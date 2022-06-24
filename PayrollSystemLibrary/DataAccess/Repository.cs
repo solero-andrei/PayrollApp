@@ -44,7 +44,6 @@ namespace PayrollSystemLibrary.DataAccess
                 cn.Open();
                 command.Parameters.AddWithValue("@Username", username);
                 command.Parameters.AddWithValue("Password", password);
-
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
