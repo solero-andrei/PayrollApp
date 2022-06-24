@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.container = new MaterialSkin.Controls.MaterialCard();
             this.btnLogin = new MaterialSkin.Controls.MaterialButton();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -38,8 +39,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // container
@@ -197,6 +200,11 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Copyright 2022. All Rights Reserved.";
             // 
+            // error
+            // 
+            this.error.BlinkRate = 500;
+            this.error.ContainerControl = this;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +221,7 @@
             this.container.ResumeLayout(false);
             this.container.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +239,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private MaterialSkin.Controls.MaterialButton btnLogin;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

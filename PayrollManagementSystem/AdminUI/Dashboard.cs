@@ -10,16 +10,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PayrollSystemLibrary.Interfaces;
 
 namespace PayrollManagementSystem.AdminUI
 {
     public partial class Dashboard : MaterialForm
     {
+        private IUser adminInformation; 
         public Dashboard()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
+        }
+
+        public Dashboard(IUser user) : this()
+        {
+            adminInformation = user;
         }
 
         public void demo(string id)
@@ -43,19 +50,17 @@ namespace PayrollManagementSystem.AdminUI
 
             if (DateTime.Now.Hour <= 12 && DateTime.Now.Hour > 0)
             {
-                txtGreeting.Text = "Hello, Good Morning! Andrei"; 
+                txtGreeting.Text = $"Hello, Good Morning! {adminInformation.FirstName} {adminInformation.LastName}"; 
             }
             else if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 17)
             {
-                txtGreeting.Text = "Hello, Good Afternoon! Andrei";
+                txtGreeting.Text = $"Hello, Good Afternoon! {adminInformation.FirstName} {adminInformation.LastName}";
             }
-            else if (DateTime.Now.Hour >= 17 && DateTime.Now.Hour < 12)
+            else if (DateTime.Now.Hour >= 17 && DateTime.Now.Hour < 24)
             {
-                txtGreeting.Text = "Hello, Good Evening! Andrei";
+                txtGreeting.Text = $"Hello, Good Evening! {adminInformation.FirstName} {adminInformation.LastName}";
             }
         }
-
-
 
         private void materialButton2_Click(object sender, EventArgs e)
         {

@@ -44,7 +44,6 @@
     <Compile Include="DataAccess\ConnectionString.cs" />
     <Compile Include="DataAccess\IRepository.cs" />
     <Compile Include="DataAccess\Repository.cs" />
-    <Compile Include="Interfaces\IUserLogin.cs" />
     <Compile Include="Logic\LoginProcessor.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
