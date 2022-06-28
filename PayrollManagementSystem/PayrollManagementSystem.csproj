@@ -78,6 +78,7 @@
     <Compile Include="AdminUI\ModifyEmployee.Designer.cs">
       <DependentUpon>ModifyEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminUI\AddEmployee.resx">

@@ -18,8 +18,9 @@ namespace PayrollSystemLibrary.Models
         public string EmailAddress { get; set; }
         public string ContactNumber { get; set; }
         public string HomeAddress { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public DateTime DateOfApply { get; set; }
+        public string DateOfBirth { get; set; }
+        public string DateOfApply { get; set; }
+        public JobPositions Job { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
     }

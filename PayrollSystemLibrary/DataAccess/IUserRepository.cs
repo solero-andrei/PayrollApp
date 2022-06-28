@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace PayrollSystemLibrary.DataAccess
 {
-    public interface IRepository
+    public interface IUserRepository
     {
-        IUser GetUserDataByAccount(Roles role);
+        IUser GetUserDataByAccount(Roles role, string username, string password);
     }
 }

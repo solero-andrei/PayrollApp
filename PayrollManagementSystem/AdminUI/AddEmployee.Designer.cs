@@ -29,101 +29,98 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployee));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialMultiLineTextBox21 = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.basicInformation = new System.Windows.Forms.GroupBox();
+            this.txtAddress = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.radFemale = new MaterialSkin.Controls.MaterialRadioButton();
+            this.radMale = new MaterialSkin.Controls.MaterialRadioButton();
+            this.btnGenerateID = new MaterialSkin.Controls.MaterialButton();
+            this.txtLastName = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtMiddleName = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtFirstName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtID = new MaterialSkin.Controls.MaterialTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox7 = new MaterialSkin.Controls.MaterialTextBox();
+            this.contactInformation = new System.Windows.Forms.GroupBox();
+            this.txtContactNumber = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblHireDate = new System.Windows.Forms.Label();
+            this.lblMonthlySalary = new System.Windows.Forms.Label();
+            this.lblJobID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbJobPosition = new MaterialSkin.Controls.MaterialComboBox();
+            this.btnUpload = new MaterialSkin.Controls.MaterialButton();
+            this.btnSave = new MaterialSkin.Controls.MaterialButton();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.employeeImage = new System.Windows.Forms.PictureBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.linkAccountGenerator = new System.Windows.Forms.LinkLabel();
+            this.basicInformation.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contactInformation.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // basicInformation
             // 
-            this.groupBox1.Controls.Add(this.materialMultiLineTextBox21);
-            this.groupBox1.Controls.Add(this.materialDivider1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.materialRadioButton2);
-            this.groupBox1.Controls.Add(this.materialRadioButton1);
-            this.groupBox1.Controls.Add(this.materialButton1);
-            this.groupBox1.Controls.Add(this.materialTextBox4);
-            this.groupBox1.Controls.Add(this.materialTextBox3);
-            this.groupBox1.Controls.Add(this.materialTextBox2);
-            this.groupBox1.Controls.Add(this.txtID);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(25, 61);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(417, 467);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Basic Information";
+            this.basicInformation.Controls.Add(this.txtAddress);
+            this.basicInformation.Controls.Add(this.materialDivider1);
+            this.basicInformation.Controls.Add(this.label1);
+            this.basicInformation.Controls.Add(this.dateOfBirth);
+            this.basicInformation.Controls.Add(this.radFemale);
+            this.basicInformation.Controls.Add(this.radMale);
+            this.basicInformation.Controls.Add(this.btnGenerateID);
+            this.basicInformation.Controls.Add(this.txtLastName);
+            this.basicInformation.Controls.Add(this.txtMiddleName);
+            this.basicInformation.Controls.Add(this.txtFirstName);
+            this.basicInformation.Controls.Add(this.txtID);
+            this.basicInformation.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.basicInformation.Location = new System.Drawing.Point(25, 61);
+            this.basicInformation.Name = "basicInformation";
+            this.basicInformation.Size = new System.Drawing.Size(417, 467);
+            this.basicInformation.TabIndex = 1;
+            this.basicInformation.TabStop = false;
+            this.basicInformation.Text = "Basic Information";
             // 
-            // materialMultiLineTextBox21
+            // txtAddress
             // 
-            this.materialMultiLineTextBox21.AnimateReadOnly = false;
-            this.materialMultiLineTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMultiLineTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialMultiLineTextBox21.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.materialMultiLineTextBox21.Depth = 0;
-            this.materialMultiLineTextBox21.HideSelection = true;
-            this.materialMultiLineTextBox21.Hint = "Home Address";
-            this.materialMultiLineTextBox21.Location = new System.Drawing.Point(19, 344);
-            this.materialMultiLineTextBox21.MaxLength = 32767;
-            this.materialMultiLineTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMultiLineTextBox21.Name = "materialMultiLineTextBox21";
-            this.materialMultiLineTextBox21.PasswordChar = '\0';
-            this.materialMultiLineTextBox21.ReadOnly = false;
-            this.materialMultiLineTextBox21.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.materialMultiLineTextBox21.SelectedText = "";
-            this.materialMultiLineTextBox21.SelectionLength = 0;
-            this.materialMultiLineTextBox21.SelectionStart = 0;
-            this.materialMultiLineTextBox21.ShortcutsEnabled = true;
-            this.materialMultiLineTextBox21.Size = new System.Drawing.Size(377, 117);
-            this.materialMultiLineTextBox21.TabIndex = 7;
-            this.materialMultiLineTextBox21.TabStop = false;
-            this.materialMultiLineTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMultiLineTextBox21.UseSystemPasswordChar = false;
-            this.materialMultiLineTextBox21.Click += new System.EventHandler(this.materialMultiLineTextBox21_Click);
+            this.txtAddress.AnimateReadOnly = false;
+            this.txtAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAddress.Depth = 0;
+            this.txtAddress.HideSelection = true;
+            this.txtAddress.Hint = "Home Address";
+            this.txtAddress.Location = new System.Drawing.Point(19, 344);
+            this.txtAddress.MaxLength = 32767;
+            this.txtAddress.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.PasswordChar = '\0';
+            this.txtAddress.ReadOnly = false;
+            this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAddress.SelectedText = "";
+            this.txtAddress.SelectionLength = 0;
+            this.txtAddress.SelectionStart = 0;
+            this.txtAddress.ShortcutsEnabled = true;
+            this.txtAddress.Size = new System.Drawing.Size(377, 117);
+            this.txtAddress.TabIndex = 7;
+            this.txtAddress.TabStop = false;
+            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAddress.UseSystemPasswordChar = false;
             // 
             // materialDivider1
             // 
@@ -146,120 +143,121 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Date of Birth:";
             // 
-            // dateTimePicker1
+            // dateOfBirth
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(174, 298);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(222, 30);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateOfBirth.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateOfBirth.Location = new System.Drawing.Point(174, 298);
+            this.dateOfBirth.Name = "dateOfBirth";
+            this.dateOfBirth.Size = new System.Drawing.Size(222, 30);
+            this.dateOfBirth.TabIndex = 6;
             // 
-            // materialRadioButton2
+            // radFemale
             // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Location = new System.Drawing.Point(260, 253);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(87, 37);
-            this.materialRadioButton2.TabIndex = 5;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Female";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.radFemale.AutoSize = true;
+            this.radFemale.Depth = 0;
+            this.radFemale.Location = new System.Drawing.Point(260, 253);
+            this.radFemale.Margin = new System.Windows.Forms.Padding(0);
+            this.radFemale.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.radFemale.MouseState = MaterialSkin.MouseState.HOVER;
+            this.radFemale.Name = "radFemale";
+            this.radFemale.Ripple = true;
+            this.radFemale.Size = new System.Drawing.Size(87, 37);
+            this.radFemale.TabIndex = 5;
+            this.radFemale.TabStop = true;
+            this.radFemale.Text = "Female";
+            this.radFemale.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton1
+            // radMale
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Location = new System.Drawing.Point(69, 253);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(70, 37);
-            this.materialRadioButton1.TabIndex = 4;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "Male";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.radMale.AutoSize = true;
+            this.radMale.Depth = 0;
+            this.radMale.Location = new System.Drawing.Point(69, 253);
+            this.radMale.Margin = new System.Windows.Forms.Padding(0);
+            this.radMale.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.radMale.MouseState = MaterialSkin.MouseState.HOVER;
+            this.radMale.Name = "radMale";
+            this.radMale.Ripple = true;
+            this.radMale.Size = new System.Drawing.Size(70, 37);
+            this.radMale.TabIndex = 4;
+            this.radMale.TabStop = true;
+            this.radMale.Text = "Male";
+            this.radMale.UseVisualStyleBackColor = true;
             // 
-            // materialButton1
+            // btnGenerateID
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(259, 38);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(127, 35);
-            this.materialButton1.TabIndex = 1;
-            this.materialButton1.Text = "Generate ID";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btnGenerateID.AutoSize = false;
+            this.btnGenerateID.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnGenerateID.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnGenerateID.Depth = 0;
+            this.btnGenerateID.HighEmphasis = true;
+            this.btnGenerateID.Icon = null;
+            this.btnGenerateID.Location = new System.Drawing.Point(259, 38);
+            this.btnGenerateID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnGenerateID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnGenerateID.Name = "btnGenerateID";
+            this.btnGenerateID.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnGenerateID.Size = new System.Drawing.Size(127, 35);
+            this.btnGenerateID.TabIndex = 1;
+            this.btnGenerateID.Text = "Generate";
+            this.btnGenerateID.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnGenerateID.UseAccentColor = false;
+            this.btnGenerateID.UseVisualStyleBackColor = true;
+            this.btnGenerateID.Click += new System.EventHandler(this.btnGenerateID_Click);
             // 
-            // materialTextBox4
+            // txtLastName
             // 
-            this.materialTextBox4.AnimateReadOnly = false;
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox4.Hint = "Last Name";
-            this.materialTextBox4.LeadingIcon = null;
-            this.materialTextBox4.Location = new System.Drawing.Point(19, 200);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(377, 50);
-            this.materialTextBox4.TabIndex = 3;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.TrailingIcon = null;
+            this.txtLastName.AnimateReadOnly = false;
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastName.Depth = 0;
+            this.txtLastName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLastName.Hint = "Last Name";
+            this.txtLastName.LeadingIcon = null;
+            this.txtLastName.Location = new System.Drawing.Point(19, 200);
+            this.txtLastName.MaxLength = 50;
+            this.txtLastName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtLastName.Multiline = false;
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(377, 50);
+            this.txtLastName.TabIndex = 3;
+            this.txtLastName.Text = "";
+            this.txtLastName.TrailingIcon = null;
             // 
-            // materialTextBox3
+            // txtMiddleName
             // 
-            this.materialTextBox3.AnimateReadOnly = false;
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox3.Hint = "Middle Name";
-            this.materialTextBox3.LeadingIcon = null;
-            this.materialTextBox3.Location = new System.Drawing.Point(19, 144);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(377, 50);
-            this.materialTextBox3.TabIndex = 2;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.TrailingIcon = null;
+            this.txtMiddleName.AnimateReadOnly = false;
+            this.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMiddleName.Depth = 0;
+            this.txtMiddleName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMiddleName.Hint = "Middle Name";
+            this.txtMiddleName.LeadingIcon = null;
+            this.txtMiddleName.Location = new System.Drawing.Point(19, 144);
+            this.txtMiddleName.MaxLength = 50;
+            this.txtMiddleName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMiddleName.Multiline = false;
+            this.txtMiddleName.Name = "txtMiddleName";
+            this.txtMiddleName.Size = new System.Drawing.Size(377, 50);
+            this.txtMiddleName.TabIndex = 2;
+            this.txtMiddleName.Text = "";
+            this.txtMiddleName.TrailingIcon = null;
             // 
-            // materialTextBox2
+            // txtFirstName
             // 
-            this.materialTextBox2.AnimateReadOnly = false;
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.Hint = "First Name";
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(19, 88);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(377, 50);
-            this.materialTextBox2.TabIndex = 1;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
+            this.txtFirstName.AnimateReadOnly = false;
+            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFirstName.Depth = 0;
+            this.txtFirstName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFirstName.Hint = "First Name";
+            this.txtFirstName.LeadingIcon = null;
+            this.txtFirstName.Location = new System.Drawing.Point(19, 88);
+            this.txtFirstName.MaxLength = 50;
+            this.txtFirstName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtFirstName.Multiline = false;
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(377, 50);
+            this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.Text = "";
+            this.txtFirstName.TrailingIcon = null;
             // 
             // txtID
             // 
@@ -267,7 +265,7 @@
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.Depth = 0;
             this.txtID.Enabled = false;
-            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtID.Hint = "Employee ID";
             this.txtID.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtID.LeadingIcon = null;
@@ -304,6 +302,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Fill up required fields to add new employee.";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -315,58 +323,59 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Add New Employee";
             // 
-            // groupBox2
+            // contactInformation
             // 
-            this.groupBox2.Controls.Add(this.materialTextBox6);
-            this.groupBox2.Controls.Add(this.materialTextBox7);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(448, 61);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(417, 175);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Contact Information";
+            this.contactInformation.Controls.Add(this.txtContactNumber);
+            this.contactInformation.Controls.Add(this.txtEmail);
+            this.contactInformation.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactInformation.Location = new System.Drawing.Point(448, 61);
+            this.contactInformation.Name = "contactInformation";
+            this.contactInformation.Size = new System.Drawing.Size(417, 175);
+            this.contactInformation.TabIndex = 4;
+            this.contactInformation.TabStop = false;
+            this.contactInformation.Text = "Contact Information";
             // 
-            // materialTextBox6
+            // txtContactNumber
             // 
-            this.materialTextBox6.AnimateReadOnly = false;
-            this.materialTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox6.Depth = 0;
-            this.materialTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox6.Hint = "Contact Number";
-            this.materialTextBox6.LeadingIcon = null;
-            this.materialTextBox6.Location = new System.Drawing.Point(20, 88);
-            this.materialTextBox6.MaxLength = 50;
-            this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox6.Multiline = false;
-            this.materialTextBox6.Name = "materialTextBox6";
-            this.materialTextBox6.Size = new System.Drawing.Size(377, 50);
-            this.materialTextBox6.TabIndex = 9;
-            this.materialTextBox6.Text = "";
-            this.materialTextBox6.TrailingIcon = null;
+            this.txtContactNumber.AnimateReadOnly = false;
+            this.txtContactNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContactNumber.Depth = 0;
+            this.txtContactNumber.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtContactNumber.Hint = "Contact Number";
+            this.txtContactNumber.LeadingIcon = null;
+            this.txtContactNumber.Location = new System.Drawing.Point(20, 88);
+            this.txtContactNumber.MaxLength = 50;
+            this.txtContactNumber.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtContactNumber.Multiline = false;
+            this.txtContactNumber.Name = "txtContactNumber";
+            this.txtContactNumber.Size = new System.Drawing.Size(377, 50);
+            this.txtContactNumber.TabIndex = 9;
+            this.txtContactNumber.Text = "";
+            this.txtContactNumber.TrailingIcon = null;
             // 
-            // materialTextBox7
+            // txtEmail
             // 
-            this.materialTextBox7.AnimateReadOnly = false;
-            this.materialTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox7.Depth = 0;
-            this.materialTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox7.Hint = "Email Address";
-            this.materialTextBox7.LeadingIcon = null;
-            this.materialTextBox7.Location = new System.Drawing.Point(20, 32);
-            this.materialTextBox7.MaxLength = 50;
-            this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox7.Multiline = false;
-            this.materialTextBox7.Name = "materialTextBox7";
-            this.materialTextBox7.Size = new System.Drawing.Size(377, 50);
-            this.materialTextBox7.TabIndex = 8;
-            this.materialTextBox7.Text = "";
-            this.materialTextBox7.TrailingIcon = null;
+            this.txtEmail.AnimateReadOnly = false;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtEmail.Hint = "Email Address";
+            this.txtEmail.LeadingIcon = null;
+            this.txtEmail.Location = new System.Drawing.Point(20, 32);
+            this.txtEmail.MaxLength = 50;
+            this.txtEmail.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(377, 50);
+            this.txtEmail.TabIndex = 8;
+            this.txtEmail.Text = "";
+            this.txtEmail.TrailingIcon = null;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox3.Controls.Add(this.materialComboBox1);
+            this.groupBox3.Controls.Add(this.cmbJobPosition);
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(448, 242);
             this.groupBox3.Name = "groupBox3";
@@ -375,198 +384,173 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Job Information";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(23, 259);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(275, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Taxes and Deductions are computed at payroll";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblHireDate, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblMonthlySalary, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblJobID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 76);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(377, 204);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48275F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48275F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.03448F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(377, 166);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(191, 160);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(183, 44);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "- - -";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(182, 44);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Net Pay";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(191, 120);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(183, 40);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "- - -";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 120);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(182, 40);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Gross Pay";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
+            this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(191, 80);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 114);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(183, 40);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "- - -";
+            this.label9.Size = new System.Drawing.Size(182, 52);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Hire Date:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // lblHireDate
             // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 80);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(182, 40);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Deductions";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHireDate.AutoSize = true;
+            this.lblHireDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHireDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblHireDate.Location = new System.Drawing.Point(191, 114);
+            this.lblHireDate.Name = "lblHireDate";
+            this.lblHireDate.Size = new System.Drawing.Size(183, 52);
+            this.lblHireDate.TabIndex = 8;
+            this.lblHireDate.Text = "-";
+            this.lblHireDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // lblMonthlySalary
             // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(191, 40);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(183, 40);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "- - -";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonthlySalary.AutoSize = true;
+            this.lblMonthlySalary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMonthlySalary.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblMonthlySalary.Location = new System.Drawing.Point(191, 57);
+            this.lblMonthlySalary.Name = "lblMonthlySalary";
+            this.lblMonthlySalary.Size = new System.Drawing.Size(183, 57);
+            this.lblMonthlySalary.TabIndex = 7;
+            this.lblMonthlySalary.Text = "-";
+            this.lblMonthlySalary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // lblJobID
             // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 40);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Salary Range/Annual Salary";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(191, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 40);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "- - -";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblJobID.AutoSize = true;
+            this.lblJobID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblJobID.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJobID.Location = new System.Drawing.Point(191, 0);
+            this.lblJobID.Name = "lblJobID";
+            this.lblJobID.Size = new System.Drawing.Size(183, 57);
+            this.lblJobID.TabIndex = 1;
+            this.lblJobID.Text = "-";
+            this.lblJobID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
+            this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(182, 40);
+            this.label4.Size = new System.Drawing.Size(182, 57);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Date of Join";
+            this.label4.Text = "Job ID:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialComboBox1
+            // label6
             // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 174;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.Hint = "Department";
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 43;
-            this.materialComboBox1.Location = new System.Drawing.Point(20, 21);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(377, 49);
-            this.materialComboBox1.StartIndex = 0;
-            this.materialComboBox1.TabIndex = 10;
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(182, 57);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Monthly Salary:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialButton2
+            // cmbJobPosition
             // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(975, 294);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(127, 36);
-            this.materialButton2.TabIndex = 11;
-            this.materialButton2.Text = "Upload Image";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.cmbJobPosition.AutoResize = false;
+            this.cmbJobPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbJobPosition.Depth = 0;
+            this.cmbJobPosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbJobPosition.DropDownHeight = 174;
+            this.cmbJobPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbJobPosition.DropDownWidth = 121;
+            this.cmbJobPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbJobPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbJobPosition.FormattingEnabled = true;
+            this.cmbJobPosition.Hint = "Job Position";
+            this.cmbJobPosition.IntegralHeight = false;
+            this.cmbJobPosition.ItemHeight = 43;
+            this.cmbJobPosition.Location = new System.Drawing.Point(20, 21);
+            this.cmbJobPosition.MaxDropDownItems = 4;
+            this.cmbJobPosition.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbJobPosition.Name = "cmbJobPosition";
+            this.cmbJobPosition.Size = new System.Drawing.Size(377, 49);
+            this.cmbJobPosition.StartIndex = 0;
+            this.cmbJobPosition.TabIndex = 10;
+            this.cmbJobPosition.SelectedIndexChanged += new System.EventHandler(this.cmbJobPosition_SelectedIndexChanged);
             // 
-            // materialButton3
+            // btnUpload
             // 
-            this.materialButton3.AutoSize = false;
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(872, 475);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(158, 47);
-            this.materialButton3.TabIndex = 12;
-            this.materialButton3.Text = "Save Employee";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.btnUpload.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpload.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnUpload.Depth = 0;
+            this.btnUpload.HighEmphasis = true;
+            this.btnUpload.Icon = null;
+            this.btnUpload.Location = new System.Drawing.Point(975, 267);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUpload.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnUpload.Size = new System.Drawing.Size(127, 36);
+            this.btnUpload.TabIndex = 11;
+            this.btnUpload.Text = "Upload Image";
+            this.btnUpload.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnUpload.UseAccentColor = false;
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoSize = false;
+            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSave.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSave.Depth = 0;
+            this.btnSave.HighEmphasis = true;
+            this.btnSave.Icon = null;
+            this.btnSave.Location = new System.Drawing.Point(872, 475);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSave.Size = new System.Drawing.Size(158, 47);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save Employee";
+            this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.btnSave.UseAccentColor = false;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // materialButton4
             // 
@@ -592,81 +576,86 @@
             // 
             this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.label14.Location = new System.Drawing.Point(936, 343);
+            this.label14.Location = new System.Drawing.Point(906, 318);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(204, 41);
+            this.label14.Size = new System.Drawing.Size(265, 41);
             this.label14.TabIndex = 14;
             this.label14.Text = "Auto Generated Account for Employee Dashboard Account";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // lblUserName
             // 
-            this.label15.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.label15.Location = new System.Drawing.Point(936, 384);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(204, 41);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Username";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUserName.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.lblUserName.Location = new System.Drawing.Point(930, 359);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(216, 41);
+            this.lblUserName.TabIndex = 15;
+            this.lblUserName.Text = "Username";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // employeeImage
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(919, 64);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(234, 221);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.employeeImage.Location = new System.Drawing.Point(938, 59);
+            this.employeeImage.Name = "employeeImage";
+            this.employeeImage.Size = new System.Drawing.Size(200, 200);
+            this.employeeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.employeeImage.TabIndex = 3;
+            this.employeeImage.TabStop = false;
             // 
-            // pictureBox1
+            // lblPassword
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.lblPassword.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.lblPassword.Location = new System.Drawing.Point(930, 400);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(216, 41);
+            this.lblPassword.TabIndex = 16;
+            this.lblPassword.Text = "Password";
+            this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // linkAccountGenerator
             // 
-            this.label16.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.label16.Location = new System.Drawing.Point(934, 425);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(204, 41);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Password";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkAccountGenerator.AutoSize = true;
+            this.linkAccountGenerator.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkAccountGenerator.Location = new System.Drawing.Point(871, 453);
+            this.linkAccountGenerator.Name = "linkAccountGenerator";
+            this.linkAccountGenerator.Size = new System.Drawing.Size(123, 16);
+            this.linkAccountGenerator.TabIndex = 17;
+            this.linkAccountGenerator.TabStop = true;
+            this.linkAccountGenerator.Text = "Generate Username";
+            this.linkAccountGenerator.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAccountGenerator_LinkClicked);
             // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.linkAccountGenerator);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.materialButton4);
-            this.Controls.Add(this.materialButton3);
-            this.Controls.Add(this.materialButton2);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.contactInformation);
+            this.Controls.Add(this.employeeImage);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.basicInformation);
             this.Name = "AddEmployee";
             this.Size = new System.Drawing.Size(1257, 537);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.basicInformation.ResumeLayout(false);
+            this.basicInformation.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contactInformation.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,44 +663,42 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox basicInformation;
         private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialRadioButton radFemale;
+        private MaterialSkin.Controls.MaterialRadioButton radMale;
+        private MaterialSkin.Controls.MaterialButton btnGenerateID;
+        private MaterialSkin.Controls.MaterialTextBox txtLastName;
+        private MaterialSkin.Controls.MaterialTextBox txtMiddleName;
+        private MaterialSkin.Controls.MaterialTextBox txtFirstName;
         private MaterialSkin.Controls.MaterialTextBox txtID;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateOfBirth;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 materialMultiLineTextBox21;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox6;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox7;
+        private System.Windows.Forms.PictureBox employeeImage;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtAddress;
+        private System.Windows.Forms.GroupBox contactInformation;
+        private MaterialSkin.Controls.MaterialTextBox txtContactNumber;
+        private MaterialSkin.Controls.MaterialTextBox txtEmail;
         private System.Windows.Forms.GroupBox groupBox3;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialComboBox cmbJobPosition;
+        private MaterialSkin.Controls.MaterialButton btnUpload;
+        private MaterialSkin.Controls.MaterialButton btnSave;
         private MaterialSkin.Controls.MaterialButton materialButton4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblJobID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblMonthlySalary;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.LinkLabel linkAccountGenerator;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblHireDate;
     }
 }

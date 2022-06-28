@@ -12,12 +12,13 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using PayrollSystemLibrary.Interfaces;
 using PayrollSystemLibrary.Logic;
+using PayrollSystemLibrary.Models;
 
 namespace PayrollManagementSystem.AdminUI
 {
     public partial class Login : MaterialForm
     {
-        private IUser user;
+        private PayrollUser admin;
         public Login()
         {
             InitializeComponent();
@@ -31,39 +32,37 @@ namespace PayrollManagementSystem.AdminUI
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                bool isValidLogin = LoginUser(txtUsername.Text, txtPassword.Text);
-                if (isValidLogin == true)
-                {
-                    Dashboard adminDashboard = new Dashboard(user);
-                    adminDashboard.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid");
-                }
+                btnLogin_Click(sender, e);
             }
         }
 
-        private bool LoginUser(string username, string password)
+        private bool AdminLogin()
         {
-            LoginProcessor adminLogin = new LoginProcessor();
-            bool isValidLogin = adminLogin.UserLogin(username, password, out user);
+            bool isValidLogin = false;
+            AdminProcessor admin = new AdminProcessor();
+            var adminInfo = admin.Login(txtUsername.Text, txtPassword.Text);
+            this.admin = (PayrollUser) adminInfo;
+
+            if (adminInfo != null)
+            {
+                isValidLogin = true;
+            }
 
             return isValidLogin;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool isValidLogin = LoginUser(txtUsername.Text, txtPassword.Text);
-            if (isValidLogin == true)
+            bool isValid = AdminLogin();
+
+            if (isValid == true)
             {
-                error.Clear();
-                Dashboard adminDashboard = new Dashboard(user);
+                Dashboard adminDashboard = new Dashboard(admin);
                 adminDashboard.ShowDialog();
             }
             else
             {
-                error.SetError(btnLogin, "Invalid username or password. Please try again.");
+                error.SetError(btnLogin, "Invalid username or password. Please try again");
             }
         }
     }

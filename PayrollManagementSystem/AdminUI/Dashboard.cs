@@ -10,13 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PayrollSystemLibrary.Interfaces;
+using PayrollSystemLibrary.Models;
 
 namespace PayrollManagementSystem.AdminUI
 {
     public partial class Dashboard : MaterialForm
     {
-        private IUser adminInformation; 
+        private PayrollUser adminInformation; 
         public Dashboard()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace PayrollManagementSystem.AdminUI
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
         }
 
-        public Dashboard(IUser user) : this()
+        public Dashboard(PayrollUser user) : this()
         {
             adminInformation = user;
         }

@@ -189,7 +189,6 @@
             // 
             // dateTime
             // 
-            this.dateTime.Enabled = true;
             this.dateTime.Tick += new System.EventHandler(this.dateTime_Tick);
             // 
             // txtTime
