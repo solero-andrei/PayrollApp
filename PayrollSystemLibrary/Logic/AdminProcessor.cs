@@ -16,6 +16,16 @@ namespace PayrollSystemLibrary.Logic
             
         }
 
+        public IUser GetUserByID(int userID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<IUser> GetUsers()
+        {
+            throw new NotImplementedException();
+        }
+
         public IUser Login(string username, string password)
         {
             IUserRepository adminRepo = new UserRepository();

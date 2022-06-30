@@ -1,5 +1,4 @@
-﻿using PayrollManagementSystem.AdminUI;
-using PayrollSystemLibrary.DataAccess;
+﻿using PayrollSystemLibrary.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -22,7 +21,7 @@ namespace PayrollManagementSystem
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+            Application.Run(new ClientUI.Login());
         }
     }
 }

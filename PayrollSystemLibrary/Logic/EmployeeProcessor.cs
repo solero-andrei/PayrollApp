@@ -1,5 +1,6 @@
 ﻿using PayrollSystemLibrary.DataAccess;
 using PayrollSystemLibrary.Interfaces;
+using PayrollSystemLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,25 +12,35 @@ namespace PayrollSystemLibrary.Logic
 {
     public class EmployeeProcessor : IUserProcessor
     {
-        public string ImagePath{ private get; set; }
+        IUserRepository repository;
         public EmployeeProcessor()
         {
-
-        }
-
-        public EmployeeProcessor(string imagePath)
-        {
-            this.ImagePath = imagePath;
+            repository = new UserRepository();
         }
         public void Add(IUser user)
         {
-            UserRepository repository = new UserRepository();
             repository.AddUser(Roles.Client, user);
+        }
+
+        public IUser GetUserByID(int userID)
+        {
+            return repository.GetUserDataByID(Roles.Client, userID);
+        }
+
+        public List<IUser> GetUsers()
+        {
+            return repository.GetAllUsers(Roles.Client);            
         }
 
         public IUser Login(string username, string password)
         {
-            throw new NotImplementedException();
+            IUserRepository adminRepo = new UserRepository();
+            IUser emp = new Employee();
+
+            var empInfo = adminRepo.GetUserDataByAccount(Roles.Client, username, password);
+            emp = empInfo;
+
+            return emp;
         }
     }
 }

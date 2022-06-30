@@ -50,7 +50,6 @@
     <Compile Include="Logic\EmployeeProcessor.cs" />
     <Compile Include="Logic\JobsProcessor.cs" />
     <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\EmployeeJob.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Models\JobPositions.cs" />
     <Compile Include="Models\PayrollUser.cs" />

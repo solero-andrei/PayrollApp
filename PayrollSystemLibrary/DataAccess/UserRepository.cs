@@ -22,7 +22,7 @@ namespace PayrollSystemLibrary.DataAccess
             }
             if (role == Roles.Client)
             {
-                query = "";
+                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID";
             }
 
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
@@ -47,6 +47,12 @@ namespace PayrollSystemLibrary.DataAccess
                             EmailAddress = reader["EmailAddress"].ToString(),
                             Username = reader["UserName"].ToString(),
                             Password = reader["Password"].ToString(),
+                        };
+                    }
+                    if (role == Roles.Client)
+                    {
+                        user = new Employee
+                        {
                             
                         };
                     }
@@ -56,12 +62,65 @@ namespace PayrollSystemLibrary.DataAccess
             return user;
         }
 
+        public IUser GetUserDataByID(Roles role, int UserID)
+        {
+            IUser user = null;
+            string query = "";
+
+            if (role == Roles.Client)
+            {
+                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID where EmployeeJobInfo.EmployeeID = @EmployeeID";
+            }
+            if (role == Roles.Admin)
+            {
+                query = "";
+            }
+
+            using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
+            using (SqlCommand command = new SqlCommand(query, cn))
+            {
+                cn.Open();
+                command.Parameters.AddWithValue("@EmployeeID", UserID);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    if (role == Roles.Client)
+                    {
+                        user = new Employee
+                        {
+                            ID = int.Parse(reader["EmployeeID"].ToString()),
+                            FirstName = reader["FirstName"].ToString(),
+                            MiddleName = reader["MiddleName"].ToString(),
+                            LastName = reader["LastName"].ToString(),
+                            ContactNumber = reader["ContactNumber"].ToString(),
+                            EmailAddress = reader["EmailAddress"].ToString(),
+                            Username = reader["UserName"].ToString(),
+                            DateOfBirth = reader["DateOfBirth"].ToString(),
+                            DateOfApply = reader["DateOfApply"].ToString(),
+                            Gender = reader["Gender"].ToString(),
+                            StreetAddress = reader["StreetAddress"].ToString(),
+                            City = reader["City"].ToString(),
+                            Job = new JobPositions 
+                            {
+                                JobID = int.Parse(reader["JobID"].ToString()),
+                                JobName = reader["JobName"].ToString(),
+                                MonthlySalary = Convert.ToDecimal(reader["MonthlySalary"].ToString())
+                            }
+                        };
+                    }
+                }
+            }
+
+            return user;
+        }
+
         public void AddUser(Roles role, IUser userInfo)
         {
             string query = "";
             if (role == Roles.Client)
             {
-                query = "insert into Employee([EmployeeID], [FirstName], [MiddleName], [LastName], [Gender], [EmailAddress], [ContactNumber], [HomeAddress], [DateOfBirth], [DateOfApply])values(@EmployeeID, @FirstName, @MiddleName, @LastName, @Gender, @EmailAddress, @ContactNumber, @HomeAddress, @DateOfBirth, @DateOfApply);" +
+                query = "insert into Employee([EmployeeID], [FirstName], [MiddleName], [LastName], [Gender], [EmailAddress], [ContactNumber], [DateOfBirth], [DateOfApply], [StreetAddress], [City])values(@EmployeeID, @FirstName, @MiddleName, @LastName, @Gender, @EmailAddress, @ContactNumber, @DateOfBirth, @DateOfApply, @StreetAddress, @City);" +
                     "insert into EmployeeDashboardAccount([EmployeeID], [Username], [AccountPassword])values(@EmployeeID, @Username, @Password);" +
                     "insert into EmployeeJobInfo([EmployeeID], [JobID])values(@EmployeeID, @JobID)";
             }
@@ -81,16 +140,66 @@ namespace PayrollSystemLibrary.DataAccess
                     command.Parameters.AddWithValue("@Gender", emp.Gender);
                     command.Parameters.AddWithValue("@EmailAddress", emp.EmailAddress);
                     command.Parameters.AddWithValue("@ContactNumber", emp.ContactNumber);
-                    command.Parameters.AddWithValue("@HomeAddress", emp.HomeAddress);
                     command.Parameters.AddWithValue("@DateOfBirth", emp.DateOfBirth);
                     command.Parameters.AddWithValue("@DateOfApply", emp.DateOfApply);
                     command.Parameters.AddWithValue("@Username", emp.Username);
                     command.Parameters.AddWithValue("@Password", emp.Password);
                     command.Parameters.AddWithValue("@JobID", emp.Job.JobID);
+                    command.Parameters.AddWithValue("@StreetAddress", emp.StreetAddress);
+                    command.Parameters.AddWithValue("@City", emp.City);
 
                     @command.ExecuteNonQuery();
                 }
             }
+        }
+
+        public List<IUser> GetAllUsers(Roles role)
+        {
+            List<IUser> output = new List<IUser>();
+            string query = "";
+
+            if (role == Roles.Client)
+            {
+                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID";
+            }
+
+            using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
+            using (SqlCommand command = new SqlCommand(query, cn))
+            {
+                cn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (role == Roles.Client)
+                    {
+                        output.Add(new Employee
+                        {
+                            ID = int.Parse(reader["EmployeeID"].ToString()),
+                            FirstName = reader["FirstName"].ToString(),
+                            MiddleName = reader["MiddleName"].ToString(),
+                            LastName = reader["LastName"].ToString(),
+                            ContactNumber = reader["ContactNumber"].ToString(),
+                            EmailAddress = reader["EmailAddress"].ToString(),
+                            Username = reader["UserName"].ToString(),
+                            DateOfBirth = reader["DateOfBirth"].ToString(),
+                            DateOfApply = reader["DateOfApply"].ToString(),
+                            Gender = reader["Gender"].ToString(),
+                            StreetAddress = reader["StreetAddress"].ToString(),
+                            City = reader["City"].ToString(),
+                            Job = new JobPositions 
+                            { 
+                                JobID = int.Parse(reader["JobID"].ToString()),
+                                JobName = reader["JobName"].ToString(),
+                                MonthlySalary = decimal.Parse(reader["MonthlySalary"].ToString())
+                            }
+                        });
+                    }
+                }
+               
+            }
+
+            return output;
         }
     }
 }

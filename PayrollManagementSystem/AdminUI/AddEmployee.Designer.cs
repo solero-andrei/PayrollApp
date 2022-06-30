@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployee));
             this.basicInformation = new System.Windows.Forms.GroupBox();
-            this.txtAddress = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.label1 = new System.Windows.Forms.Label();
             this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
@@ -66,6 +65,8 @@
             this.employeeImage = new System.Windows.Forms.PictureBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.linkAccountGenerator = new System.Windows.Forms.LinkLabel();
+            this.txtCity = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtStreet = new MaterialSkin.Controls.MaterialTextBox();
             this.basicInformation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,7 +78,8 @@
             // 
             // basicInformation
             // 
-            this.basicInformation.Controls.Add(this.txtAddress);
+            this.basicInformation.Controls.Add(this.txtCity);
+            this.basicInformation.Controls.Add(this.txtStreet);
             this.basicInformation.Controls.Add(this.materialDivider1);
             this.basicInformation.Controls.Add(this.label1);
             this.basicInformation.Controls.Add(this.dateOfBirth);
@@ -96,37 +98,11 @@
             this.basicInformation.TabStop = false;
             this.basicInformation.Text = "Basic Information";
             // 
-            // txtAddress
-            // 
-            this.txtAddress.AnimateReadOnly = false;
-            this.txtAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddress.Depth = 0;
-            this.txtAddress.HideSelection = true;
-            this.txtAddress.Hint = "Home Address";
-            this.txtAddress.Location = new System.Drawing.Point(19, 344);
-            this.txtAddress.MaxLength = 32767;
-            this.txtAddress.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.PasswordChar = '\0';
-            this.txtAddress.ReadOnly = false;
-            this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtAddress.SelectedText = "";
-            this.txtAddress.SelectionLength = 0;
-            this.txtAddress.SelectionStart = 0;
-            this.txtAddress.ShortcutsEnabled = true;
-            this.txtAddress.Size = new System.Drawing.Size(377, 117);
-            this.txtAddress.TabIndex = 7;
-            this.txtAddress.TabStop = false;
-            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtAddress.UseSystemPasswordChar = false;
-            // 
             // materialDivider1
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(14, 337);
+            this.materialDivider1.Location = new System.Drawing.Point(14, 332);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(388, 1);
@@ -137,26 +113,26 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 304);
+            this.label1.Location = new System.Drawing.Point(184, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 23);
+            this.label1.Size = new System.Drawing.Size(93, 23);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Date of Birth:";
+            this.label1.Text = "Birthdate:";
             // 
             // dateOfBirth
             // 
             this.dateOfBirth.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateOfBirth.Location = new System.Drawing.Point(174, 298);
+            this.dateOfBirth.Location = new System.Drawing.Point(278, 256);
             this.dateOfBirth.Name = "dateOfBirth";
-            this.dateOfBirth.Size = new System.Drawing.Size(222, 30);
+            this.dateOfBirth.Size = new System.Drawing.Size(122, 30);
             this.dateOfBirth.TabIndex = 6;
             // 
             // radFemale
             // 
             this.radFemale.AutoSize = true;
             this.radFemale.Depth = 0;
-            this.radFemale.Location = new System.Drawing.Point(260, 253);
+            this.radFemale.Location = new System.Drawing.Point(19, 290);
             this.radFemale.Margin = new System.Windows.Forms.Padding(0);
             this.radFemale.MouseLocation = new System.Drawing.Point(-1, -1);
             this.radFemale.MouseState = MaterialSkin.MouseState.HOVER;
@@ -172,7 +148,7 @@
             // 
             this.radMale.AutoSize = true;
             this.radMale.Depth = 0;
-            this.radMale.Location = new System.Drawing.Point(69, 253);
+            this.radMale.Location = new System.Drawing.Point(19, 253);
             this.radMale.Margin = new System.Windows.Forms.Padding(0);
             this.radMale.MouseLocation = new System.Drawing.Point(-1, -1);
             this.radMale.MouseState = MaterialSkin.MouseState.HOVER;
@@ -626,6 +602,42 @@
             this.linkAccountGenerator.Text = "Generate Username";
             this.linkAccountGenerator.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAccountGenerator_LinkClicked);
             // 
+            // txtCity
+            // 
+            this.txtCity.AnimateReadOnly = false;
+            this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCity.Depth = 0;
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCity.Hint = "City";
+            this.txtCity.LeadingIcon = null;
+            this.txtCity.Location = new System.Drawing.Point(23, 399);
+            this.txtCity.MaxLength = 50;
+            this.txtCity.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCity.Multiline = false;
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(377, 50);
+            this.txtCity.TabIndex = 13;
+            this.txtCity.Text = "";
+            this.txtCity.TrailingIcon = null;
+            // 
+            // txtStreet
+            // 
+            this.txtStreet.AnimateReadOnly = false;
+            this.txtStreet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStreet.Depth = 0;
+            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtStreet.Hint = "Street Number";
+            this.txtStreet.LeadingIcon = null;
+            this.txtStreet.Location = new System.Drawing.Point(23, 343);
+            this.txtStreet.MaxLength = 50;
+            this.txtStreet.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtStreet.Multiline = false;
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Size = new System.Drawing.Size(377, 50);
+            this.txtStreet.TabIndex = 12;
+            this.txtStreet.Text = "";
+            this.txtStreet.TrailingIcon = null;
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,7 +691,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox employeeImage;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtAddress;
         private System.Windows.Forms.GroupBox contactInformation;
         private MaterialSkin.Controls.MaterialTextBox txtContactNumber;
         private MaterialSkin.Controls.MaterialTextBox txtEmail;
@@ -700,5 +711,7 @@
         private System.Windows.Forms.LinkLabel linkAccountGenerator;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblHireDate;
+        private MaterialSkin.Controls.MaterialTextBox txtCity;
+        private MaterialSkin.Controls.MaterialTextBox txtStreet;
     }
 }

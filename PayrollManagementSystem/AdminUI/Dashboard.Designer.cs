@@ -32,7 +32,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.btnModifyEmployee = new MaterialSkin.Controls.MaterialButton();
             this.btnAddEmployee = new MaterialSkin.Controls.MaterialButton();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -58,7 +58,7 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.materialButton3);
-            this.tabPage3.Controls.Add(this.materialButton2);
+            this.tabPage3.Controls.Add(this.btnModifyEmployee);
             this.tabPage3.Controls.Add(this.btnAddEmployee);
             this.tabPage3.Controls.Add(this.panelContainer);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -88,26 +88,26 @@
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
             // 
-            // materialButton2
+            // btnModifyEmployee
             // 
-            this.materialButton2.AutoSize = false;
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(190, 546);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(172, 40);
-            this.materialButton2.TabIndex = 2;
-            this.materialButton2.Text = "Modify Employee";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
-            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
+            this.btnModifyEmployee.AutoSize = false;
+            this.btnModifyEmployee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnModifyEmployee.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnModifyEmployee.Depth = 0;
+            this.btnModifyEmployee.HighEmphasis = true;
+            this.btnModifyEmployee.Icon = null;
+            this.btnModifyEmployee.Location = new System.Drawing.Point(190, 546);
+            this.btnModifyEmployee.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnModifyEmployee.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnModifyEmployee.Name = "btnModifyEmployee";
+            this.btnModifyEmployee.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnModifyEmployee.Size = new System.Drawing.Size(172, 40);
+            this.btnModifyEmployee.TabIndex = 2;
+            this.btnModifyEmployee.Text = "Modify Employee";
+            this.btnModifyEmployee.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnModifyEmployee.UseAccentColor = false;
+            this.btnModifyEmployee.UseVisualStyleBackColor = true;
+            this.btnModifyEmployee.Click += new System.EventHandler(this.btnModifyEmployee_Click);
             // 
             // btnAddEmployee
             // 
@@ -252,7 +252,7 @@
         private MaterialSkin.Controls.MaterialButton btnAddEmployee;
         private System.Windows.Forms.Panel panelContainer;
         private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton btnModifyEmployee;
         private System.Windows.Forms.Label txtDate;
         private System.Windows.Forms.Timer dateTime;
         private System.Windows.Forms.Label txtTime;

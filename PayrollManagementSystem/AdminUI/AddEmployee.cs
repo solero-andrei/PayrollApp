@@ -24,9 +24,25 @@ namespace PayrollManagementSystem.AdminUI
             cmbJobPosition.SelectedItem = null;
         }
 
-        public AddEmployee(string text) : this()
+        public AddEmployee(Employee employee) : this()
         {
-            this.txtID.Text = text;
+            btnGenerateID.Enabled = false;
+            linkAccountGenerator.Enabled = false;
+
+            txtID.Text = employee.ID.ToString();
+            txtFirstName.Text = employee.FirstName;
+            txtMiddleName.Text = employee.MiddleName;
+            txtLastName.Text = employee.LastName;
+            dateOfBirth.Text = employee.DateOfBirth;
+            txtStreet.Text = employee.StreetAddress;
+            txtCity.Text = employee.City;
+            txtEmail.Text = employee.EmailAddress;
+            txtContactNumber.Text = employee.ContactNumber;
+            cmbJobPosition.Text = employee.Job.JobName;
+            lblJobID.Text = employee.Job.JobID.ToString();
+            lblMonthlySalary.Text = employee.Job.MonthlySalary.ToString();
+            lblUserName.Text = employee.Username;
+            lblPassword.Text = "*******";
         }
 
         private void ResetControls()
@@ -41,10 +57,11 @@ namespace PayrollManagementSystem.AdminUI
                 textbox.Clear();
             }
 
-            txtAddress.Text = "";
             radFemale.Checked = false;
             radMale.Checked = false;
             dateOfBirth.Value = DateTime.Now;
+            lblUserName.Text = "Username";
+            lblPassword.Text = "Password";
         }
 
         private void btnGenerateID_Click(object sender, EventArgs e)
@@ -71,7 +88,6 @@ namespace PayrollManagementSystem.AdminUI
             }
             else
             {
-                lblUserName.Text = HelperClass.UsernameGenerator(txtFirstName.Text, txtLastName.Text);
                 Employee user = new Employee
                 {
                     ID = int.Parse(txtID.Text),
@@ -81,7 +97,8 @@ namespace PayrollManagementSystem.AdminUI
                     Gender = (radMale.Checked == true) ? "Male" : "Female",
                     EmailAddress = txtEmail.Text,
                     ContactNumber = txtContactNumber.Text,
-                    HomeAddress = txtAddress.Text,
+                    StreetAddress = txtStreet.Text,
+                    City = txtCity.Text,
                     DateOfBirth = dateOfBirth.Text,
                     DateOfApply = DateTime.Now.ToString("d"),
                     Username = lblUserName.Text,

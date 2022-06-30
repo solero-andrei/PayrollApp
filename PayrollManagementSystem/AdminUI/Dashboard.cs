@@ -29,9 +29,9 @@ namespace PayrollManagementSystem.AdminUI
             adminInformation = user;
         }
 
-        public void demo(string id)
+        public void employeeModifier(Employee emp)
         {
-            AddEmployee addEmp = new AddEmployee(id);
+            AddEmployee addEmp = new AddEmployee(emp);
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(addEmp);
         }
@@ -62,7 +62,7 @@ namespace PayrollManagementSystem.AdminUI
             }
         }
 
-        private void materialButton2_Click(object sender, EventArgs e)
+        private void btnModifyEmployee_Click(object sender, EventArgs e)
         {
             ModifyEmployee modifyEmp = new ModifyEmployee(this);
             panelContainer.Controls.Clear();
