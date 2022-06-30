@@ -74,23 +74,27 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1257, 53);
+            this.panel1.Size = new System.Drawing.Size(1676, 65);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(85, 33);
+            this.label3.Location = new System.Drawing.Point(113, 41);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(257, 16);
+            this.label3.Size = new System.Drawing.Size(325, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fill up required fields to add new employee.";
             // 
@@ -99,9 +103,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(80, 4);
+            this.label2.Location = new System.Drawing.Point(107, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(236, 29);
+            this.label2.Size = new System.Drawing.Size(292, 35);
             this.label2.TabIndex = 0;
             this.label2.Text = "Add New Employee";
             // 
@@ -111,9 +116,11 @@
             this.groupBox1.Controls.Add(this.listEmployee);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(19, 59);
+            this.groupBox1.Location = new System.Drawing.Point(25, 73);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(557, 468);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(743, 576);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List of Employees";
@@ -126,12 +133,13 @@
             this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox1.Hint = "Search Employee Name";
             this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(28, 31);
+            this.materialTextBox1.Location = new System.Drawing.Point(37, 38);
+            this.materialTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialTextBox1.MaxLength = 50;
             this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox1.Multiline = false;
             this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(285, 50);
+            this.materialTextBox1.Size = new System.Drawing.Size(380, 50);
             this.materialTextBox1.TabIndex = 1;
             this.materialTextBox1.Text = "";
             this.materialTextBox1.TrailingIcon = null;
@@ -148,13 +156,14 @@
             this.listEmployee.Depth = 0;
             this.listEmployee.FullRowSelect = true;
             this.listEmployee.HideSelection = false;
-            this.listEmployee.Location = new System.Drawing.Point(28, 87);
-            this.listEmployee.MinimumSize = new System.Drawing.Size(200, 100);
+            this.listEmployee.Location = new System.Drawing.Point(37, 107);
+            this.listEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listEmployee.MinimumSize = new System.Drawing.Size(267, 123);
             this.listEmployee.MouseLocation = new System.Drawing.Point(-1, -1);
             this.listEmployee.MouseState = MaterialSkin.MouseState.OUT;
             this.listEmployee.Name = "listEmployee";
             this.listEmployee.OwnerDraw = true;
-            this.listEmployee.Size = new System.Drawing.Size(500, 324);
+            this.listEmployee.Size = new System.Drawing.Size(667, 399);
             this.listEmployee.TabIndex = 0;
             this.listEmployee.UseCompatibleStateImageBehavior = false;
             this.listEmployee.View = System.Windows.Forms.View.Details;
@@ -201,7 +210,8 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblFirstName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(582, 59);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(776, 73);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
@@ -217,19 +227,19 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(389, 468);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 576);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // lblUsernae
             // 
             this.lblUsernae.AutoSize = true;
-            this.lblUsernae.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblUsernae.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblUsernae.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUsernae.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsernae.Location = new System.Drawing.Point(150, 435);
-            this.lblUsernae.Margin = new System.Windows.Forms.Padding(3);
+            this.lblUsernae.Location = new System.Drawing.Point(201, 532);
+            this.lblUsernae.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblUsernae.Name = "lblUsernae";
-            this.lblUsernae.Size = new System.Drawing.Size(236, 30);
+            this.lblUsernae.Size = new System.Drawing.Size(314, 40);
             this.lblUsernae.TabIndex = 25;
             this.lblUsernae.Text = "-";
             this.lblUsernae.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -237,16 +247,16 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label27.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(3, 435);
-            this.label27.Margin = new System.Windows.Forms.Padding(3);
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label27.Location = new System.Drawing.Point(4, 532);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(141, 30);
+            this.label27.Size = new System.Drawing.Size(189, 40);
             this.label27.TabIndex = 24;
             this.label27.Text = "Username:";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -254,13 +264,13 @@
             // lblSalary
             // 
             this.lblSalary.AutoSize = true;
-            this.lblSalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSalary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblSalary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSalary.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(150, 399);
-            this.lblSalary.Margin = new System.Windows.Forms.Padding(3);
+            this.lblSalary.Location = new System.Drawing.Point(201, 488);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(236, 30);
+            this.lblSalary.Size = new System.Drawing.Size(314, 36);
             this.lblSalary.TabIndex = 23;
             this.lblSalary.Text = "-";
             this.lblSalary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -268,16 +278,16 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label25.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(3, 399);
-            this.label25.Margin = new System.Windows.Forms.Padding(3);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label25.Location = new System.Drawing.Point(4, 488);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(141, 30);
+            this.label25.Size = new System.Drawing.Size(189, 36);
             this.label25.TabIndex = 22;
             this.label25.Text = "Monthly Salary:";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -285,13 +295,13 @@
             // lblJob
             // 
             this.lblJob.AutoSize = true;
-            this.lblJob.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblJob.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblJob.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblJob.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJob.Location = new System.Drawing.Point(150, 363);
-            this.lblJob.Margin = new System.Windows.Forms.Padding(3);
+            this.lblJob.Location = new System.Drawing.Point(201, 444);
+            this.lblJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblJob.Name = "lblJob";
-            this.lblJob.Size = new System.Drawing.Size(236, 30);
+            this.lblJob.Size = new System.Drawing.Size(314, 36);
             this.lblJob.TabIndex = 21;
             this.lblJob.Text = "-";
             this.lblJob.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -299,30 +309,31 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(3, 363);
-            this.label23.Margin = new System.Windows.Forms.Padding(3);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label23.Location = new System.Drawing.Point(4, 444);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(141, 30);
+            this.label23.Size = new System.Drawing.Size(189, 36);
             this.label23.TabIndex = 20;
             this.label23.Text = "Job Title:";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // lblDateHired
             // 
             this.lblDateHired.AutoSize = true;
-            this.lblDateHired.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDateHired.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDateHired.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDateHired.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateHired.Location = new System.Drawing.Point(150, 327);
-            this.lblDateHired.Margin = new System.Windows.Forms.Padding(3);
+            this.lblDateHired.Location = new System.Drawing.Point(201, 400);
+            this.lblDateHired.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblDateHired.Name = "lblDateHired";
-            this.lblDateHired.Size = new System.Drawing.Size(236, 30);
+            this.lblDateHired.Size = new System.Drawing.Size(314, 36);
             this.lblDateHired.TabIndex = 19;
             this.lblDateHired.Text = "-";
             this.lblDateHired.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -330,16 +341,16 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(3, 327);
-            this.label21.Margin = new System.Windows.Forms.Padding(3);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label21.Location = new System.Drawing.Point(4, 400);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(141, 30);
+            this.label21.Size = new System.Drawing.Size(189, 36);
             this.label21.TabIndex = 18;
             this.label21.Text = "Date Hired:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -347,13 +358,13 @@
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDOB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDOB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDOB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(150, 291);
-            this.lblDOB.Margin = new System.Windows.Forms.Padding(3);
+            this.lblDOB.Location = new System.Drawing.Point(201, 356);
+            this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(236, 30);
+            this.lblDOB.Size = new System.Drawing.Size(314, 36);
             this.lblDOB.TabIndex = 17;
             this.lblDOB.Text = "-";
             this.lblDOB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,30 +372,30 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(3, 291);
-            this.label19.Margin = new System.Windows.Forms.Padding(3);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label19.Location = new System.Drawing.Point(4, 356);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(141, 30);
+            this.label19.Size = new System.Drawing.Size(189, 36);
             this.label19.TabIndex = 16;
-            this.label19.Text = "Date Of Birth";
+            this.label19.Text = "Date Of Birth:";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCity.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblCity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCity.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(150, 255);
-            this.lblCity.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCity.Location = new System.Drawing.Point(201, 312);
+            this.lblCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(236, 30);
+            this.lblCity.Size = new System.Drawing.Size(314, 36);
             this.lblCity.TabIndex = 15;
             this.lblCity.Text = "-";
             this.lblCity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -392,16 +403,16 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(3, 255);
-            this.label17.Margin = new System.Windows.Forms.Padding(3);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label17.Location = new System.Drawing.Point(4, 312);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(141, 30);
+            this.label17.Size = new System.Drawing.Size(189, 36);
             this.label17.TabIndex = 14;
             this.label17.Text = "City:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -409,13 +420,13 @@
             // lblStreetNumber
             // 
             this.lblStreetNumber.AutoSize = true;
-            this.lblStreetNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStreetNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblStreetNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStreetNumber.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreetNumber.Location = new System.Drawing.Point(150, 219);
-            this.lblStreetNumber.Margin = new System.Windows.Forms.Padding(3);
+            this.lblStreetNumber.Location = new System.Drawing.Point(201, 268);
+            this.lblStreetNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblStreetNumber.Name = "lblStreetNumber";
-            this.lblStreetNumber.Size = new System.Drawing.Size(236, 30);
+            this.lblStreetNumber.Size = new System.Drawing.Size(314, 36);
             this.lblStreetNumber.TabIndex = 13;
             this.lblStreetNumber.Text = "-";
             this.lblStreetNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -423,16 +434,16 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(3, 219);
-            this.label15.Margin = new System.Windows.Forms.Padding(3);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label15.Location = new System.Drawing.Point(4, 268);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(141, 30);
+            this.label15.Size = new System.Drawing.Size(189, 36);
             this.label15.TabIndex = 12;
             this.label15.Text = "Street No.:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -440,13 +451,13 @@
             // lblContact
             // 
             this.lblContact.AutoSize = true;
-            this.lblContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblContact.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblContact.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContact.Location = new System.Drawing.Point(150, 183);
-            this.lblContact.Margin = new System.Windows.Forms.Padding(3);
+            this.lblContact.Location = new System.Drawing.Point(201, 224);
+            this.lblContact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(236, 30);
+            this.lblContact.Size = new System.Drawing.Size(314, 36);
             this.lblContact.TabIndex = 11;
             this.lblContact.Text = "-";
             this.lblContact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -454,16 +465,16 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(3, 183);
-            this.label13.Margin = new System.Windows.Forms.Padding(3);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label13.Location = new System.Drawing.Point(4, 224);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(141, 30);
+            this.label13.Size = new System.Drawing.Size(189, 36);
             this.label13.TabIndex = 10;
             this.label13.Text = "Contact #:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -471,13 +482,13 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEmail.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(150, 147);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(3);
+            this.lblEmail.Location = new System.Drawing.Point(201, 180);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(236, 30);
+            this.lblEmail.Size = new System.Drawing.Size(314, 36);
             this.lblEmail.TabIndex = 9;
             this.lblEmail.Text = "-";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -485,16 +496,16 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(3, 147);
-            this.label11.Margin = new System.Windows.Forms.Padding(3);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label11.Location = new System.Drawing.Point(4, 180);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 30);
+            this.label11.Size = new System.Drawing.Size(189, 36);
             this.label11.TabIndex = 8;
             this.label11.Text = "Email Address:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -502,13 +513,13 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGender.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblGender.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(150, 111);
-            this.lblGender.Margin = new System.Windows.Forms.Padding(3);
+            this.lblGender.Location = new System.Drawing.Point(201, 136);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(236, 30);
+            this.lblGender.Size = new System.Drawing.Size(314, 36);
             this.lblGender.TabIndex = 7;
             this.lblGender.Text = "-";
             this.lblGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -516,16 +527,16 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 111);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label9.Location = new System.Drawing.Point(4, 136);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 30);
+            this.label9.Size = new System.Drawing.Size(189, 36);
             this.label9.TabIndex = 6;
             this.label9.Text = "Gender:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -533,13 +544,13 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblLastName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblLastName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLastName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(150, 75);
-            this.lblLastName.Margin = new System.Windows.Forms.Padding(3);
+            this.lblLastName.Location = new System.Drawing.Point(201, 92);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(236, 30);
+            this.lblLastName.Size = new System.Drawing.Size(314, 36);
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "-";
             this.lblLastName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -547,16 +558,16 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 75);
-            this.label7.Margin = new System.Windows.Forms.Padding(3);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label7.Location = new System.Drawing.Point(4, 92);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(141, 30);
+            this.label7.Size = new System.Drawing.Size(189, 36);
             this.label7.TabIndex = 4;
             this.label7.Text = "Last Name:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -564,13 +575,13 @@
             // lblMiddleName
             // 
             this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMiddleName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(150, 39);
-            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(3);
+            this.lblMiddleName.Location = new System.Drawing.Point(201, 48);
+            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(236, 30);
+            this.lblMiddleName.Size = new System.Drawing.Size(314, 36);
             this.lblMiddleName.TabIndex = 3;
             this.lblMiddleName.Text = "-";
             this.lblMiddleName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -578,16 +589,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 39);
-            this.label5.Margin = new System.Windows.Forms.Padding(3);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label5.Location = new System.Drawing.Point(4, 48);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 30);
+            this.label5.Size = new System.Drawing.Size(189, 36);
             this.label5.TabIndex = 2;
             this.label5.Text = "Middle Name:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -595,13 +606,13 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFirstName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFirstName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(150, 3);
-            this.lblFirstName.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFirstName.Location = new System.Drawing.Point(201, 4);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(236, 30);
+            this.lblFirstName.Size = new System.Drawing.Size(314, 36);
             this.lblFirstName.TabIndex = 1;
             this.lblFirstName.Text = "-";
             this.lblFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -609,25 +620,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(89)))), ((int)(((byte)(179)))));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(3);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 30);
+            this.label1.Size = new System.Drawing.Size(189, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // employeeImage
             // 
-            this.employeeImage.Location = new System.Drawing.Point(991, 62);
+            this.employeeImage.Location = new System.Drawing.Point(1349, 121);
+            this.employeeImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.employeeImage.Name = "employeeImage";
-            this.employeeImage.Size = new System.Drawing.Size(200, 200);
+            this.employeeImage.Size = new System.Drawing.Size(267, 246);
             this.employeeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.employeeImage.TabIndex = 12;
             this.employeeImage.TabStop = false;
@@ -637,23 +649,26 @@
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(991, 301);
+            this.button1.Location = new System.Drawing.Point(1349, 488);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 56);
+            this.button1.Size = new System.Drawing.Size(267, 53);
             this.button1.TabIndex = 13;
             this.button1.Text = "Archive Employee";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // btnEditEmployee
             // 
+            this.btnEditEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditEmployee.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditEmployee.ForeColor = System.Drawing.Color.Blue;
-            this.btnEditEmployee.Location = new System.Drawing.Point(991, 360);
+            this.btnEditEmployee.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.btnEditEmployee.Location = new System.Drawing.Point(1349, 429);
+            this.btnEditEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditEmployee.Name = "btnEditEmployee";
-            this.btnEditEmployee.Size = new System.Drawing.Size(200, 56);
+            this.btnEditEmployee.Size = new System.Drawing.Size(267, 51);
             this.btnEditEmployee.TabIndex = 14;
             this.btnEditEmployee.Text = "Edit Employee";
             this.btnEditEmployee.UseVisualStyleBackColor = true;
@@ -661,7 +676,7 @@
             // 
             // ModifyEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnEditEmployee);
@@ -670,8 +685,9 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ModifyEmployee";
-            this.Size = new System.Drawing.Size(1257, 537);
+            this.Size = new System.Drawing.Size(1676, 661);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

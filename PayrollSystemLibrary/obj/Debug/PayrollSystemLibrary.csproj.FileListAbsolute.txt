@@ -1,0 +1,6 @@
+C:\Users\Love Joy\Desktop\programming\updated-payroll\PayrollSystemLibrary\bin\Debug\PayrollSystemLibrary.dll
+C:\Users\Love Joy\Desktop\programming\updated-payroll\PayrollSystemLibrary\bin\Debug\PayrollSystemLibrary.pdb
+C:\Users\Love Joy\Desktop\programming\updated-payroll\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.csproj.AssemblyReference.cache
+C:\Users\Love Joy\Desktop\programming\updated-payroll\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Love Joy\Desktop\programming\updated-payroll\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.dll
+C:\Users\Love Joy\Desktop\programming\updated-payroll\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.pdb
