@@ -1,4 +1,5 @@
-﻿using PayrollSystemLibrary.Interfaces;
+﻿using MaterialSkin;
+using PayrollSystemLibrary.Interfaces;
 using PayrollSystemLibrary.Logic;
 using PayrollSystemLibrary.Models;
 using System;
@@ -25,6 +26,9 @@ namespace PayrollManagementSystem.AdminUI
             this.main = main;
 
             ListViewData();
+            var materialSkinManager = MaterialSkinManager.Instance;
+
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
         }
 
         private void ListViewData()
@@ -75,6 +79,16 @@ namespace PayrollManagementSystem.AdminUI
             {
                 main.employeeModifier(FilterEmployee());
             }
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
