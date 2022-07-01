@@ -23,9 +23,8 @@ namespace PayrollManagementSystem.AdminUI
 
             ShowJobs();
             cmbJobPosition.SelectedItem = null;
-            var materialSkinManager = MaterialSkinManager.Instance;
-
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.BLACK);
+            //var materialSkinManager = MaterialSkinManager.Instance;
+            //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.BLACK);
         }
 
         public AddEmployee(Employee employee) : this()
