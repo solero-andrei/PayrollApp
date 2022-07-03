@@ -53,7 +53,24 @@ namespace PayrollSystemLibrary.DataAccess
                     {
                         user = new Employee
                         {
-                            
+                            ID = int.Parse(reader["EmployeeID"].ToString()),
+                            FirstName = reader["FirstName"].ToString(),
+                            MiddleName = reader["MiddleName"].ToString(),
+                            LastName = reader["LastName"].ToString(),
+                            Gender = reader["Gender"].ToString(),
+                            EmailAddress = reader["EmailAddress"].ToString(),
+                            ContactNumber = reader["ContactNumber"].ToString(),
+                            StreetAddress = reader["StreetAddress"].ToString(),
+                            City = reader["City"].ToString(),
+                            DateOfBirth = reader["DateOfBirth"].ToString(),
+                            DateOfApply = reader["DateOfApply"].ToString(),
+                            Job = new JobPositions {
+                                JobID = int.Parse(reader["JobID"].ToString()),
+                                JobName = reader["JobName"].ToString(),
+                                MonthlySalary = decimal.Parse(reader["MonthlySalary"].ToString())
+                            },
+                            Username = reader["Username"].ToString(),
+                            Password = reader["AccountPassword"].ToString()
                         };
                     }
                 }

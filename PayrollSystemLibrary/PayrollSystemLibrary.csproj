@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\ConnectionString.cs" />
+    <Compile Include="DataAccess\EmployeeRepository.cs" />
     <Compile Include="DataAccess\IUserRepository.cs" />
     <Compile Include="DataAccess\JobRepository.cs" />
     <Compile Include="DataAccess\UserRepository.cs" />

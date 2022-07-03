@@ -224,7 +224,6 @@
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.tabContainer);
-            this.DrawerAutoShow = true;
             this.DrawerBackgroundWithAccent = true;
             this.DrawerIndicatorWidth = 10;
             this.DrawerShowIconsWhenHidden = true;

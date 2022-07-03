@@ -78,6 +78,12 @@
     <Compile Include="AdminUI\ModifyEmployee.Designer.cs">
       <DependentUpon>ModifyEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientUI\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientUI\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUI\ModifyEmployee.resx">
       <DependentUpon>ModifyEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientUI\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
