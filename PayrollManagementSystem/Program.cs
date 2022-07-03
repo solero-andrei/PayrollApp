@@ -16,12 +16,13 @@ namespace PayrollManagementSystem
         [STAThread]
         static void Main()
         {
-
             ConnectionString.CnnString = ConfigurationManager.ConnectionStrings["PayrollDb"].ConnectionString;
 
-            Application.EnableVisualStyles();
+            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ClientUI.Login());
+
+            //Application.Run(new AdminUI.Login());
+            Application.Run(new AdminUI.Dashboard());
         }
     }
 }

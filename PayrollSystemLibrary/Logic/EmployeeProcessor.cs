@@ -13,9 +13,11 @@ namespace PayrollSystemLibrary.Logic
     public class EmployeeProcessor : IUserProcessor
     {
         IUserRepository repository;
+        EmployeeRepository empRepository;
         public EmployeeProcessor()
         {
             repository = new UserRepository();
+            empRepository = new EmployeeRepository();
         }
         public void Add(IUser user)
         {
@@ -30,6 +32,12 @@ namespace PayrollSystemLibrary.Logic
         public List<IUser> GetUsers()
         {
             return repository.GetAllUsers(Roles.Client);            
+        }
+
+        public void SetTimeIn(int empID)
+        {
+            DateTime dt = Convert.ToDateTime(DateTime.Now.ToString("t"));
+            empRepository.SetAttendance(dt, empID);
         }
 
         public IUser Login(string username, string password)
