@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using PayrollSystemLibrary.DataAccess;
 using PayrollSystemLibrary.Interfaces;
 using PayrollSystemLibrary.Models;
 using System;
@@ -16,26 +17,31 @@ namespace PayrollManagementSystem.ClientUI
     public partial class Dashboard : MaterialForm
     {
         private Employee employeeDetails;
+        private Employee fullDetails;
         public Dashboard()
         {
             InitializeComponent();
-            monthCalendar1.TitleBackColor = System.Drawing.Color.Blue;
-            monthCalendar1.TrailingForeColor = System.Drawing.Color.Red;
-            monthCalendar1.TitleForeColor = System.Drawing.Color.Yellow;
-            //timeDate.Enabled = true;
+            timeDate.Enabled = true;
         }
 
         public Dashboard(Employee user) : this()
         {
             this.employeeDetails = user;
-            
+            EmpAttendanceRepository attendanceRepo = new EmpAttendanceRepository();
+            this.fullDetails = attendanceRepo.GetAttendance(employeeDetails.ID);
+
+            LoadFullDetails();
         }
 
-        private void timeDate_Tick(object sender, EventArgs e)
+        private void LoadFullDetails()
         {
-            lblDate.Text = DateTime.Now.ToString("D");
-            lblTime.Text = DateTime.Now.ToString("T");
+            lblTimein.Text = fullDetails.AttendanceInformation.TimeIn.ToString();
+            lblStatus.Text = fullDetails.AttendanceInformation.AttendanceStatus.ToString();
+            lblHourlyPay.Text = fullDetails.Job.SalaryPerHour.ToString();
+        }
 
+        private void Greetings()
+        {
             if (DateTime.Now.Hour <= 12 && DateTime.Now.Hour > 0)
             {
                 txtGreeting.Text = $"Hello, Good Morning! {employeeDetails.FirstName} {employeeDetails.LastName}";
@@ -50,16 +56,18 @@ namespace PayrollManagementSystem.ClientUI
             }
         }
 
-
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void timeDate_Tick(object sender, EventArgs e)
         {
+            lblDate.Text = DateTime.Now.ToString("D");
+            lblTime.Text = DateTime.Now.ToString("T");
 
-        }
+            var numberOfHours = DateTime.Now.Hour - this.fullDetails.AttendanceInformation.TimeIn.Hours;
+            var estimate = numberOfHours * fullDetails.Job.SalaryPerHour;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            monthCalendar1.BackColor = Color.Red;
+            lblHoursOfWork.Text = numberOfHours.ToString();
+            lblEstimatedPay.Text = estimate.ToString();
+
+            Greetings();
         }
     }
 }

@@ -44,6 +44,7 @@ namespace PayrollManagementSystem.AdminUI
             cmbJobPosition.Text = employee.Job.JobName;
             lblJobID.Text = employee.Job.JobID.ToString();
             lblMonthlySalary.Text = employee.Job.MonthlySalary.ToString();
+            lblHourlyPay.Text = employee.Job.SalaryPerHour.ToString();
             lblUserName.Text = employee.Username;
             lblPassword.Text = "*******";
         }
@@ -155,7 +156,8 @@ namespace PayrollManagementSystem.AdminUI
 
                 lblJobID.Text = jobInfo.JobID.ToString();
                 lblMonthlySalary.Text = jobInfo.MonthlySalary.ToString("C", CultureInfo.GetCultureInfo("en-ph"));
-                lblHireDate.Text = DateTime.Now.ToShortDateString();                
+                lblHireDate.Text = DateTime.Now.ToShortDateString();              
+                lblHourlyPay.Text = jobInfo.SalaryPerHour.ToString("C", CultureInfo.GetCultureInfo("en-ph"));
             }
         }
     }

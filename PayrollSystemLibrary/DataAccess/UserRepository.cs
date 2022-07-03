@@ -22,15 +22,17 @@ namespace PayrollSystemLibrary.DataAccess
             }
             if (role == Roles.Client)
             {
-                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID";
+                //query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword, Attendance.AttendanceID, Attendance.AttendanceDate, Attendance.AttendanceStatus, Attendance.Att_TimeIn, Attendance.Att_TimeOut from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID inner join Attendance on Attendance.EmployeeID = Employee.EmployeeID where EmployeeDashboardAccount.Username = @username and EmployeeDashboardAccount.AccountPassword = @password";
+
+                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, JobPositions.SalaryPerHour, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID where EmployeeDashboardAccount.Username = @username and EmployeeDashboardAccount.AccountPassword = @password";
             }
 
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
             using (SqlCommand command = new SqlCommand(query, cn))
             {
                 cn.Open();
-                command.Parameters.AddWithValue("@Username", username);
-                command.Parameters.AddWithValue("Password", password);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
                 SqlDataReader reader = command.ExecuteReader();
                 
                 if (reader.Read())
@@ -67,7 +69,8 @@ namespace PayrollSystemLibrary.DataAccess
                             Job = new JobPositions {
                                 JobID = int.Parse(reader["JobID"].ToString()),
                                 JobName = reader["JobName"].ToString(),
-                                MonthlySalary = decimal.Parse(reader["MonthlySalary"].ToString())
+                                MonthlySalary = decimal.Parse(reader["MonthlySalary"].ToString()),
+                                SalaryPerHour = decimal.Parse(reader["SalaryPerHour"].ToString())
                             },
                             Username = reader["Username"].ToString(),
                             Password = reader["AccountPassword"].ToString()
@@ -86,7 +89,7 @@ namespace PayrollSystemLibrary.DataAccess
 
             if (role == Roles.Client)
             {
-                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID where EmployeeJobInfo.EmployeeID = @EmployeeID";
+                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, JobPositions.SalaryPerHour, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID where EmployeeJobInfo.EmployeeID = @EmployeeID";
             }
             if (role == Roles.Admin)
             {
@@ -122,7 +125,8 @@ namespace PayrollSystemLibrary.DataAccess
                             {
                                 JobID = int.Parse(reader["JobID"].ToString()),
                                 JobName = reader["JobName"].ToString(),
-                                MonthlySalary = Convert.ToDecimal(reader["MonthlySalary"].ToString())
+                                MonthlySalary = Convert.ToDecimal(reader["MonthlySalary"].ToString()),
+                                SalaryPerHour = decimal.Parse(reader["SalaryPerHour"].ToString())
                             }
                         };
                     }
@@ -177,7 +181,7 @@ namespace PayrollSystemLibrary.DataAccess
 
             if (role == Roles.Client)
             {
-                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID";
+                query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, JobPositions.SalaryPerHour, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID";
             }
 
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
@@ -208,7 +212,8 @@ namespace PayrollSystemLibrary.DataAccess
                             { 
                                 JobID = int.Parse(reader["JobID"].ToString()),
                                 JobName = reader["JobName"].ToString(),
-                                MonthlySalary = decimal.Parse(reader["MonthlySalary"].ToString())
+                                MonthlySalary = decimal.Parse(reader["MonthlySalary"].ToString()),
+                                SalaryPerHour = decimal.Parse(reader["SalaryPerHour"].ToString())
                             }
                         });
                     }

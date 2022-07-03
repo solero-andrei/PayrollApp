@@ -18,11 +18,11 @@ namespace PayrollManagementSystem
         {
             ConnectionString.CnnString = ConfigurationManager.ConnectionStrings["PayrollDb"].ConnectionString;
 
-            //Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new AdminUI.Login());
-            Application.Run(new AdminUI.Dashboard());
+            Application.Run(new ClientUI.Login());
         }
     }
 }

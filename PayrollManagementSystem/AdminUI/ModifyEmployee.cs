@@ -67,7 +67,7 @@ namespace PayrollManagementSystem.AdminUI
             lblDateHired.Text = employeeInformation.DateOfApply;
             lblJob.Text = employeeInformation.Job.JobName;
             lblSalary.Text = employeeInformation.Job.MonthlySalary.ToString();
-            lblUsernae.Text = employeeInformation.Username;
+            lblHourlyPay.Text = employeeInformation.Job.SalaryPerHour.ToString();
         }
 
         private void btnEditEmployee_Click(object sender, EventArgs e)

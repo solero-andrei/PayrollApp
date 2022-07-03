@@ -24,5 +24,6 @@ namespace PayrollSystemLibrary.Models
         public JobPositions Job { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public Attendance AttendanceInformation { get; set; }
     }
 }

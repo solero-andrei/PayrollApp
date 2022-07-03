@@ -65,7 +65,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(471, 362);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // materialLabel1
             // 
@@ -81,7 +80,6 @@
             this.materialLabel1.TabIndex = 20;
             this.materialLabel1.Text = "Employee Dashboard";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // linkLabel1
             // 
@@ -95,7 +93,6 @@
             this.linkLabel1.TabIndex = 19;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnLogin
             // 
@@ -141,7 +138,6 @@
             this.txtPassword.TabIndex = 16;
             this.txtPassword.Text = "";
             this.txtPassword.TrailingIcon = null;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtUsername
             // 
@@ -162,7 +158,6 @@
             this.txtUsername.TabIndex = 15;
             this.txtUsername.Text = "";
             this.txtUsername.TrailingIcon = null;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // label1
             // 

@@ -22,6 +22,7 @@ namespace PayrollManagementSystem.AdminUI
             InitializeComponent();
             //var materialSkinManager = MaterialSkinManager.Instance;
             //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
+            
         }
 
         public Dashboard(PayrollUser user) : this()

@@ -26,7 +26,7 @@ namespace PayrollManagementSystem.ClientUI
             bool isValidLogin = false;
             EmployeeProcessor employee = new EmployeeProcessor();
             var empInfo = employee.Login(txtUsername.Text, txtPassword.Text);
-            this.employee = (Employee)empInfo;
+            this.employee = (Employee) empInfo;
 
             if (empInfo != null)
             {
@@ -40,7 +40,7 @@ namespace PayrollManagementSystem.ClientUI
         private void TimeIn()
         {
             EmployeeProcessor empProcessor = new EmployeeProcessor();
-            empProcessor.SetTimeIn(employee.ID);
+            empProcessor.SetTimeIn(this.employee.ID);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -57,31 +57,6 @@ namespace PayrollManagementSystem.ClientUI
                 ErrorProvider error = new ErrorProvider();
                 error.SetError(btnLogin, "Invalid username or password. Please try again");
             }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void materialLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

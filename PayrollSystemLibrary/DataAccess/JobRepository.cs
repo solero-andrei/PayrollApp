@@ -26,7 +26,8 @@ namespace PayrollSystemLibrary.DataAccess
                     {
                         JobID = int.Parse(reader[0].ToString()),
                         JobName = reader[1].ToString(),
-                        MonthlySalary = decimal.Parse(reader[2].ToString())
+                        MonthlySalary = decimal.Parse(reader[2].ToString()),
+                        SalaryPerHour = decimal.Parse(reader[3].ToString())
                     });
                 }
             }
@@ -53,7 +54,8 @@ namespace PayrollSystemLibrary.DataAccess
                     {
                         JobID = int.Parse(reader[0].ToString()),
                         JobName = reader[1].ToString(),
-                        MonthlySalary = decimal.Parse(reader[2].ToString())
+                        MonthlySalary = decimal.Parse(reader[2].ToString()),
+                        SalaryPerHour = decimal.Parse(reader[3].ToString())
                     };
                 }
             }

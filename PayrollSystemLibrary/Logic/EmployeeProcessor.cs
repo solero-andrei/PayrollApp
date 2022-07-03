@@ -13,11 +13,11 @@ namespace PayrollSystemLibrary.Logic
     public class EmployeeProcessor : IUserProcessor
     {
         IUserRepository repository;
-        EmployeeRepository empRepository;
+        EmpAttendanceRepository empRepository;
         public EmployeeProcessor()
         {
             repository = new UserRepository();
-            empRepository = new EmployeeRepository();
+            empRepository = new EmpAttendanceRepository();
         }
         public void Add(IUser user)
         {
@@ -36,8 +36,7 @@ namespace PayrollSystemLibrary.Logic
 
         public void SetTimeIn(int empID)
         {
-            DateTime dt = Convert.ToDateTime(DateTime.Now.ToString("t"));
-            empRepository.SetAttendance(dt, empID);
+            empRepository.SetAttendance(DateTime.Now, empID);
         }
 
         public IUser Login(string username, string password)
