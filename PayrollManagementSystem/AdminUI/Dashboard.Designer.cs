@@ -29,64 +29,69 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.btnClear = new MaterialSkin.Controls.MaterialButton();
             this.btnModifyEmployee = new MaterialSkin.Controls.MaterialButton();
             this.btnAddEmployee = new MaterialSkin.Controls.MaterialButton();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabContainer = new MaterialSkin.Controls.MaterialTabControl();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txtDate = new System.Windows.Forms.Label();
             this.dateTime = new System.Windows.Forms.Timer(this.components);
             this.txtTime = new System.Windows.Forms.Label();
             this.txtGreeting = new System.Windows.Forms.Label();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.tabPage3.SuspendLayout();
             this.tabContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.ImageKey = "payroll.png";
+            this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1257, 569);
+            this.tabPage4.Size = new System.Drawing.Size(1257, 552);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Payroll";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.materialButton3);
+            this.tabPage3.Controls.Add(this.btnClear);
             this.tabPage3.Controls.Add(this.btnModifyEmployee);
             this.tabPage3.Controls.Add(this.btnAddEmployee);
             this.tabPage3.Controls.Add(this.panelContainer);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.ImageKey = "user.png";
+            this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1257, 569);
+            this.tabPage3.Size = new System.Drawing.Size(1257, 552);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Employee";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // materialButton3
+            // btnClear
             // 
-            this.materialButton3.AutoSize = false;
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(370, 546);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(172, 40);
-            this.materialButton3.TabIndex = 3;
-            this.materialButton3.Text = "Close Dashboard";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.btnClear.AutoSize = false;
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClear.Depth = 0;
+            this.btnClear.HighEmphasis = true;
+            this.btnClear.Icon = null;
+            this.btnClear.Location = new System.Drawing.Point(370, 546);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClear.Size = new System.Drawing.Size(172, 40);
+            this.btnClear.TabIndex = 3;
+            this.btnClear.Text = "Clean Dashboard";
+            this.btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClear.UseAccentColor = false;
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // btnModifyEmployee
             // 
@@ -140,20 +145,22 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.ImageKey = "identity-card.png";
+            this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1257, 569);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(1257, 552);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Attendance";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.ImageKey = "dashboard.png";
+            this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1257, 569);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1257, 552);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -166,6 +173,7 @@
             this.tabContainer.Controls.Add(this.tabPage4);
             this.tabContainer.Depth = 0;
             this.tabContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabContainer.ImageList = this.imageList1;
             this.tabContainer.Location = new System.Drawing.Point(0, 72);
             this.tabContainer.MouseState = MaterialSkin.MouseState.HOVER;
             this.tabContainer.Multiline = true;
@@ -174,6 +182,18 @@
             this.tabContainer.Size = new System.Drawing.Size(1265, 595);
             this.tabContainer.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabContainer.TabIndex = 0;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "payroll.png");
+            this.imageList1.Images.SetKeyName(1, "dashboard.png");
+            this.imageList1.Images.SetKeyName(2, "division.png");
+            this.imageList1.Images.SetKeyName(3, "identity-card.png");
+            this.imageList1.Images.SetKeyName(4, "salary.png");
+            this.imageList1.Images.SetKeyName(5, "stakeholder.png");
+            this.imageList1.Images.SetKeyName(6, "user.png");
             // 
             // txtDate
             // 
@@ -216,6 +236,17 @@
             this.txtGreeting.Text = "label1";
             this.txtGreeting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "dashboard.png");
+            this.imageList2.Images.SetKeyName(1, "division.png");
+            this.imageList2.Images.SetKeyName(2, "attendance.png");
+            this.imageList2.Images.SetKeyName(3, "payroll.png");
+            this.imageList2.Images.SetKeyName(4, "stakeholder.png");
+            this.imageList2.Images.SetKeyName(5, "employee.png");
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,11 +282,13 @@
         private MaterialSkin.Controls.MaterialTabControl tabContainer;
         private MaterialSkin.Controls.MaterialButton btnAddEmployee;
         private System.Windows.Forms.Panel panelContainer;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialButton btnClear;
         private MaterialSkin.Controls.MaterialButton btnModifyEmployee;
         private System.Windows.Forms.Label txtDate;
         private System.Windows.Forms.Timer dateTime;
         private System.Windows.Forms.Label txtTime;
         private System.Windows.Forms.Label txtGreeting;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }

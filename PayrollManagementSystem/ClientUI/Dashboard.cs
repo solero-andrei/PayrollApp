@@ -1,6 +1,6 @@
-﻿using MaterialSkin.Controls;
-using PayrollSystemLibrary.DataAccess;
-using PayrollSystemLibrary.Interfaces;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using PayrollSystemLibrary.Logic;
 using PayrollSystemLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -18,17 +18,23 @@ namespace PayrollManagementSystem.ClientUI
     {
         private Employee employeeDetails;
         private Employee fullDetails;
+        private EmpAttendanceProcessor attendanceProcessor;
+        private int numberOfHours;
+        private decimal estimate;
         public Dashboard()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
             timeDate.Enabled = true;
         }
 
         public Dashboard(Employee user) : this()
         {
+            attendanceProcessor = new EmpAttendanceProcessor();
+
             this.employeeDetails = user;
-            EmpAttendanceRepository attendanceRepo = new EmpAttendanceRepository();
-            this.fullDetails = attendanceRepo.GetAttendance(employeeDetails.ID);
+            this.fullDetails = attendanceProcessor.GetAttendanceDetails(employeeDetails.ID);
 
             LoadFullDetails();
         }
@@ -37,7 +43,14 @@ namespace PayrollManagementSystem.ClientUI
         {
             lblTimein.Text = fullDetails.AttendanceInformation.TimeIn.ToString();
             lblStatus.Text = fullDetails.AttendanceInformation.AttendanceStatus.ToString();
-            lblHourlyPay.Text = fullDetails.Job.SalaryPerHour.ToString();
+            lblHourlyPay.Text = HelperClass.CurrencyFormat(fullDetails.Job.SalaryPerHour);
+            lblAttendanceID.Text = fullDetails.AttendanceInformation.ID.ToString();
+            lblUserID.Text = employeeDetails.ID.ToString();
+        }
+
+        private void SetTimeOut()
+        {
+            attendanceProcessor.SetTimeOut(fullDetails.AttendanceInformation.ID, int.Parse(lblHoursOfWork.Text), estimate);
         }
 
         private void Greetings()
@@ -56,18 +69,63 @@ namespace PayrollManagementSystem.ClientUI
             }
         }
 
+        private void FilterAttendance()
+        {
+            attendanceProcessor = new EmpAttendanceProcessor();
+            var history = attendanceProcessor.FilterAttendanceLogs(DateTime.Parse(calendar.SelectionRange.Start.ToString("M/dd/yyyy")), employeeDetails.ID);
+
+            if(history == null)
+            {
+                MessageBox.Show("Not Found");
+            }
+            else
+            {
+                lblHistoryTimeIn.Text = history.AttendanceInformation.TimeIn.ToString();
+                lblHistoryAttendance.Text = history.AttendanceInformation.AttendanceStatus;
+                lblHistoryTimeOut.Text = history.AttendanceInformation.TimeOut.ToString("t");
+                lblHistoryWorkHours.Text = history.AttendanceInformation.NumberOfWorkHours.ToString();
+                lblHistoryPay.Text = HelperClass.CurrencyFormat(history.AttendanceInformation.EstimatedPay);
+                lblHistoryDate.Text = history.AttendanceInformation.AttendanceDate.ToString("M/dd/yyyy");
+            }  
+        }
+
         private void timeDate_Tick(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToString("D");
             lblTime.Text = DateTime.Now.ToString("T");
 
-            var numberOfHours = DateTime.Now.Hour - this.fullDetails.AttendanceInformation.TimeIn.Hours;
-            var estimate = numberOfHours * fullDetails.Job.SalaryPerHour;
+            numberOfHours = DateTime.Now.Hour - this.fullDetails.AttendanceInformation.TimeIn.Hours;
+            estimate = numberOfHours * fullDetails.Job.SalaryPerHour;
 
             lblHoursOfWork.Text = numberOfHours.ToString();
-            lblEstimatedPay.Text = estimate.ToString();
+            lblEstimatedPay.Text = HelperClass.CurrencyFormat(estimate);
 
             Greetings();
+        }
+
+        private void linkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DialogResult question = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (question == DialogResult.Yes)
+            {
+                SetTimeOut();
+                this.Dispose();
+                this.Close();
+            }
+        }
+
+        private void calendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            if (calendar.SelectionRange.Start.Date.ToString("M/dd/yyyy") == DateTime.Now.ToString("M/dd/yyyy"))
+            {
+                MessageBox.Show("Test");
+            }
+            else
+            {
+                FilterAttendance();
+            }
+            
         }
     }
 }

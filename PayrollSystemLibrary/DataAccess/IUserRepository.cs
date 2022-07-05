@@ -13,5 +13,6 @@ namespace PayrollSystemLibrary.DataAccess
         IUser GetUserDataByID(Roles role, int userID);
         List<IUser> GetAllUsers(Roles role);
         void AddUser(Roles role, IUser userInfo);
+        void UpdateUser(Roles role, IUser userInfo);
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.container = new MaterialSkin.Controls.MaterialCard();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsername = new MaterialSkin.Controls.MaterialTextBox();
@@ -40,15 +40,16 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new MaterialSkin.Controls.MaterialButton();
+            this.container = new MaterialSkin.Controls.MaterialCard();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
-            this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.container.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(156, 492);
@@ -62,36 +63,16 @@
             this.error.BlinkRate = 500;
             this.error.ContainerControl = this;
             // 
-            // container
-            // 
-            this.container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.container.Controls.Add(this.btnLogin);
-            this.container.Controls.Add(this.linkLabel2);
-            this.container.Controls.Add(this.materialLabel1);
-            this.container.Controls.Add(this.linkLabel1);
-            this.container.Controls.Add(this.txtPassword);
-            this.container.Controls.Add(this.txtUsername);
-            this.container.Controls.Add(this.label2);
-            this.container.Controls.Add(this.pictureBox1);
-            this.container.Depth = 0;
-            this.container.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.container.Location = new System.Drawing.Point(47, 61);
-            this.container.Margin = new System.Windows.Forms.Padding(12);
-            this.container.MouseState = MaterialSkin.MouseState.HOVER;
-            this.container.Name = "container";
-            this.container.Padding = new System.Windows.Forms.Padding(12);
-            this.container.Size = new System.Drawing.Size(403, 419);
-            this.container.TabIndex = 1;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PayrollManagementSystem.Properties.Resources.PinClipart_com_sold_clip_art_1673655;
-            this.pictureBox1.Location = new System.Drawing.Point(220, 22);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(282, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(133, 133);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -99,7 +80,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(40, 127);
+            this.label2.Location = new System.Drawing.Point(83, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 15);
             this.label2.TabIndex = 12;
@@ -114,7 +95,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtUsername.Hint = "Enter Username";
             this.txtUsername.LeadingIcon = null;
-            this.txtUsername.Location = new System.Drawing.Point(32, 171);
+            this.txtUsername.Location = new System.Drawing.Point(75, 213);
             this.txtUsername.MaxLength = 50;
             this.txtUsername.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUsername.Multiline = false;
@@ -133,7 +114,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPassword.Hint = "Enter Password";
             this.txtPassword.LeadingIcon = null;
-            this.txtPassword.Location = new System.Drawing.Point(34, 227);
+            this.txtPassword.Location = new System.Drawing.Point(77, 269);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPassword.Multiline = false;
@@ -150,7 +131,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
-            this.linkLabel1.Location = new System.Drawing.Point(51, 285);
+            this.linkLabel1.Location = new System.Drawing.Point(94, 327);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(113, 17);
             this.linkLabel1.TabIndex = 15;
@@ -163,10 +144,10 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel1.Location = new System.Drawing.Point(38, 22);
+            this.materialLabel1.Location = new System.Drawing.Point(81, 68);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(153, 102);
+            this.materialLabel1.Size = new System.Drawing.Size(181, 98);
             this.materialLabel1.TabIndex = 10;
             this.materialLabel1.Text = "Payroll Management System";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,7 +157,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.linkLabel2.LinkColor = System.Drawing.Color.Gray;
-            this.linkLabel2.Location = new System.Drawing.Point(209, 285);
+            this.linkLabel2.Location = new System.Drawing.Point(252, 327);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(143, 17);
             this.linkLabel2.TabIndex = 16;
@@ -193,7 +174,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.HighEmphasis = true;
             this.btnLogin.Icon = null;
-            this.btnLogin.Location = new System.Drawing.Point(95, 329);
+            this.btnLogin.Location = new System.Drawing.Point(138, 371);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
@@ -205,6 +186,28 @@
             this.btnLogin.UseAccentColor = false;
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // container
+            // 
+            this.container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.container.Controls.Add(this.btnLogin);
+            this.container.Controls.Add(this.linkLabel2);
+            this.container.Controls.Add(this.materialLabel1);
+            this.container.Controls.Add(this.linkLabel1);
+            this.container.Controls.Add(this.txtPassword);
+            this.container.Controls.Add(this.txtUsername);
+            this.container.Controls.Add(this.label2);
+            this.container.Controls.Add(this.pictureBox1);
+            this.container.Depth = 0;
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.container.Location = new System.Drawing.Point(3, 24);
+            this.container.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.container.MouseState = MaterialSkin.MouseState.HOVER;
+            this.container.Name = "container";
+            this.container.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.container.Size = new System.Drawing.Size(491, 513);
+            this.container.TabIndex = 1;
             // 
             // Login
             // 
@@ -220,9 +223,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log";
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.container.ResumeLayout(false);
             this.container.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

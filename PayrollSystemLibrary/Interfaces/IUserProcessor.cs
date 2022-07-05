@@ -10,6 +10,7 @@ namespace PayrollSystemLibrary.Interfaces
     {
         IUser Login(string username, string password);
         void Add(IUser user);
+        void Update(IUser user);
         List<IUser> GetUsers();
         IUser GetUserByID(int userID);
     }

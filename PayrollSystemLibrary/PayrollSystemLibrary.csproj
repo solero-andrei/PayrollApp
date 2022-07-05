@@ -46,8 +46,10 @@
     <Compile Include="DataAccess\IUserRepository.cs" />
     <Compile Include="DataAccess\JobRepository.cs" />
     <Compile Include="DataAccess\UserRepository.cs" />
+    <Compile Include="Interfaces\IAttendance.cs" />
     <Compile Include="Interfaces\IUserProcessor.cs" />
     <Compile Include="Logic\AdminProcessor.cs" />
+    <Compile Include="Logic\EmpAttendanceProcessor.cs" />
     <Compile Include="Logic\EmployeeProcessor.cs" />
     <Compile Include="Logic\JobsProcessor.cs" />
     <Compile Include="Models\Attendance.cs" />

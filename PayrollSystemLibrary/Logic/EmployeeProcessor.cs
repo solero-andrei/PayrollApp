@@ -13,11 +13,9 @@ namespace PayrollSystemLibrary.Logic
     public class EmployeeProcessor : IUserProcessor
     {
         IUserRepository repository;
-        EmpAttendanceRepository empRepository;
         public EmployeeProcessor()
         {
             repository = new UserRepository();
-            empRepository = new EmpAttendanceRepository();
         }
         public void Add(IUser user)
         {
@@ -34,11 +32,6 @@ namespace PayrollSystemLibrary.Logic
             return repository.GetAllUsers(Roles.Client);            
         }
 
-        public void SetTimeIn(int empID)
-        {
-            empRepository.SetAttendance(DateTime.Now, empID);
-        }
-
         public IUser Login(string username, string password)
         {
             IUserRepository adminRepo = new UserRepository();
@@ -48,6 +41,11 @@ namespace PayrollSystemLibrary.Logic
             emp = empInfo;
 
             return emp;
+        }
+
+        public void Update(IUser user)
+        {
+            throw new NotImplementedException();
         }
     }
 }

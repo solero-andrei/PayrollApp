@@ -22,8 +22,6 @@ namespace PayrollSystemLibrary.DataAccess
             }
             if (role == Roles.Client)
             {
-                //query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword, Attendance.AttendanceID, Attendance.AttendanceDate, Attendance.AttendanceStatus, Attendance.Att_TimeIn, Attendance.Att_TimeOut from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID inner join Attendance on Attendance.EmployeeID = Employee.EmployeeID where EmployeeDashboardAccount.Username = @username and EmployeeDashboardAccount.AccountPassword = @password";
-
                 query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, JobPositions.SalaryPerHour, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID where EmployeeDashboardAccount.Username = @username and EmployeeDashboardAccount.AccountPassword = @password";
             }
 
@@ -165,6 +163,40 @@ namespace PayrollSystemLibrary.DataAccess
                     command.Parameters.AddWithValue("@DateOfApply", emp.DateOfApply);
                     command.Parameters.AddWithValue("@Username", emp.Username);
                     command.Parameters.AddWithValue("@Password", emp.Password);
+                    command.Parameters.AddWithValue("@JobID", emp.Job.JobID);
+                    command.Parameters.AddWithValue("@StreetAddress", emp.StreetAddress);
+                    command.Parameters.AddWithValue("@City", emp.City);
+
+                    @command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void UpdateUser(Roles role, IUser userInfo)
+        {
+            string query = "";
+            if (role == Roles.Client)
+            {
+                query = "update Employee set [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @LastName, [Gender] = @Gender, [EmailAddress] = @EmailAddress, [ContactNumber] = @ContactNumber, [DateOfBirth] = @DateOfBirth, [StreetAddress] = @StreetAddress, [City] = @City where [EmployeeID] = @EmployeeID;" +
+                    "update EmployeeJobInfo set [JobID] = @JobID where [EmployeeID] = @EmployeeID;";
+            }
+
+            using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
+            using (SqlCommand command = new SqlCommand(query, cn))
+            {
+                cn.Open();
+                if (userInfo is Employee)
+                {
+                    Employee emp = (Employee)userInfo;
+
+                    command.Parameters.AddWithValue("@EmployeeID", emp.ID);
+                    command.Parameters.AddWithValue("@FirstName", emp.FirstName);
+                    command.Parameters.AddWithValue("@MiddleName", emp.MiddleName);
+                    command.Parameters.AddWithValue("@LastName", emp.LastName);
+                    command.Parameters.AddWithValue("@Gender", emp.Gender);
+                    command.Parameters.AddWithValue("@EmailAddress", emp.EmailAddress);
+                    command.Parameters.AddWithValue("@ContactNumber", emp.ContactNumber);
+                    command.Parameters.AddWithValue("@DateOfBirth", emp.DateOfBirth);
                     command.Parameters.AddWithValue("@JobID", emp.Job.JobID);
                     command.Parameters.AddWithValue("@StreetAddress", emp.StreetAddress);
                     command.Parameters.AddWithValue("@City", emp.City);

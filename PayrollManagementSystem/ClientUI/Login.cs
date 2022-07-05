@@ -20,27 +20,32 @@ namespace PayrollManagementSystem.ClientUI
         public Login()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
         }
         private bool EmployeeLogin()
         {
-            bool isValidLogin = false;
             EmployeeProcessor employee = new EmployeeProcessor();
             var empInfo = employee.Login(txtUsername.Text, txtPassword.Text);
             this.employee = (Employee) empInfo;
 
+            bool isValidLogin;
             if (empInfo != null)
             {
                 isValidLogin = true;
             }
+            else
+            {
+                isValidLogin = false;
+            }
 
-            TimeIn();
             return isValidLogin;
         }
 
         private void TimeIn()
         {
-            EmployeeProcessor empProcessor = new EmployeeProcessor();
-            empProcessor.SetTimeIn(this.employee.ID);
+            EmpAttendanceProcessor attendanceProcessor = new EmpAttendanceProcessor();
+            attendanceProcessor.SetTimeIn(this.employee.ID);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -49,6 +54,7 @@ namespace PayrollManagementSystem.ClientUI
 
             if (isValid == true)
             {
+                TimeIn();
                 Dashboard employeeDashboard = new Dashboard(employee);
                 employeeDashboard.ShowDialog();
             }

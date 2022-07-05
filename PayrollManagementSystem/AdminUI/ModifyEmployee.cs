@@ -66,8 +66,8 @@ namespace PayrollManagementSystem.AdminUI
             lblDOB.Text = employeeInformation.DateOfBirth;
             lblDateHired.Text = employeeInformation.DateOfApply;
             lblJob.Text = employeeInformation.Job.JobName;
-            lblSalary.Text = employeeInformation.Job.MonthlySalary.ToString();
-            lblHourlyPay.Text = employeeInformation.Job.SalaryPerHour.ToString();
+            lblSalary.Text = HelperClass.CurrencyFormat(employeeInformation.Job.MonthlySalary);
+            lblHourlyPay.Text = HelperClass.CurrencyFormat(employeeInformation.Job.SalaryPerHour);
         }
 
         private void btnEditEmployee_Click(object sender, EventArgs e)
@@ -86,6 +86,11 @@ namespace PayrollManagementSystem.AdminUI
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

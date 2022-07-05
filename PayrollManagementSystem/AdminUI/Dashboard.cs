@@ -20,8 +20,8 @@ namespace PayrollManagementSystem.AdminUI
         public Dashboard()
         {
             InitializeComponent();
-            //var materialSkinManager = MaterialSkinManager.Instance;
-            //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
             
         }
 
@@ -32,7 +32,8 @@ namespace PayrollManagementSystem.AdminUI
 
         public void employeeModifier(Employee emp)
         {
-            AddEmployee addEmp = new AddEmployee(emp);
+            AddEmployee addEmp = new AddEmployee(emp, "Modify Existing Employee", "Modify some informations that are requested");
+
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(addEmp);
         }
@@ -42,6 +43,9 @@ namespace PayrollManagementSystem.AdminUI
             AddEmployee addEmp = new AddEmployee();
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(addEmp);
+
+            btnAddEmployee.Enabled = false;
+            btnModifyEmployee.Enabled = true;
         }
 
         private void dateTime_Tick(object sender, EventArgs e)
@@ -68,6 +72,9 @@ namespace PayrollManagementSystem.AdminUI
             ModifyEmployee modifyEmp = new ModifyEmployee(this);
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(modifyEmp);
+
+            btnAddEmployee.Enabled = true;
+            btnModifyEmployee.Enabled = false;
         }
     }
 }

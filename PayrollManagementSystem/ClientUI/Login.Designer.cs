@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new MaterialSkin.Controls.MaterialButton();
             this.txtPassword = new MaterialSkin.Controls.MaterialTextBox();
             this.txtUsername = new MaterialSkin.Controls.MaterialTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 24);
@@ -50,6 +50,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 362);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(14, 319);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Your logged in will serve as your attendance";
             // 
             // panel2
             // 
@@ -89,7 +97,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(68, 232);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(113, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(143, 23);
             this.linkLabel1.TabIndex = 19;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password?";
@@ -159,17 +167,9 @@
             this.txtUsername.Text = "";
             this.txtUsername.TrailingIcon = null;
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(14, 319);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Your logged in will serve as your attendance";
-            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(706, 386);

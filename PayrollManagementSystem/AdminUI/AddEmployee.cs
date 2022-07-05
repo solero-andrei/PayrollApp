@@ -23,12 +23,22 @@ namespace PayrollManagementSystem.AdminUI
 
             ShowJobs();
             cmbJobPosition.SelectedItem = null;
+
             //var materialSkinManager = MaterialSkinManager.Instance;
             //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.BLACK);
         }
 
-        public AddEmployee(Employee employee) : this()
+        /// <summary>
+        /// Modify the employee information
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <param name="header"></param>
+        /// <param name="paragraph"></param>
+        public AddEmployee(Employee employee, string header, string paragraph) : this()
         {
+            lblHeader.Text = header;
+            lblParaHeader.Text = paragraph;
+
             btnGenerateID.Enabled = false;
             linkAccountGenerator.Enabled = false;
 
@@ -43,11 +53,24 @@ namespace PayrollManagementSystem.AdminUI
             txtContactNumber.Text = employee.ContactNumber;
             cmbJobPosition.Text = employee.Job.JobName;
             lblJobID.Text = employee.Job.JobID.ToString();
-            lblMonthlySalary.Text = employee.Job.MonthlySalary.ToString();
-            lblHourlyPay.Text = employee.Job.SalaryPerHour.ToString();
+            lblMonthlySalary.Text = HelperClass.CurrencyFormat(employee.Job.MonthlySalary);
+            lblHourlyPay.Text = HelperClass.CurrencyFormat(employee.Job.SalaryPerHour);
             lblUserName.Text = employee.Username;
             lblPassword.Text = "*******";
+
+            if (employee.Gender == "Male")
+            {
+                radMale.Checked = true;
+                radFemale.Checked = false;
+            }
+            else if (employee.Gender == "Female")
+            {
+                radMale.Checked = true;
+                radFemale.Checked = false;
+            }
         }
+
+        #region Private Codes
 
         private void ResetControls()
         {
@@ -68,12 +91,6 @@ namespace PayrollManagementSystem.AdminUI
             lblPassword.Text = "Password";
         }
 
-        private void btnGenerateID_Click(object sender, EventArgs e)
-        {
-            this.txtID.Text = HelperClass.GenerateID().ToString();
-            lblPassword.Text = HelperClass.GenerateID().ToString();
-        }
-
         private void ShowJobs()
         {
             JobsProcessor jobProcessor = new JobsProcessor();
@@ -81,6 +98,64 @@ namespace PayrollManagementSystem.AdminUI
 
             cmbJobPosition.DisplayMember = "JobName";
             cmbJobPosition.DataSource = jobs;
+        }
+
+        private void SaveEmployee()
+        {
+            Employee user = new Employee
+            {
+                ID = int.Parse(txtID.Text),
+                FirstName = txtFirstName.Text,
+                MiddleName = txtMiddleName.Text,
+                LastName = txtLastName.Text,
+                Gender = (radMale.Checked == true) ? "Male" : "Female",
+                EmailAddress = txtEmail.Text,
+                ContactNumber = txtContactNumber.Text,
+                StreetAddress = txtStreet.Text,
+                City = txtCity.Text,
+                DateOfBirth = dateOfBirth.Text,
+                DateOfApply = DateTime.Now.ToString("d"),
+                Username = lblUserName.Text,
+                Password = lblPassword.Text,
+                Job = new JobPositions
+                {
+                    JobID = int.Parse(lblJobID.Text),
+                }
+            };
+
+            IUserProcessor empProcessor = new EmployeeProcessor();
+            empProcessor.Add(user);
+        }
+        private void EditEmployee()
+        {
+            Employee user = new Employee
+            {
+                ID = int.Parse(txtID.Text),
+                FirstName = txtFirstName.Text,
+                MiddleName = txtMiddleName.Text,
+                LastName = txtLastName.Text,
+                Gender = (radMale.Checked == true) ? "Male" : "Female",
+                EmailAddress = txtEmail.Text,
+                ContactNumber = txtContactNumber.Text,
+                StreetAddress = txtStreet.Text,
+                City = txtCity.Text,
+                DateOfBirth = dateOfBirth.Text,
+                Job = new JobPositions
+                {
+                    JobID = int.Parse(lblJobID.Text),
+                }
+            };
+
+            IUserProcessor adminProcessor = new AdminProcessor();
+            adminProcessor.Update(user);
+        } 
+
+        #endregion
+
+        private void btnGenerateID_Click(object sender, EventArgs e)
+        {
+            this.txtID.Text = HelperClass.GenerateID().ToString();
+            lblPassword.Text = HelperClass.GenerateID().ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -92,31 +167,18 @@ namespace PayrollManagementSystem.AdminUI
             }
             else
             {
-                Employee user = new Employee
+                if (btnGenerateID.Enabled == true)
                 {
-                    ID = int.Parse(txtID.Text),
-                    FirstName = txtFirstName.Text,
-                    MiddleName = txtMiddleName.Text,
-                    LastName = txtLastName.Text,
-                    Gender = (radMale.Checked == true) ? "Male" : "Female",
-                    EmailAddress = txtEmail.Text,
-                    ContactNumber = txtContactNumber.Text,
-                    StreetAddress = txtStreet.Text,
-                    City = txtCity.Text,
-                    DateOfBirth = dateOfBirth.Text,
-                    DateOfApply = DateTime.Now.ToString("d"),
-                    Username = lblUserName.Text,
-                    Password = lblPassword.Text,
-                    Job = new JobPositions
-                    {
-                        JobID = int.Parse(lblJobID.Text),
-                    }
-                };
-
-                IUserProcessor empProcessor = new EmployeeProcessor();
-                empProcessor.Add(user);
-                MessageBox.Show("Employee Information Saved", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ResetControls();
+                    SaveEmployee();
+                    MessageBox.Show("Employee Information Saved", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetControls();
+                }
+                else
+                {
+                    EditEmployee();
+                    MessageBox.Show("Employee Information Modified", "Successfully Modified", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetControls();
+                }
             }
         }
 
@@ -155,9 +217,9 @@ namespace PayrollManagementSystem.AdminUI
                 var jobInfo = jobProcessor.FilterJob(cmbJobPosition.Text.ToString());
 
                 lblJobID.Text = jobInfo.JobID.ToString();
-                lblMonthlySalary.Text = jobInfo.MonthlySalary.ToString("C", CultureInfo.GetCultureInfo("en-ph"));
-                lblHireDate.Text = DateTime.Now.ToShortDateString();              
-                lblHourlyPay.Text = jobInfo.SalaryPerHour.ToString("C", CultureInfo.GetCultureInfo("en-ph"));
+                lblHireDate.Text = DateTime.Now.ToShortDateString();
+                lblMonthlySalary.Text = HelperClass.CurrencyFormat(jobInfo.MonthlySalary);
+                lblHourlyPay.Text = HelperClass.CurrencyFormat(jobInfo.SalaryPerHour);
             }
         }
     }

@@ -11,6 +11,12 @@ namespace PayrollSystemLibrary.Logic
 {
     public class AdminProcessor : IUserProcessor
     {
+        IUserRepository repository;
+        public AdminProcessor()
+        {
+            repository = new UserRepository();
+        }
+
         public void Add(IUser user)
         {
             
@@ -28,13 +34,17 @@ namespace PayrollSystemLibrary.Logic
 
         public IUser Login(string username, string password)
         {
-            IUserRepository adminRepo = new UserRepository();
             IUser admin = new PayrollUser();
 
-            var adminInfo = adminRepo.GetUserDataByAccount(Roles.Admin, username, password);
+            var adminInfo = repository.GetUserDataByAccount(Roles.Admin, username, password);
             admin = adminInfo;
 
             return admin;
+        }
+
+        public void Update(IUser user)
+        {
+            repository.UpdateUser(Roles.Client, user);
         }
     }
 }

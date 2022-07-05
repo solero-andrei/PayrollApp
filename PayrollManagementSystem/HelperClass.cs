@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace PayrollManagementSystem
             Random random = new Random();
             int number = random.Next(1, 99);
             return firstName.Substring(0, 2) + lastName + number;
+        }
+        
+        public static string CurrencyFormat(decimal amount)
+        {
+            return amount.ToString("C", CultureInfo.GetCultureInfo("en-ph"));
         }
     }
 }

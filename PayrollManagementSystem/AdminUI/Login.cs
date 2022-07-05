@@ -22,6 +22,9 @@ namespace PayrollManagementSystem.AdminUI
         public Login()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
+
         }
 
         private void txtAccount_Proceed(object sender, KeyPressEventArgs e)
@@ -60,6 +63,11 @@ namespace PayrollManagementSystem.AdminUI
             {
                 error.SetError(btnLogin, "Invalid username or password. Please try again");
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
