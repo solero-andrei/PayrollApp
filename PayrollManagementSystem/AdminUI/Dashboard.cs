@@ -208,5 +208,10 @@ namespace PayrollManagementSystem.AdminUI
             Deductions_Contributions deductions = new Deductions_Contributions(this);
             deductions.ShowDialog();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

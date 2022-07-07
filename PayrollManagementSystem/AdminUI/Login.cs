@@ -75,5 +75,15 @@ namespace PayrollManagementSystem.AdminUI
         {
             string path = Directory.GetCurrentDirectory() + @"\EmployeeImages";
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void container_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
