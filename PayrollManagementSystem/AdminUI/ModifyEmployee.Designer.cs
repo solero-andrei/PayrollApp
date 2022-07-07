@@ -30,9 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyEmployee));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.listEmployee = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,13 +69,11 @@
             this.employeeImage = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEditEmployee = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,6 +89,16 @@
             this.panel1.Size = new System.Drawing.Size(1257, 53);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(19, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -126,6 +136,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List of Employees";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(25, 414);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(209, 14);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Click on the list to view employee details.";
+            // 
             // materialTextBox1
             // 
             this.materialTextBox1.AnimateReadOnly = false;
@@ -156,7 +177,6 @@
             this.listEmployee.Depth = 0;
             this.listEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.listEmployee.FullRowSelect = true;
-            this.listEmployee.GridLines = true;
             this.listEmployee.HideSelection = false;
             this.listEmployee.Location = new System.Drawing.Point(28, 87);
             this.listEmployee.MinimumSize = new System.Drawing.Size(200, 100);
@@ -238,7 +258,7 @@
             this.lblHourlyPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHourlyPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblHourlyPay.Location = new System.Drawing.Point(150, 435);
-            this.lblHourlyPay.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblHourlyPay.Margin = new System.Windows.Forms.Padding(3);
             this.lblHourlyPay.Name = "lblHourlyPay";
             this.lblHourlyPay.Size = new System.Drawing.Size(236, 30);
             this.lblHourlyPay.TabIndex = 25;
@@ -255,7 +275,7 @@
             this.label27.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label27.Location = new System.Drawing.Point(3, 435);
-            this.label27.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label27.Margin = new System.Windows.Forms.Padding(3);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(141, 30);
             this.label27.TabIndex = 24;
@@ -270,7 +290,7 @@
             this.lblSalary.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblSalary.Location = new System.Drawing.Point(150, 399);
-            this.lblSalary.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(3);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(236, 30);
             this.lblSalary.TabIndex = 23;
@@ -287,7 +307,7 @@
             this.label25.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label25.Location = new System.Drawing.Point(3, 399);
-            this.label25.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label25.Margin = new System.Windows.Forms.Padding(3);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(141, 30);
             this.label25.TabIndex = 22;
@@ -302,7 +322,7 @@
             this.lblJob.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblJob.Location = new System.Drawing.Point(150, 363);
-            this.lblJob.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblJob.Margin = new System.Windows.Forms.Padding(3);
             this.lblJob.Name = "lblJob";
             this.lblJob.Size = new System.Drawing.Size(236, 30);
             this.lblJob.TabIndex = 21;
@@ -319,7 +339,7 @@
             this.label23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label23.Location = new System.Drawing.Point(3, 363);
-            this.label23.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label23.Margin = new System.Windows.Forms.Padding(3);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(141, 30);
             this.label23.TabIndex = 20;
@@ -335,7 +355,7 @@
             this.lblDateHired.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateHired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblDateHired.Location = new System.Drawing.Point(150, 327);
-            this.lblDateHired.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblDateHired.Margin = new System.Windows.Forms.Padding(3);
             this.lblDateHired.Name = "lblDateHired";
             this.lblDateHired.Size = new System.Drawing.Size(236, 30);
             this.lblDateHired.TabIndex = 19;
@@ -352,7 +372,7 @@
             this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label21.Location = new System.Drawing.Point(3, 327);
-            this.label21.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label21.Margin = new System.Windows.Forms.Padding(3);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(141, 30);
             this.label21.TabIndex = 18;
@@ -367,7 +387,7 @@
             this.lblDOB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblDOB.Location = new System.Drawing.Point(150, 291);
-            this.lblDOB.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblDOB.Margin = new System.Windows.Forms.Padding(3);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(236, 30);
             this.lblDOB.TabIndex = 17;
@@ -384,7 +404,7 @@
             this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label19.Location = new System.Drawing.Point(3, 291);
-            this.label19.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label19.Margin = new System.Windows.Forms.Padding(3);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(141, 30);
             this.label19.TabIndex = 16;
@@ -399,7 +419,7 @@
             this.lblCity.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblCity.Location = new System.Drawing.Point(150, 255);
-            this.lblCity.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblCity.Margin = new System.Windows.Forms.Padding(3);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(236, 30);
             this.lblCity.TabIndex = 15;
@@ -416,7 +436,7 @@
             this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label17.Location = new System.Drawing.Point(3, 255);
-            this.label17.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label17.Margin = new System.Windows.Forms.Padding(3);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(141, 30);
             this.label17.TabIndex = 14;
@@ -431,7 +451,7 @@
             this.lblStreetNumber.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStreetNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblStreetNumber.Location = new System.Drawing.Point(150, 219);
-            this.lblStreetNumber.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblStreetNumber.Margin = new System.Windows.Forms.Padding(3);
             this.lblStreetNumber.Name = "lblStreetNumber";
             this.lblStreetNumber.Size = new System.Drawing.Size(236, 30);
             this.lblStreetNumber.TabIndex = 13;
@@ -448,7 +468,7 @@
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label15.Location = new System.Drawing.Point(3, 219);
-            this.label15.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label15.Margin = new System.Windows.Forms.Padding(3);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(141, 30);
             this.label15.TabIndex = 12;
@@ -463,7 +483,7 @@
             this.lblContact.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblContact.Location = new System.Drawing.Point(150, 183);
-            this.lblContact.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblContact.Margin = new System.Windows.Forms.Padding(3);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(236, 30);
             this.lblContact.TabIndex = 11;
@@ -480,7 +500,7 @@
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label13.Location = new System.Drawing.Point(3, 183);
-            this.label13.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label13.Margin = new System.Windows.Forms.Padding(3);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(141, 30);
             this.label13.TabIndex = 10;
@@ -495,7 +515,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblEmail.Location = new System.Drawing.Point(150, 147);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(3);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(236, 30);
             this.lblEmail.TabIndex = 9;
@@ -512,7 +532,7 @@
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label11.Location = new System.Drawing.Point(3, 147);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label11.Margin = new System.Windows.Forms.Padding(3);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(141, 30);
             this.label11.TabIndex = 8;
@@ -527,7 +547,7 @@
             this.lblGender.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblGender.Location = new System.Drawing.Point(150, 111);
-            this.lblGender.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(3);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(236, 30);
             this.lblGender.TabIndex = 7;
@@ -544,7 +564,7 @@
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label9.Location = new System.Drawing.Point(3, 111);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(141, 30);
             this.label9.TabIndex = 6;
@@ -559,7 +579,7 @@
             this.lblLastName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblLastName.Location = new System.Drawing.Point(150, 75);
-            this.lblLastName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(3);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(236, 30);
             this.lblLastName.TabIndex = 5;
@@ -576,7 +596,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label7.Location = new System.Drawing.Point(3, 75);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label7.Margin = new System.Windows.Forms.Padding(3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 30);
             this.label7.TabIndex = 4;
@@ -591,7 +611,7 @@
             this.lblMiddleName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMiddleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblMiddleName.Location = new System.Drawing.Point(150, 39);
-            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(3);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(236, 30);
             this.lblMiddleName.TabIndex = 3;
@@ -608,7 +628,7 @@
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label5.Location = new System.Drawing.Point(3, 39);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label5.Margin = new System.Windows.Forms.Padding(3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 30);
             this.label5.TabIndex = 2;
@@ -623,7 +643,7 @@
             this.lblFirstName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblFirstName.Location = new System.Drawing.Point(150, 3);
-            this.lblFirstName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(3);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(236, 30);
             this.lblFirstName.TabIndex = 1;
@@ -640,7 +660,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 30);
             this.label1.TabIndex = 0;
@@ -649,7 +669,6 @@
             // 
             // employeeImage
             // 
-            this.employeeImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.employeeImage.Location = new System.Drawing.Point(985, 98);
             this.employeeImage.Name = "employeeImage";
             this.employeeImage.Size = new System.Drawing.Size(201, 201);
@@ -686,27 +705,6 @@
             this.btnEditEmployee.UseVisualStyleBackColor = true;
             this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(19, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(25, 414);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(209, 14);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Click on the list to view employee details.";
-            // 
             // ModifyEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -722,12 +720,12 @@
             this.Size = new System.Drawing.Size(1257, 537);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

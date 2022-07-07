@@ -15,5 +15,7 @@ namespace PayrollSystemLibrary.Models
         public TimeSpan TimeOut { get; set; }
         public int NumberOfWorkHours { get; set; } = 0;
         public decimal EstimatedPay { get; set; }
+        public int MinutesLate { get; set; }
+        public int Overtime { get; set; }
     }
 }

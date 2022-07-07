@@ -22,12 +22,9 @@ namespace PayrollManagementSystem.AdminUI
         {
             InitializeComponent();
             empProcessor = new EmployeeProcessor();
-
             this.main = main;
 
             ListViewData();
-            //var materialSkinManager = MaterialSkinManager.Instance;
-            //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
         }
 
         private void ListViewData()
@@ -68,6 +65,17 @@ namespace PayrollManagementSystem.AdminUI
             lblJob.Text = employeeInformation.Job.JobName;
             lblSalary.Text = HelperClass.CurrencyFormat(employeeInformation.Job.MonthlySalary);
             lblHourlyPay.Text = HelperClass.CurrencyFormat(employeeInformation.Job.SalaryPerHour);
+
+            ErrorProvider error = new ErrorProvider();
+            try
+            {                
+                employeeImage.Image = Image.FromFile(HelperClass.LoadImage(employeeInformation.ID.ToString()));
+            }
+            catch (Exception)
+            {
+                employeeImage.Image = Image.FromFile(HelperClass.LoadImage("no-image"));
+            }
+            
         }
 
         private void btnEditEmployee_Click(object sender, EventArgs e)

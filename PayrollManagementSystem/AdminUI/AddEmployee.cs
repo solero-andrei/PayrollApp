@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -125,6 +126,8 @@ namespace PayrollManagementSystem.AdminUI
 
             IUserProcessor empProcessor = new EmployeeProcessor();
             empProcessor.Add(user);
+
+            HelperClass.SaveImage(employeeImagePath, txtID.Text);
         }
         private void EditEmployee()
         {
@@ -195,6 +198,7 @@ namespace PayrollManagementSystem.AdminUI
             }
         }
 
+        private string employeeImagePath = "";
         private void btnUpload_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog
@@ -206,6 +210,7 @@ namespace PayrollManagementSystem.AdminUI
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 employeeImage.Image = Image.FromFile(dialog.FileName);
+                employeeImagePath = dialog.FileName;
             }
         }
 
@@ -221,6 +226,11 @@ namespace PayrollManagementSystem.AdminUI
                 lblMonthlySalary.Text = HelperClass.CurrencyFormat(jobInfo.MonthlySalary);
                 lblHourlyPay.Text = HelperClass.CurrencyFormat(jobInfo.SalaryPerHour);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

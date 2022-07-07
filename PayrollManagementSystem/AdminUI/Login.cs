@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using PayrollSystemLibrary.Interfaces;
 using PayrollSystemLibrary.Logic;
 using PayrollSystemLibrary.Models;
+using System.IO;
 
 namespace PayrollManagementSystem.AdminUI
 {
@@ -56,6 +56,7 @@ namespace PayrollManagementSystem.AdminUI
 
             if (isValid == true)
             {
+                this.Hide();
                 Dashboard adminDashboard = new Dashboard(admin);
                 adminDashboard.ShowDialog();
             }
@@ -68,6 +69,11 @@ namespace PayrollManagementSystem.AdminUI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string path = Directory.GetCurrentDirectory() + @"\EmployeeImages";
         }
     }
 }

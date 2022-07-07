@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,18 @@ namespace PayrollManagementSystem
         {
             Random ran = new Random();
             return ran.Next(1000000, 9999999);
+        }
+
+        
+        public static void SaveImage(string imagePath, string id)
+        {
+            string path = Directory.GetCurrentDirectory() + $@"\EmployeeImages\{id}.jpg";
+            File.Copy(imagePath, path);
+        }
+
+        public static string LoadImage(string id)
+        {
+            return Directory.GetCurrentDirectory() + $@"\EmployeeImages\{id}.jpg";
         }
 
         public static string UsernameGenerator(string firstName, string lastName)

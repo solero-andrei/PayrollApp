@@ -21,7 +21,7 @@ namespace PayrollManagementSystem.ClientUI
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue100, TextShade.WHITE);            
         }
         private bool EmployeeLogin()
         {
@@ -42,10 +42,10 @@ namespace PayrollManagementSystem.ClientUI
             return isValidLogin;
         }
 
-        private void TimeIn()
+        private bool TimeIn()
         {
             EmpAttendanceProcessor attendanceProcessor = new EmpAttendanceProcessor();
-            attendanceProcessor.SetTimeIn(this.employee.ID);
+            return attendanceProcessor.SetTimeIn(this.employee.ID);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -54,15 +54,37 @@ namespace PayrollManagementSystem.ClientUI
 
             if (isValid == true)
             {
-                TimeIn();
-                Dashboard employeeDashboard = new Dashboard(employee);
-                employeeDashboard.ShowDialog();
+                if (TimeIn() == true)
+                {
+                    TimeIn();
+                    Dashboard employeeDashboard = new Dashboard(employee);
+                    employeeDashboard.ShowDialog();
+                }
+                else
+                {
+                    Dashboard employeeDashboard = new Dashboard(employee);
+                    employeeDashboard.ShowDialog();
+                }                
             }
             else
             {
                 ErrorProvider error = new ErrorProvider();
                 error.SetError(btnLogin, "Invalid username or password. Please try again");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

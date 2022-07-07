@@ -202,10 +202,10 @@
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.container.Location = new System.Drawing.Point(3, 24);
-            this.container.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.container.Margin = new System.Windows.Forms.Padding(12);
             this.container.MouseState = MaterialSkin.MouseState.HOVER;
             this.container.Name = "container";
-            this.container.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.container.Padding = new System.Windows.Forms.Padding(12);
             this.container.Size = new System.Drawing.Size(491, 513);
             this.container.TabIndex = 1;
             // 

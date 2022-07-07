@@ -9,9 +9,10 @@ namespace PayrollSystemLibrary.Interfaces
 {
     public interface IAttendance
     {
-        void SetTimeIn(int EmpID);
+        bool SetTimeIn(int EmpID);
         void SetTimeOut(int AttendanceID, int workHours, decimal pay);
         Employee GetAttendanceDetails(int EmpID);
         Employee FilterAttendanceLogs(DateTime date, int empID);
+        Employee ComputeWorkingHours(int empID);
     }
 }

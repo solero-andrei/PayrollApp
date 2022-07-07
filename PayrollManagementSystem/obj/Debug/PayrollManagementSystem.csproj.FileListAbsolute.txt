@@ -61,3 +61,4 @@ C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollM
 C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.CopyComplete
 C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.exe
 C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.pdb
+C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AdminUI.Deductions_Contributions.resources

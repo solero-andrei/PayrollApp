@@ -46,6 +46,7 @@ namespace PayrollManagementSystem.ClientUI
             lblHourlyPay.Text = HelperClass.CurrencyFormat(fullDetails.Job.SalaryPerHour);
             lblAttendanceID.Text = fullDetails.AttendanceInformation.ID.ToString();
             lblUserID.Text = employeeDetails.ID.ToString();
+            lblMinutesLate.Text = fullDetails.AttendanceInformation.MinutesLate.ToString();
         }
 
         private void SetTimeOut()
@@ -82,10 +83,12 @@ namespace PayrollManagementSystem.ClientUI
             {
                 lblHistoryTimeIn.Text = history.AttendanceInformation.TimeIn.ToString();
                 lblHistoryAttendance.Text = history.AttendanceInformation.AttendanceStatus;
-                lblHistoryTimeOut.Text = history.AttendanceInformation.TimeOut.ToString("t");
+                lblHistoryTimeOut.Text = history.AttendanceInformation.TimeOut.ToString();
                 lblHistoryWorkHours.Text = history.AttendanceInformation.NumberOfWorkHours.ToString();
                 lblHistoryPay.Text = HelperClass.CurrencyFormat(history.AttendanceInformation.EstimatedPay);
                 lblHistoryDate.Text = history.AttendanceInformation.AttendanceDate.ToString("M/dd/yyyy");
+                lblHistoryLate.Text = history.AttendanceInformation.MinutesLate.ToString();
+                lblOvertime.Text = history.AttendanceInformation.Overtime.ToString();
             }  
         }
 
@@ -105,7 +108,8 @@ namespace PayrollManagementSystem.ClientUI
 
         private void linkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DialogResult question = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult question = MessageBox.Show("Are you sure you want to logout?\n" +
+                "Note: By Logging out, it will be served as your time out.", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (question == DialogResult.Yes)
             {
@@ -119,13 +123,12 @@ namespace PayrollManagementSystem.ClientUI
         {
             if (calendar.SelectionRange.Start.Date.ToString("M/dd/yyyy") == DateTime.Now.ToString("M/dd/yyyy"))
             {
-                MessageBox.Show("Test");
+                MessageBox.Show("Today's Attendance Information is still processing until the end of the work hours", "Note", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 FilterAttendance();
             }
-            
         }
     }
 }

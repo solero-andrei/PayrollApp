@@ -27,14 +27,24 @@ namespace PayrollSystemLibrary.Logic
             return empRepository.GetAttendance(EmpID);
         }
 
-        public void SetTimeIn(int EmpID)
+        public bool SetTimeIn(int EmpID)
         {
-            empRepository.SetAttendance(DateTime.Now, EmpID);
+            return empRepository.SetAttendance(DateTime.Now, EmpID);
         }
 
         public void SetTimeOut(int AttendanceID, int workHours, decimal pay)
         {
             empRepository.UpdateAttendance(DateTime.Now, AttendanceID, workHours, pay);
+        }
+
+        public List<Employee> GetAllEmployeeAttendance()
+        {
+            return empRepository.GetAttendanceDetails();
+        }
+
+        public Employee ComputeWorkingHours(int empID)
+        {
+            return empRepository.ComputeWorkHours(empID);
         }
     }
 }

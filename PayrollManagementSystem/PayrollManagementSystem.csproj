@@ -60,6 +60,12 @@
     <Compile Include="AdminUI\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminUI\Deductions_Contributions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUI\Deductions_Contributions.Designer.cs">
+      <DependentUpon>Deductions_Contributions.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperClass.cs" />
+    <Compile Include="PayrollProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminUI\AddEmployee.resx">
@@ -98,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUI\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUI\Deductions_Contributions.resx">
+      <DependentUpon>Deductions_Contributions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -13,13 +13,15 @@ namespace PayrollSystemLibrary.Logic
     public class EmployeeProcessor : IUserProcessor
     {
         IUserRepository repository;
+        
+
         public EmployeeProcessor()
         {
             repository = new UserRepository();
         }
         public void Add(IUser user)
         {
-            repository.AddUser(Roles.Client, user);
+            repository.AddUser(Roles.Client, user);            
         }
 
         public IUser GetUserByID(int userID)
