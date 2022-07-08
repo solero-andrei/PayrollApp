@@ -12,12 +12,13 @@ namespace PayrollSystemLibrary.DataAccess
     {
         public void InsertPayroll(Payroll payroll)
         {
-            string query = "insert into [Payroll] ([AdminID], [TotalWorkingHours], [TotalMinutesLate], [TotalOvertime], [TotalAmountLate], [TotalAmountWorkHours], [TotalAmountOvertime], [SSS], [PhilHealth], [PagIBIG], [TotalDeductions], [GrossPay], [NetPay], [DateProcessed])values(@adminID, @totalWorkHours, @totalMinutesLate, @totalOvertime, @late, @workhours, @overtime, @sss, @philhealth, @pagibig, @deductions, @grosspay, @netpay, @dateprocessed)";
+            string query = "insert into [Payroll] ([AdminID], [EmployeeID], [TotalWorkingHours], [TotalMinutesLate], [TotalOvertime], [TotalAmountLate], [TotalAmountWorkHours], [TotalAmountOvertime], [SSS], [PhilHealth], [PagIBIG], [TotalDeductions], [GrossPay], [NetPay], [DateProcessed], [PayrollStatus])values(@adminID, @employeeID, @totalWorkHours, @totalMinutesLate, @totalOvertime, @late, @workhours, @overtime, @sss, @philhealth, @pagibig, @deductions, @grosspay, @netpay, @dateprocessed, 'Paid')";
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
             using (SqlCommand command = new SqlCommand(query, cn))
             {
                 cn.Open();
                 command.Parameters.AddWithValue("@adminID", payroll.ProccesedBy.ID);
+                command.Parameters.AddWithValue("@employeeID", payroll.EmpInformation.ID);
                 command.Parameters.AddWithValue("@totalWorkHours", payroll.EmpInformation.AttendanceInformation.NumberOfWorkHours);
                 command.Parameters.AddWithValue("@totalMinutesLate", payroll.EmpInformation.AttendanceInformation.MinutesLate);
                 command.Parameters.AddWithValue("@totalOvertime", payroll.EmpInformation.AttendanceInformation.Overtime);
@@ -35,5 +36,66 @@ namespace PayrollSystemLibrary.DataAccess
                 command.ExecuteNonQuery();
             }
         }
+
+        public List<Payroll> PayrollLogs()
+        {
+            List<Payroll> outputs = new List<Payroll>();
+
+            using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
+            using (SqlCommand command = new SqlCommand("select Employee.*, Payroll.* from Payroll inner join Employee on Payroll.EmployeeID = Employee.EmployeeID", cn))
+            {
+                cn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    outputs.Add(new Payroll
+                    {
+                        EmpInformation = new Employee
+                        {
+                            ID = int.Parse(reader["EmployeeID"].ToString()),
+                            FirstName = reader["FirstName"].ToString(),
+                            LastName = reader["LastName"].ToString(),
+                            MiddleName = reader["MiddleName"].ToString()
+                        },
+
+                        PayrollStatus = reader["PayrollStatus"].ToString()
+                    });
+                }
+            }
+
+            return outputs;
+        }
+
+        public List<Payroll> GetPayrollStatus()
+        {
+            List<Payroll> outputs = new List<Payroll>();
+
+            using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
+            using (SqlCommand command = new SqlCommand("select Employee.*, Payroll.* from Employee left join Payroll on Payroll.EmployeeID = Employee.EmployeeID", cn))
+            {
+                cn.Open();
+                command.Parameters.AddWithValue("@date", DateTime.Now.ToString("MM/dd/yyyy"));
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    outputs.Add(new Payroll
+                    {
+                        EmpInformation = new Employee
+                        {
+                            ID = int.Parse(reader["EmployeeID"].ToString()),
+                            FirstName = reader["FirstName"].ToString(),
+                            LastName = reader["LastName"].ToString(),
+                            MiddleName = reader["MiddleName"].ToString()
+                        },
+                       PayrollStatus = reader["PayrollStatus"].ToString()
+                    });
+                }
+            }
+
+            return outputs;
+        }
+
     }
 }

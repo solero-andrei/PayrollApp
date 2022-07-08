@@ -19,5 +19,10 @@ namespace PayrollSystemLibrary.Logic
         {
             payrollRepo.InsertPayroll(payroll);
         }
+
+        public List<Payroll> GetPayrollStatus()
+        {
+            return payrollRepo.GetPayrollStatus();
+        }
     }
 }

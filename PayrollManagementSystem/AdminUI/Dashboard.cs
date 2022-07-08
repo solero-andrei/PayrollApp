@@ -20,6 +20,7 @@ namespace PayrollManagementSystem.AdminUI
         private PayrollUser adminInformation; 
         private EmpAttendanceProcessor attendanceProcessor;
         private EmployeeProcessor empProcessor;
+        private PayrollProcessor payProcessor;
         public Dashboard()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace PayrollManagementSystem.AdminUI
 
             attendanceProcessor = new EmpAttendanceProcessor();
             empProcessor = new EmployeeProcessor();
+            payProcessor = new PayrollProcessor();
 
             lblMonitoringDate.Text = lblMonitoringDate.Text + DateTime.Now.ToLongDateString();
         }
@@ -80,7 +82,7 @@ namespace PayrollManagementSystem.AdminUI
         private void LoadPayrollDetails()
         {
             foreach(var employee in empProcessor.GetUsers())
-                {
+            {
                 ListViewItem lv = new ListViewItem();
                 lv = listPayrollEmployee.Items.Add(employee.ID.ToString());
                 lv.SubItems.Add($"{ employee.LastName }, { employee.FirstName } { employee.MiddleName }");
@@ -164,6 +166,29 @@ namespace PayrollManagementSystem.AdminUI
             return payroll;
         }
 
+        private bool PayrollValidation()
+        {
+            bool isEnabled;
+            if (DateTime.Now.Day == 15)
+            {
+                isEnabled = true;
+            }
+            else if (DateTime.Now.Day == 30)
+            {
+                isEnabled = true;
+            }
+            else if (DateTime.Now.Month == 2 && DateTime.Now.Day == 29)
+            {
+                isEnabled = true;
+            }
+            else
+            {
+                isEnabled = false;
+            }
+
+            return isEnabled;
+        }
+
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             AddEmployee addEmp = new AddEmployee();
@@ -176,6 +201,9 @@ namespace PayrollManagementSystem.AdminUI
 
         private void dateTime_Tick(object sender, EventArgs e)
         {
+            //payrollPanel.Enabled = PayrollValidation();
+            //lblNote.Visible = !PayrollValidation();
+
             txtDate.Text = DateTime.Now.ToLongDateString();
             txtTime.Text = DateTime.Now.ToLongTimeString();            
 
@@ -252,6 +280,11 @@ namespace PayrollManagementSystem.AdminUI
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabContainer_Selecting(object sender, TabControlCancelEventArgs e)
         {
 
         }

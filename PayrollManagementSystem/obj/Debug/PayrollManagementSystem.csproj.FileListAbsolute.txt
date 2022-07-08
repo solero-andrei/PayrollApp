@@ -85,3 +85,4 @@ C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManag
 C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.CopyComplete
 C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.exe
 C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.pdb
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AdminUI.PaySlip.resources

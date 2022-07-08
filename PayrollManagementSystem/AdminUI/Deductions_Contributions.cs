@@ -91,6 +91,10 @@ namespace PayrollManagementSystem.AdminUI
         {
             PayrollProcessor payProcessor = new PayrollProcessor();
             payProcessor.UploadPayroll(payrollModel);
+
+            MessageBox.Show("Employee Paid!", "Succesfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dashboard.Opacity = 1;
+            this.Close();
         }
     }
 }

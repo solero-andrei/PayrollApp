@@ -38,12 +38,14 @@
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.timeKeepingRefresher = new System.Windows.Forms.Timer(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.payrollPanel = new System.Windows.Forms.Panel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtOvertimePay = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnDeductions = new MaterialSkin.Controls.MaterialButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblLateDeduction = new MaterialSkin.Controls.MaterialTextBox2();
             this.employeeImage = new System.Windows.Forms.PictureBox();
@@ -93,10 +95,41 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblMonitoringDate = new System.Windows.Forms.Label();
             this.tabContainer = new MaterialSkin.Controls.MaterialTabControl();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblNote = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage4.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.payrollPanel.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeImage)).BeginInit();
@@ -113,6 +146,8 @@
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabContainer.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -126,6 +161,7 @@
             this.imageList1.Images.SetKeyName(4, "salary.png");
             this.imageList1.Images.SetKeyName(5, "stakeholder.png");
             this.imageList1.Images.SetKeyName(6, "user.png");
+            this.imageList1.Images.SetKeyName(7, "salarylogs.png");
             // 
             // txtDate
             // 
@@ -186,7 +222,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.panel2);
+            this.tabPage4.Controls.Add(this.payrollPanel);
             this.tabPage4.ImageKey = "payroll.png";
             this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Name = "tabPage4";
@@ -195,22 +231,22 @@
             this.tabPage4.Text = "Payroll";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // payrollPanel
             // 
-            this.panel2.Controls.Add(this.groupBox8);
-            this.panel2.Controls.Add(this.btnDeductions);
-            this.panel2.Controls.Add(this.groupBox6);
-            this.panel2.Controls.Add(this.employeeImage);
-            this.panel2.Controls.Add(this.groupBox7);
-            this.panel2.Controls.Add(this.groupBox5);
-            this.panel2.Controls.Add(this.groupBox4);
-            this.panel2.Controls.Add(this.groupBox3);
-            this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1257, 600);
-            this.panel2.TabIndex = 0;
+            this.payrollPanel.Controls.Add(this.groupBox8);
+            this.payrollPanel.Controls.Add(this.btnDeductions);
+            this.payrollPanel.Controls.Add(this.groupBox6);
+            this.payrollPanel.Controls.Add(this.employeeImage);
+            this.payrollPanel.Controls.Add(this.groupBox7);
+            this.payrollPanel.Controls.Add(this.groupBox5);
+            this.payrollPanel.Controls.Add(this.groupBox4);
+            this.payrollPanel.Controls.Add(this.groupBox3);
+            this.payrollPanel.Controls.Add(this.groupBox2);
+            this.payrollPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.payrollPanel.Location = new System.Drawing.Point(0, 0);
+            this.payrollPanel.Name = "payrollPanel";
+            this.payrollPanel.Size = new System.Drawing.Size(1257, 600);
+            this.payrollPanel.TabIndex = 0;
             // 
             // groupBox8
             // 
@@ -226,6 +262,17 @@
             this.groupBox8.TabIndex = 18;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Overtime";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(17, 105);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(215, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "(Hourly Rate * 1.25) * Total Overtime";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
@@ -302,6 +349,17 @@
             this.groupBox6.TabIndex = 16;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Attendance Deduction";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 104);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(177, 17);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "(Hourly Rate / 60) * Total Late";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -460,7 +518,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label8, 0, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(14, 22);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -474,9 +532,9 @@
             this.lblPayrollMinutesLate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPayrollMinutesLate.Font = new System.Drawing.Font("Arial", 14.25F);
             this.lblPayrollMinutesLate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblPayrollMinutesLate.Location = new System.Drawing.Point(157, 118);
+            this.lblPayrollMinutesLate.Location = new System.Drawing.Point(157, 106);
             this.lblPayrollMinutesLate.Name = "lblPayrollMinutesLate";
-            this.lblPayrollMinutesLate.Size = new System.Drawing.Size(227, 61);
+            this.lblPayrollMinutesLate.Size = new System.Drawing.Size(227, 53);
             this.lblPayrollMinutesLate.TabIndex = 5;
             this.lblPayrollMinutesLate.Text = "- - -";
             this.lblPayrollMinutesLate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -487,9 +545,9 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label16.Location = new System.Drawing.Point(3, 118);
+            this.label16.Location = new System.Drawing.Point(3, 106);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(148, 61);
+            this.label16.Size = new System.Drawing.Size(148, 53);
             this.label16.TabIndex = 4;
             this.label16.Text = "Total Number of Minutes Late:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -500,9 +558,9 @@
             this.lblPayrollOvertime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPayrollOvertime.Font = new System.Drawing.Font("Arial", 14.25F);
             this.lblPayrollOvertime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblPayrollOvertime.Location = new System.Drawing.Point(157, 59);
+            this.lblPayrollOvertime.Location = new System.Drawing.Point(157, 53);
             this.lblPayrollOvertime.Name = "lblPayrollOvertime";
-            this.lblPayrollOvertime.Size = new System.Drawing.Size(227, 59);
+            this.lblPayrollOvertime.Size = new System.Drawing.Size(227, 53);
             this.lblPayrollOvertime.TabIndex = 3;
             this.lblPayrollOvertime.Text = "- - -";
             this.lblPayrollOvertime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -515,7 +573,7 @@
             this.lblPayrollWorkHours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblPayrollWorkHours.Location = new System.Drawing.Point(157, 0);
             this.lblPayrollWorkHours.Name = "lblPayrollWorkHours";
-            this.lblPayrollWorkHours.Size = new System.Drawing.Size(227, 59);
+            this.lblPayrollWorkHours.Size = new System.Drawing.Size(227, 53);
             this.lblPayrollWorkHours.TabIndex = 1;
             this.lblPayrollWorkHours.Text = "- - -";
             this.lblPayrollWorkHours.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -528,7 +586,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(148, 59);
+            this.label11.Size = new System.Drawing.Size(148, 53);
             this.label11.TabIndex = 0;
             this.label11.Text = "Total Number of Work Hours:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -539,9 +597,9 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label8.Location = new System.Drawing.Point(3, 59);
+            this.label8.Location = new System.Drawing.Point(3, 53);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(148, 59);
+            this.label8.Size = new System.Drawing.Size(148, 53);
             this.label8.TabIndex = 2;
             this.label8.Text = "Total Number of Overtime Hours:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -686,6 +744,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox2.Controls.Add(this.lblNote);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.materialTextBox1);
             this.groupBox2.Controls.Add(this.listPayrollEmployee);
@@ -949,6 +1008,7 @@
             this.tabContainer.Controls.Add(this.tabPage2);
             this.tabContainer.Controls.Add(this.tabPage3);
             this.tabContainer.Controls.Add(this.tabPage4);
+            this.tabContainer.Controls.Add(this.tabPage1);
             this.tabContainer.Depth = 0;
             this.tabContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabContainer.ImageList = this.imageList1;
@@ -961,27 +1021,457 @@
             this.tabContainer.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabContainer.TabIndex = 0;
             // 
-            // label10
+            // lblNote
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 104);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(177, 17);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "(Hourly Rate / 60) * Total Late";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNote.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNote.ForeColor = System.Drawing.Color.Blue;
+            this.lblNote.Location = new System.Drawing.Point(12, 519);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(404, 51);
+            this.lblNote.TabIndex = 13;
+            this.lblNote.Text = "Note: Payroll s only enabled when the day of month is 15/30 or date is 02-29.";
+            this.lblNote.Visible = false;
             // 
-            // label9
+            // tabPage1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(17, 105);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(215, 17);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "(Hourly Rate * 1.25) * Total Overtime";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tabPage1.Controls.Add(this.tableLayoutPanel4);
+            this.tabPage1.Controls.Add(this.materialListView1);
+            this.tabPage1.ImageKey = "salarylogs.png";
+            this.tabPage1.Location = new System.Drawing.Point(4, 39);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1257, 552);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Payroll Logs";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // materialListView1
+            // 
+            this.materialListView1.AutoSizeTable = false;
+            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader1,
+            this.columnHeader4});
+            this.materialListView1.Depth = 0;
+            this.materialListView1.FullRowSelect = true;
+            this.materialListView1.HideSelection = false;
+            this.materialListView1.Location = new System.Drawing.Point(86, 23);
+            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView1.Name = "materialListView1";
+            this.materialListView1.OwnerDraw = true;
+            this.materialListView1.Size = new System.Drawing.Size(515, 506);
+            this.materialListView1.TabIndex = 0;
+            this.materialListView1.UseCompatibleStateImageBehavior = false;
+            this.materialListView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Processed By";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Employee ";
+            this.columnHeader4.Width = 200;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.label40, 1, 12);
+            this.tableLayoutPanel4.Controls.Add(this.label39, 0, 12);
+            this.tableLayoutPanel4.Controls.Add(this.label38, 1, 11);
+            this.tableLayoutPanel4.Controls.Add(this.label37, 0, 11);
+            this.tableLayoutPanel4.Controls.Add(this.label36, 1, 10);
+            this.tableLayoutPanel4.Controls.Add(this.label35, 0, 10);
+            this.tableLayoutPanel4.Controls.Add(this.label34, 1, 9);
+            this.tableLayoutPanel4.Controls.Add(this.label33, 0, 9);
+            this.tableLayoutPanel4.Controls.Add(this.label32, 1, 8);
+            this.tableLayoutPanel4.Controls.Add(this.label31, 0, 8);
+            this.tableLayoutPanel4.Controls.Add(this.label30, 1, 7);
+            this.tableLayoutPanel4.Controls.Add(this.label29, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.label28, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.label27, 0, 6);
+            this.tableLayoutPanel4.Controls.Add(this.label26, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.label25, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.label24, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.label23, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.label22, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label21, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label20, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label19, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label18, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label17, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label14, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(607, 23);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 13;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(392, 506);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(190, 38);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Total Working Hours:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(199, 3);
+            this.label14.Margin = new System.Windows.Forms.Padding(3);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(190, 32);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "label14";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(3, 38);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(190, 38);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Total Late (Minutes):";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(199, 41);
+            this.label18.Margin = new System.Windows.Forms.Padding(3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(190, 32);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "label18";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(3, 76);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(190, 38);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Total Overtime (Hours):";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(199, 79);
+            this.label20.Margin = new System.Windows.Forms.Padding(3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(190, 32);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "label20";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(3, 114);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(190, 38);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "Total Amount of Late(Deduction):";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(199, 117);
+            this.label22.Margin = new System.Windows.Forms.Padding(3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(190, 32);
+            this.label22.TabIndex = 7;
+            this.label22.Text = "label22";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(3, 152);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(190, 38);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "Total Amount Working Hours:";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(199, 155);
+            this.label24.Margin = new System.Windows.Forms.Padding(3);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(190, 32);
+            this.label24.TabIndex = 9;
+            this.label24.Text = "label24";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(3, 190);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(190, 38);
+            this.label25.TabIndex = 10;
+            this.label25.Text = "Total Amount Overtime (Hours):";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(199, 193);
+            this.label26.Margin = new System.Windows.Forms.Padding(3);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(190, 32);
+            this.label26.TabIndex = 11;
+            this.label26.Text = "label26";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(3, 228);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(190, 38);
+            this.label27.TabIndex = 12;
+            this.label27.Text = "SSS Contribution:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(199, 231);
+            this.label28.Margin = new System.Windows.Forms.Padding(3);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(190, 32);
+            this.label28.TabIndex = 13;
+            this.label28.Text = "label28";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(3, 266);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(190, 38);
+            this.label29.TabIndex = 14;
+            this.label29.Text = "Philhealth Contribution:";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(199, 269);
+            this.label30.Margin = new System.Windows.Forms.Padding(3);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(190, 32);
+            this.label30.TabIndex = 15;
+            this.label30.Text = "label30";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(3, 304);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(190, 38);
+            this.label31.TabIndex = 16;
+            this.label31.Text = "Pag IBIG Contribution:";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(199, 307);
+            this.label32.Margin = new System.Windows.Forms.Padding(3);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(190, 32);
+            this.label32.TabIndex = 17;
+            this.label32.Text = "label32";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(3, 342);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(190, 38);
+            this.label33.TabIndex = 18;
+            this.label33.Text = "Total Deductions:";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(199, 345);
+            this.label34.Margin = new System.Windows.Forms.Padding(3);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(190, 32);
+            this.label34.TabIndex = 19;
+            this.label34.Text = "label34";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(3, 380);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(190, 38);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "Gross Pay:";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(199, 383);
+            this.label36.Margin = new System.Windows.Forms.Padding(3);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(190, 32);
+            this.label36.TabIndex = 21;
+            this.label36.Text = "label36";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(3, 418);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(190, 38);
+            this.label37.TabIndex = 22;
+            this.label37.Text = "Net Pay:";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(199, 421);
+            this.label38.Margin = new System.Windows.Forms.Padding(3);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(190, 32);
+            this.label38.TabIndex = 23;
+            this.label38.Text = "label38";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(3, 456);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(190, 50);
+            this.label39.TabIndex = 24;
+            this.label39.Text = "Date Processed:";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label40.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(199, 459);
+            this.label40.Margin = new System.Windows.Forms.Padding(3);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(190, 44);
+            this.label40.TabIndex = 25;
+            this.label40.Text = "label40";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Payroll ID";
+            this.columnHeader9.Width = 100;
             // 
             // Dashboard
             // 
@@ -1005,7 +1495,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payroll Dashboard";
             this.tabPage4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.payrollPanel.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1030,6 +1520,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabContainer.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1059,7 +1552,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Label lblMonitoringDate;
         private MaterialSkin.Controls.MaterialTabControl tabContainer;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel payrollPanel;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lblPayrollWorkHours;
@@ -1100,5 +1593,38 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblNote;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private MaterialSkin.Controls.MaterialListView materialListView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }

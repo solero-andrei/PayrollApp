@@ -20,5 +20,6 @@ namespace PayrollSystemLibrary.Models
         public decimal GrossPay { get; set; }
         public decimal NetPay { get; set; }
         public DateTime DateProcessed { get; set; }
+        public string PayrollStatus { get; set; }
     }
 }
