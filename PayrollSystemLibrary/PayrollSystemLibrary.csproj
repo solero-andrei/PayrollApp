@@ -45,6 +45,7 @@
     <Compile Include="DataAccess\EmpAttendanceRepository.cs" />
     <Compile Include="DataAccess\IUserRepository.cs" />
     <Compile Include="DataAccess\JobRepository.cs" />
+    <Compile Include="DataAccess\PayrollRepository.cs" />
     <Compile Include="DataAccess\UserRepository.cs" />
     <Compile Include="Interfaces\IAttendance.cs" />
     <Compile Include="Interfaces\IUserProcessor.cs" />
@@ -52,10 +53,12 @@
     <Compile Include="Logic\EmpAttendanceProcessor.cs" />
     <Compile Include="Logic\EmployeeProcessor.cs" />
     <Compile Include="Logic\JobsProcessor.cs" />
+    <Compile Include="Logic\PayrollProcessor.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Models\JobPositions.cs" />
+    <Compile Include="Models\Payroll.cs" />
     <Compile Include="Models\PayrollUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles.cs" />

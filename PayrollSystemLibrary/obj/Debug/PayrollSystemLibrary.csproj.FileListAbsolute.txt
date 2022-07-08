@@ -16,3 +16,9 @@ C:\Users\PC\Documents\payroll\payroll\PayrollSystemLibrary\obj\Debug\PayrollSyst
 C:\Users\PC\Documents\payroll\payroll\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.csproj.CoreCompileInputs.cache
 C:\Users\PC\Documents\payroll\payroll\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.dll
 C:\Users\PC\Documents\payroll\payroll\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.pdb
+C:\Users\PC\Desktop\Payroll Final\PayrollSystemLibrary\bin\Debug\PayrollSystemLibrary.dll
+C:\Users\PC\Desktop\Payroll Final\PayrollSystemLibrary\bin\Debug\PayrollSystemLibrary.pdb
+C:\Users\PC\Desktop\Payroll Final\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\Payroll Final\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Payroll Final\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.dll
+C:\Users\PC\Desktop\Payroll Final\PayrollSystemLibrary\obj\Debug\PayrollSystemLibrary.pdb

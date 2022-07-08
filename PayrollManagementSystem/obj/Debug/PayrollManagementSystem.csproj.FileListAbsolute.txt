@@ -62,3 +62,26 @@ C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollM
 C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.exe
 C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.pdb
 C:\Users\PC\Documents\payroll\payroll\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AdminUI.Deductions_Contributions.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\bin\Debug\PayrollManagementSystem.exe.config
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\bin\Debug\PayrollManagementSystem.exe
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\bin\Debug\PayrollManagementSystem.pdb
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\bin\Debug\MaterialSkin.dll
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\bin\Debug\PayrollSystemLibrary.dll
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\bin\Debug\Transitions.dll
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\bin\Debug\PayrollSystemLibrary.pdb
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\bin\Debug\Transitions.pdb
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AdminUI.AddEmployee.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AdminUI.Dashboard.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AdminUI.Deductions_Contributions.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AdminUI.Login.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AdminUI.ModifyEmployee.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.ClientUI.Dashboard.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.ClientUI.Login.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.Properties.Resources.resources
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.CopyComplete
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.exe
+C:\Users\PC\Desktop\Payroll Final\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.pdb

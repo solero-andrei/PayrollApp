@@ -121,6 +121,49 @@ namespace PayrollManagementSystem.AdminUI
             }
         }
 
+        private Payroll SetPayrollInformation()
+        {
+            var empInfo = FilterEmployee();
+            var emplAttendanceInfo = FilterPayrollDetails();
+
+            decimal lateAmount = ComputeLateDeduction(empInfo.Job.SalaryPerHour, emplAttendanceInfo.AttendanceInformation.MinutesLate);
+            decimal overtimeAmount = ComputeOvertime(empInfo.Job.SalaryPerHour, emplAttendanceInfo.AttendanceInformation.Overtime);
+
+            Payroll payroll = new Payroll
+            {
+                EmpInformation = new Employee
+                {
+                    ID = int.Parse(listPayrollEmployee.SelectedItems[0].Text),
+                    FirstName = empInfo.FirstName,
+                    LastName = empInfo.LastName,
+                    Job = new JobPositions
+                    {
+                        JobID = empInfo.Job.JobID,
+                        JobName = empInfo.Job.JobName,
+                        SalaryPerHour = empInfo.Job.SalaryPerHour,
+                        MonthlySalary = empInfo.Job.MonthlySalary
+                    },
+                    AttendanceInformation = new Attendance
+                    {
+                        NumberOfWorkHours = emplAttendanceInfo.AttendanceInformation.NumberOfWorkHours,
+                        Overtime = emplAttendanceInfo.AttendanceInformation.Overtime
+                    }
+                },
+
+                ProccesedBy = new PayrollUser
+                {
+                    ID = adminInformation.ID,
+                    FirstName = adminInformation.FirstName,
+                    LastName = adminInformation.LastName,
+                }, 
+
+                TotalLateAmount = lateAmount,
+                TotalOvertimeAmount = overtimeAmount
+            };
+
+            return payroll;
+        }
+
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             AddEmployee addEmp = new AddEmployee();
@@ -133,7 +176,6 @@ namespace PayrollManagementSystem.AdminUI
 
         private void dateTime_Tick(object sender, EventArgs e)
         {
-
             txtDate.Text = DateTime.Now.ToLongDateString();
             txtTime.Text = DateTime.Now.ToLongTimeString();            
 
@@ -205,7 +247,7 @@ namespace PayrollManagementSystem.AdminUI
         private void btnDeductions_Click(object sender, EventArgs e)
         {
             this.Opacity = 0.2;
-            Deductions_Contributions deductions = new Deductions_Contributions(this);
+            Deductions_Contributions deductions = new Deductions_Contributions(SetPayrollInformation(), this);
             deductions.ShowDialog();
         }
 
