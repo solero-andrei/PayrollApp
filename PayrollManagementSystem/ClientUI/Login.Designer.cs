@@ -33,7 +33,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new MaterialSkin.Controls.MaterialButton();
@@ -65,7 +65,6 @@
             this.lblTime.Size = new System.Drawing.Size(217, 167);
             this.lblTime.TabIndex = 1;
             this.lblTime.Text = "label2";
-            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // label1
             // 
@@ -78,7 +77,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.linkLabel2);
             this.panel2.Controls.Add(this.materialLabel1);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.btnLogin);
@@ -91,15 +90,19 @@
             this.panel2.Size = new System.Drawing.Size(471, 362);
             this.panel2.TabIndex = 1;
             // 
-            // button1
+            // linkLabel2
             // 
-            this.button1.Location = new System.Drawing.Point(323, 230);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.linkLabel2.ForeColor = System.Drawing.Color.Gray;
+            this.linkLabel2.LinkColor = System.Drawing.Color.Gray;
+            this.linkLabel2.Location = new System.Drawing.Point(316, 232);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(87, 17);
+            this.linkLabel2.TabIndex = 21;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Admin Login?";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // materialLabel1
             // 
@@ -126,7 +129,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(68, 232);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(143, 23);
+            this.linkLabel1.Size = new System.Drawing.Size(113, 17);
             this.linkLabel1.TabIndex = 19;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password?";
@@ -203,7 +206,7 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(706, 386);
@@ -213,6 +216,7 @@
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_None;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Padding = new System.Windows.Forms.Padding(0, 24, 0, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -234,8 +238,8 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

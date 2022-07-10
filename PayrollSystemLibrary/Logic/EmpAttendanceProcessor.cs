@@ -37,9 +37,9 @@ namespace PayrollSystemLibrary.Logic
             empRepository.UpdateAttendance(DateTime.Now, AttendanceID, workHours, pay);
         }
 
-        public List<Employee> GetAllEmployeeAttendance()
+        public List<Employee> GetAllEmployeeAttendance(string condition)
         {
-            return empRepository.GetAttendanceDetails();
+            return empRepository.GetAttendanceDetails(condition);
         }
 
         public Employee ComputeWorkingHours(int empID)

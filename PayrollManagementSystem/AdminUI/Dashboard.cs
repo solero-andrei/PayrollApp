@@ -38,8 +38,9 @@ namespace PayrollManagementSystem.AdminUI
         {
             adminInformation = user;
 
-            LoadTimeKeepingDetails();
+            LoadTimeKeepingDetails("");
             LoadPayrollDetails();
+            //LoadPayrollLogs();
         }
 
         public void employeeModifier(Employee emp)
@@ -50,9 +51,9 @@ namespace PayrollManagementSystem.AdminUI
             panelContainer.Controls.Add(addEmp);
         }
 
-        private void LoadTimeKeepingDetails()
+        private void LoadTimeKeepingDetails(string condition)
         {
-            var attendance =  attendanceProcessor.GetAllEmployeeAttendance();
+            var attendance =  attendanceProcessor.GetAllEmployeeAttendance(condition);
             
             listAttendance.Items.Clear();
             foreach (var data in attendance)
@@ -79,25 +80,37 @@ namespace PayrollManagementSystem.AdminUI
             }
         }
 
+        private List<Payroll> PayrollDetails()
+        {
+            return payProcessor.GetPayrollStatus("");
+        }
+
         private void LoadPayrollDetails()
         {
-            foreach(var employee in empProcessor.GetUsers())
+            listPayrollEmployee.Items.Clear();
+            foreach(var employee in PayrollDetails())
             {
                 ListViewItem lv = new ListViewItem();
-                lv = listPayrollEmployee.Items.Add(employee.ID.ToString());
-                lv.SubItems.Add($"{ employee.LastName }, { employee.FirstName } { employee.MiddleName }");
+                lv = listPayrollEmployee.Items.Add(employee.EmpInformation.ID.ToString());
+                lv.SubItems.Add($"{ employee.EmpInformation.LastName }, { employee.EmpInformation.FirstName } { employee.EmpInformation.MiddleName }");
             }
+        }
+
+        private Payroll FilterPayrollValidation()
+        {
+            int empID = int.Parse(lblSelectedEmployee.Text);
+            return payProcessor.FilterPayroll(empID, "");
         }
 
         private Employee FilterPayrollDetails()
         {
-            int empID = int.Parse(listPayrollEmployee.SelectedItems[0].Text);
+            int empID = int.Parse(lblSelectedEmployee.Text);
             return (Employee) attendanceProcessor.ComputeWorkingHours(empID);
         }
 
         private Employee FilterEmployee()
         {
-            int empID = int.Parse(listPayrollEmployee.SelectedItems[0].Text);
+            int empID = int.Parse(lblSelectedEmployee.Text);
             return (Employee)empProcessor.GetUserByID(empID);
         }
 
@@ -135,7 +148,7 @@ namespace PayrollManagementSystem.AdminUI
             {
                 EmpInformation = new Employee
                 {
-                    ID = int.Parse(listPayrollEmployee.SelectedItems[0].Text),
+                    ID = int.Parse(lblSelectedEmployee.Text),
                     FirstName = empInfo.FirstName,
                     LastName = empInfo.LastName,
                     Job = new JobPositions
@@ -164,6 +177,28 @@ namespace PayrollManagementSystem.AdminUI
             };
 
             return payroll;
+        }
+
+        private List<Payroll> GetPayrollLogs()
+        {
+            var payroll = new List<Payroll>();
+
+            payroll = payProcessor.GetAllPayrollHistory();
+            
+
+            return payroll;
+        }
+
+        private void LoadPayrollLogs()
+        {
+            listPayrollLogs.Items.Clear();
+            foreach (var employee in GetPayrollLogs())
+            {
+                ListViewItem lv = new ListViewItem();
+                //lv = listPayrollLogs.Items.Add(employee.PayrollID.ToString());
+                //lv.SubItems.Add(employee.DateProcessed.ToString("MM/dd/yyyy"));
+                //lv.SubItems.Add(employee.EmpInformation.FirstName);
+            }
         }
 
         private bool PayrollValidation()
@@ -227,41 +262,48 @@ namespace PayrollManagementSystem.AdminUI
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(modifyEmp);
 
-            btnAddEmployee.Enabled = true;
-            btnModifyEmployee.Enabled = false;
+            btnAddEmployee.Enabled = false;
+            btnModifyEmployee.Enabled = true;
         }
 
         private void timeKeepingRefresher_Tick(object sender, EventArgs e)
         {
-            LoadTimeKeepingDetails();
+            LoadTimeKeepingDetails("");
+            LoadPayrollDetails();
         }
 
+        private int workingHours = 0;
         private void listPayrollEmployee_Click(object sender, EventArgs e)
         {
             try
             {
-                var empInfo = FilterEmployee();
-                lblPayrollEmail.Text = empInfo.EmailAddress.ToString();
-                lblPContactNumber.Text = empInfo.ContactNumber.ToString();
-                lblPayrollJobPosition.Text = empInfo.Job.JobName.ToString();
-                lblPayrollSalary.Text = HelperClass.CurrencyFormat(empInfo.Job.MonthlySalary);
-                lblPayrollHourlyRate.Text = HelperClass.CurrencyFormat(empInfo.Job.SalaryPerHour);
+                lblSelectedEmployee.Text = listPayrollEmployee.SelectedItems[0].Text;
+                var empInfo = FilterPayrollValidation();
+                LoadImage(lblSelectedEmployee.Text);
 
-                LoadImage(empInfo.ID.ToString());
+                lblPayrollEmail.Text = empInfo.EmpInformation.EmailAddress.ToString();
+                lblPContactNumber.Text = empInfo.EmpInformation.ContactNumber.ToString();
+                lblPayrollJobPosition.Text = empInfo.EmpInformation.Job.JobName.ToString();
+                lblPayrollSalary.Text = HelperClass.CurrencyFormat(empInfo.EmpInformation.Job.MonthlySalary);
+                lblPayrollHourlyRate.Text = HelperClass.CurrencyFormat(empInfo.EmpInformation.Job.SalaryPerHour);
 
                 var emplAttendanceInfo = FilterPayrollDetails();
                 lblPayrollWorkHours.Text = emplAttendanceInfo.AttendanceInformation.NumberOfWorkHours.ToString() + " Hours";
+                workingHours = emplAttendanceInfo.AttendanceInformation.NumberOfWorkHours;
                 lblPayrollOvertime.Text = emplAttendanceInfo.AttendanceInformation.Overtime.ToString() + " Hours";
                 lblPayrollMinutesLate.Text = emplAttendanceInfo.AttendanceInformation.MinutesLate.ToString() + " Minutes";
 
 
-                decimal deduction = ComputeLateDeduction(empInfo.Job.SalaryPerHour, emplAttendanceInfo.AttendanceInformation.MinutesLate);
+                decimal deduction = ComputeLateDeduction(empInfo.EmpInformation.Job.SalaryPerHour, emplAttendanceInfo.AttendanceInformation.MinutesLate);
                 lblLateDeduction.Text = HelperClass.CurrencyFormat(deduction);
 
-                decimal overtimeBonus = ComputeOvertime(empInfo.Job.SalaryPerHour, emplAttendanceInfo.AttendanceInformation.Overtime);
-                txtOvertimePay.Text = HelperClass.CurrencyFormat(overtimeBonus);                
+                decimal overtimeBonus = ComputeOvertime(empInfo.EmpInformation.Job.SalaryPerHour, emplAttendanceInfo.AttendanceInformation.Overtime);
+                txtOvertimePay.Text = HelperClass.CurrencyFormat(overtimeBonus);
+
+                
+
             }
-            catch (Exception)
+            catch (Exception exe)
             {
                 lblPayrollWorkHours.Text = "0 Hours";
                 lblPayrollOvertime.Text = "0 Hours";
@@ -269,24 +311,54 @@ namespace PayrollManagementSystem.AdminUI
 
                 lblLateDeduction.Text = HelperClass.CurrencyFormat(0);
                 txtOvertimePay.Text = HelperClass.CurrencyFormat(0);
+
+                MessageBox.Show(exe.Message);
             }
         }
 
         private void btnDeductions_Click(object sender, EventArgs e)
         {
-            this.Opacity = 0.2;
-            Deductions_Contributions deductions = new Deductions_Contributions(SetPayrollInformation(), this);
-            deductions.ShowDialog();
+            var empInfo = FilterPayrollValidation();
+            if (empInfo.PayrollStatus == "Paid")
+            {
+                MessageBox.Show("Employee is alread paid.", "Unable to pay", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if(workingHours < 20)
+            {
+                MessageBox.Show("Employee unable to be paid. Insufficient Working Hours" +
+                    "\nRequired Working Hours: 20", "Unable to pay", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                this.Opacity = 0.2;
+                Deductions_Contributions deductions = new Deductions_Contributions(SetPayrollInformation(), this);
+                deductions.ShowDialog();
+            }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-
+            panelContainer.Controls.Clear();
         }
 
-        private void tabContainer_Selecting(object sender, TabControlCancelEventArgs e)
+        private void radLate_CheckedChanged(object sender, EventArgs e)
         {
+            LoadTimeKeepingDetails("and AttendanceStatus = 'Late'");
+            timeKeepingRefresher.Enabled = false;
+        }
 
+        private void radOntime_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadTimeKeepingDetails("and AttendanceStatus = 'Present'");
+            timeKeepingRefresher.Enabled = false;
+        }
+
+        private void btnResetAttendance_Click(object sender, EventArgs e)
+        {
+            LoadTimeKeepingDetails("");
+            timeKeepingRefresher.Enabled = true;
+            radLate.Checked = false;
+            radOntime.Checked = false;
         }
     }
 }

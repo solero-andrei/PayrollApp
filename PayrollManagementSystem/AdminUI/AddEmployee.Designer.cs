@@ -569,7 +569,7 @@
             this.btnUpload.Depth = 0;
             this.btnUpload.HighEmphasis = true;
             this.btnUpload.Icon = null;
-            this.btnUpload.Location = new System.Drawing.Point(993, 274);
+            this.btnUpload.Location = new System.Drawing.Point(971, 276);
             this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpload.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpload.Name = "btnUpload";
@@ -627,7 +627,7 @@
             // 
             this.label14.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label14.Location = new System.Drawing.Point(905, 309);
+            this.label14.Location = new System.Drawing.Point(902, 309);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(265, 41);
             this.label14.TabIndex = 14;
@@ -638,7 +638,7 @@
             // 
             this.lblUserName.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.lblUserName.Location = new System.Drawing.Point(930, 361);
+            this.lblUserName.Location = new System.Drawing.Point(926, 361);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(216, 41);
             this.lblUserName.TabIndex = 15;
@@ -647,7 +647,7 @@
             // 
             // employeeImage
             // 
-            this.employeeImage.Location = new System.Drawing.Point(939, 61);
+            this.employeeImage.Location = new System.Drawing.Point(934, 61);
             this.employeeImage.Name = "employeeImage";
             this.employeeImage.Size = new System.Drawing.Size(200, 200);
             this.employeeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -658,7 +658,7 @@
             // 
             this.lblPassword.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.lblPassword.Location = new System.Drawing.Point(930, 401);
+            this.lblPassword.Location = new System.Drawing.Point(926, 401);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(216, 41);
             this.lblPassword.TabIndex = 16;

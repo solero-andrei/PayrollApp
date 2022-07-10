@@ -8,6 +8,7 @@ namespace PayrollSystemLibrary.Models
 {
     public class Payroll
     {
+        public int PayrollID { get; set; }
         public Employee EmpInformation { get; set; }
         public PayrollUser ProccesedBy { get; set; }
         public decimal TotalLateAmount { get; set; }

@@ -58,12 +58,12 @@ namespace PayrollManagementSystem.ClientUI
                 {
                     TimeIn();
                     Dashboard employeeDashboard = new Dashboard(employee);
-                    employeeDashboard.ShowDialog();
+                    employeeDashboard.Show();
                 }
                 else
                 {
                     Dashboard employeeDashboard = new Dashboard(employee);
-                    employeeDashboard.ShowDialog();
+                    employeeDashboard.Show();
                 }                
             }
             else
@@ -82,9 +82,10 @@ namespace PayrollManagementSystem.ClientUI
             lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            AdminUI.Login adminlogin = new AdminUI.Login();
+            adminlogin.Show();
         }
     }
 }

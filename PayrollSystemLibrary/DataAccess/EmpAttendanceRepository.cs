@@ -21,6 +21,8 @@ namespace PayrollSystemLibrary.DataAccess
             else
             {
                 string query = "insert into [Attendance]([AttendanceID], [EmployeeID], [AttendanceDate], [AttendanceStatus], [Att_TimeIn], [NumberOfWorkHours], [Att_TimeOut], [EstimatedPay], [MinutesLate], [NumberOfOvertimeHours])values(@AttendanceID, @EmployeeID, @AttendanceDate, @AttendanceStatus, " +
+                    "@TimeIn, 0, '00:00:00', 0, @minutesLate, 0);" +
+                    "insert into [AttendanceLogs]([AttendanceID], [EmployeeID], [AttendanceDate], [AttendanceStatus], [Att_TimeIn], [NumberOfWorkHours], [Att_TimeOut], [EstimatedPay], [MinutesLate], [NumberOfOvertimeHours])values(@AttendanceID, @EmployeeID, @AttendanceDate, @AttendanceStatus, " +
                     "@TimeIn, 0, '00:00:00', 0, @minutesLate, 0)";
                 string AttendanceStatus = "";
 
@@ -102,7 +104,8 @@ namespace PayrollSystemLibrary.DataAccess
 
             if (overtime < 0) overtime = 0;
             
-            string query = "update Attendance set [Att_TimeOut] = @TimeOut, [NumberOfWorkHours] = @NumberOfWorkHours, [EstimatedPay] = @EstimatePay, [NumberOfOvertimeHours] = @overtime where [AttendanceID] = @AttendanceID";
+            string query = "update Attendance set [Att_TimeOut] = @TimeOut, [NumberOfWorkHours] = @NumberOfWorkHours, [EstimatedPay] = @EstimatePay, [NumberOfOvertimeHours] = @overtime where [AttendanceID] = @AttendanceID;" +
+                "update AttendanceLogs set [Att_TimeOut] = @TimeOut, [NumberOfWorkHours] = @NumberOfWorkHours, [EstimatedPay] = @EstimatePay, [NumberOfOvertimeHours] = @overtime where [AttendanceID] = @AttendanceID";
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
             using (SqlCommand command = new SqlCommand(query, cn))
             {
@@ -113,6 +116,17 @@ namespace PayrollSystemLibrary.DataAccess
                 command.Parameters.AddWithValue("@EstimatePay", pay);
                 command.Parameters.AddWithValue("@overtime", overtime);
 
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void ResetAttendance(int empID)
+        {
+            using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
+            using (SqlCommand command = new SqlCommand("delete from Attendance where EmployeeID = @empID", cn))
+            {
+                cn.Open();
+                command.Parameters.AddWithValue("@empID", empID);
                 command.ExecuteNonQuery();
             }
         }
@@ -157,7 +171,7 @@ namespace PayrollSystemLibrary.DataAccess
         public Employee FilterAttendanceLogs(DateTime date , int empID)
         {
             Employee output = null;
-            string query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, JobPositions.SalaryPerHour, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword, Attendance.AttendanceID, Attendance.AttendanceDate, Attendance.AttendanceStatus, Attendance.Att_TimeIn, Attendance.Att_TimeOut, Attendance.NumberOfWorkHours, Attendance.EstimatedPay, Attendance.MinutesLate, Attendance.NumberOfOvertimeHours from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID inner join Attendance on Attendance.EmployeeID = Employee.EmployeeID where Employee.EmployeeID = @empID and Attendance.AttendanceDate = @FilterDate";
+            string query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, JobPositions.SalaryPerHour, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword, AttendanceLogs.AttendanceID, AttendanceLogs.AttendanceDate, AttendanceLogs.AttendanceStatus, AttendanceLogs.Att_TimeIn, AttendanceLogs.Att_TimeOut, AttendanceLogs.NumberOfWorkHours, AttendanceLogs.EstimatedPay, AttendanceLogs.MinutesLate, AttendanceLogs.NumberOfOvertimeHours from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID inner join AttendanceLogs on AttendanceLogs.EmployeeID = Employee.EmployeeID where Employee.EmployeeID = @empID and AttendanceLogs.AttendanceDate = @FilterDate";
 
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
             using (SqlCommand command = new SqlCommand(query, cn))
@@ -185,15 +199,14 @@ namespace PayrollSystemLibrary.DataAccess
                 }
             }
 
-
             return output;
         }
 
-        public List<Employee> GetAttendanceDetails()
+        public List<Employee> GetAttendanceDetails(string condition)
         {
             List<Employee> output = new List<Employee>();
 
-            string query = "select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, JobPositions.SalaryPerHour, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword, Attendance.AttendanceID, Attendance.AttendanceDate, Attendance.AttendanceStatus, Attendance.Att_TimeIn, Attendance.Att_TimeOut, Attendance.NumberOfWorkHours, Attendance.MinutesLate, Attendance.NumberOfOvertimeHours from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID inner join Attendance on Attendance.EmployeeID = Employee.EmployeeID where Attendance.AttendanceDate = @DateToday order by Attendance.Att_TimeIn desc";
+            string query = $"select Employee.*, JobPositions.JobID, JobPositions.JobName, JobPositions.MonthlySalary, JobPositions.SalaryPerHour, EmployeeDashboardAccount.Username, EmployeeDashboardAccount.AccountPassword, Attendance.AttendanceID, Attendance.AttendanceDate, Attendance.AttendanceStatus, Attendance.Att_TimeIn, Attendance.Att_TimeOut, Attendance.NumberOfWorkHours, Attendance.MinutesLate, Attendance.NumberOfOvertimeHours from EmployeeJobInfo inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join Employee on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join EmployeeDashboardAccount on Employee.EmployeeID = EmployeeDashboardAccount.EmployeeID inner join Attendance on Attendance.EmployeeID = Employee.EmployeeID where Attendance.AttendanceDate = @DateToday {condition} order by Attendance.Att_TimeIn desc";
 
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
             using (SqlCommand command = new SqlCommand(query, cn))
@@ -239,19 +252,31 @@ namespace PayrollSystemLibrary.DataAccess
 
                 if (reader.Read())
                 {
-                    emp = new Employee
+                    try
                     {
-                        AttendanceInformation = new Attendance
+                        emp = new Employee
                         {
-                            NumberOfWorkHours = int.Parse(reader["TotalWorkHours"].ToString()),
-                            MinutesLate = int.Parse(reader["TotalMinutesLate"].ToString()),
-                            Overtime = int.Parse(reader["TotalOvertimeHours"].ToString())
-                        }
-                    };
-                }
-                else
-                {
-                    emp = null;
+                            AttendanceInformation = new Attendance
+                            {
+                                NumberOfWorkHours = int.Parse(reader["TotalWorkHours"].ToString()),
+                                MinutesLate = int.Parse(reader["TotalMinutesLate"].ToString()),
+                                Overtime = int.Parse(reader["TotalOvertimeHours"].ToString())
+                            }
+                        };
+                    }
+                    catch (Exception)
+                    {
+                        emp = new Employee
+                        {
+                            AttendanceInformation = new Attendance
+                            {
+                                NumberOfWorkHours = 0,
+                                MinutesLate = 0,
+                                Overtime = 0
+                            }
+                        };
+                    }
+                    
                 }
             }
 

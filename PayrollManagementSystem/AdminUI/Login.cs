@@ -58,7 +58,7 @@ namespace PayrollManagementSystem.AdminUI
             {
                 this.Hide();
                 Dashboard adminDashboard = new Dashboard(admin);
-                adminDashboard.ShowDialog();
+                adminDashboard.Show();
             }
             else
             {

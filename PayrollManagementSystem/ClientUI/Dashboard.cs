@@ -19,6 +19,7 @@ namespace PayrollManagementSystem.ClientUI
         private Employee employeeDetails;
         private Employee fullDetails;
         private EmpAttendanceProcessor attendanceProcessor;
+        private PayrollProcessor payProcessor;
         private int numberOfHours;
         private decimal estimate;
         public Dashboard()
@@ -32,11 +33,13 @@ namespace PayrollManagementSystem.ClientUI
         public Dashboard(Employee user) : this()
         {
             attendanceProcessor = new EmpAttendanceProcessor();
+            payProcessor = new PayrollProcessor();
 
             this.employeeDetails = user;
             this.fullDetails = attendanceProcessor.GetAttendanceDetails(employeeDetails.ID);
 
             LoadFullDetails();
+            LoadPayrollLogs();
         }
 
         private void LoadFullDetails()
@@ -91,6 +94,33 @@ namespace PayrollManagementSystem.ClientUI
                 lblOvertime.Text = history.AttendanceInformation.Overtime.ToString();
             }  
         }
+        
+        private List<Payroll> GetPayrollLogs()
+        {
+            var payroll = new List<Payroll>();
+
+            try
+            {
+                payroll = payProcessor.GetPayrollStatusLogs($"where Employee.EmployeeID = {employeeDetails.ID}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return payroll;
+        }
+
+        private void LoadPayrollLogs()
+        {
+            listPayrollLogs.Items.Clear();
+            foreach (var employee in GetPayrollLogs())
+            {
+                ListViewItem lv = new ListViewItem();
+                lv = listPayrollLogs.Items.Add(employee.PayrollID.ToString());
+                lv.SubItems.Add(employee.DateProcessed.ToString("MM/dd/yyyy"));
+            }
+        }
 
         private void timeDate_Tick(object sender, EventArgs e)
         {
@@ -129,6 +159,29 @@ namespace PayrollManagementSystem.ClientUI
             {
                 FilterAttendance();
             }
+        }
+
+        private void listPayrollLogs_Click(object sender, EventArgs e)
+        {
+            var payrollInfo = payProcessor.PayrollHistory(employeeDetails.ID);
+
+            lblDateProcessed.Text = "Date Processed: " + payrollInfo.DateProcessed.ToString("MM/dd/yyyy");
+            lblProcessedBy.Text = "Processed By: " + payrollInfo.ProccesedBy.LastName + ", " + payrollInfo.ProccesedBy.FirstName;
+
+            lblEmpID.Text = payrollInfo.EmpInformation.ID.ToString();
+            lblEmpName.Text = payrollInfo.EmpInformation.LastName + ", " + payrollInfo.EmpInformation.FirstName;
+            lblJobPosition.Text = payrollInfo.EmpInformation.Job.JobName;
+            lblMonthlySalary.Text = HelperClass.CurrencyFormat(payrollInfo.EmpInformation.Job.MonthlySalary);
+            lblPayrollHourlyRate.Text = HelperClass.CurrencyFormat(payrollInfo.EmpInformation.Job.SalaryPerHour);
+            lblPayrollWorkhours.Text = payrollInfo.EmpInformation.AttendanceInformation.NumberOfWorkHours.ToString();
+            lblPayrollOvertime.Text= payrollInfo.EmpInformation.AttendanceInformation.Overtime.ToString();
+            lblPayrollLateAmount.Text = HelperClass.CurrencyFormat(payrollInfo.TotalLateAmount);
+            lblPayrollSSS.Text = HelperClass.CurrencyFormat(payrollInfo.SSS);
+            lblPayrollPhilhealth.Text = HelperClass.CurrencyFormat(payrollInfo.PhilHealth);
+            lblPayrollPagibig.Text = HelperClass.CurrencyFormat(payrollInfo.PagIBIG);
+            lblPayrollTotalDeductions.Text = HelperClass.CurrencyFormat(payrollInfo.TotalDeductions);
+            lblPayrollGrossPay.Text = HelperClass.CurrencyFormat(payrollInfo.GrossPay);
+            lblPayrollNetPay.Text = HelperClass.CurrencyFormat(payrollInfo.NetPay);
         }
     }
 }

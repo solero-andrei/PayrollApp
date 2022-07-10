@@ -28,8 +28,9 @@ namespace PayrollManagementSystem.AdminUI
             this.dashboard = dashboard;
 
             LoadSetDetails();
-        }        
+        }
 
+        decimal netPay;
         private void LoadSetDetails()
         {
             LoadImage(payrollModel.EmpInformation.ID.ToString());
@@ -62,7 +63,7 @@ namespace PayrollManagementSystem.AdminUI
             lblPagIBig.Text = HelperClass.CurrencyFormat(payProcessor.PagIBIGContribution());
             lblGrossPay.Text = HelperClass.CurrencyFormat(totalPay);
 
-            var netPay = totalPay - (payrollModel.TotalLateAmount + payProcessor.SSSContribution() + payProcessor.PhilhealthContribution() + payProcessor.PagIBIGContribution());
+            netPay = totalPay - (payrollModel.TotalLateAmount + payProcessor.SSSContribution() + payProcessor.PhilhealthContribution() + payProcessor.PagIBIGContribution());
 
             lblNetPay.Text = HelperClass.CurrencyFormat(netPay);
 
@@ -93,6 +94,12 @@ namespace PayrollManagementSystem.AdminUI
             payProcessor.UploadPayroll(payrollModel);
 
             MessageBox.Show("Employee Paid!", "Succesfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dashboard.Opacity = 1;
+            this.Close();
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
             dashboard.Opacity = 1;
             this.Close();
         }

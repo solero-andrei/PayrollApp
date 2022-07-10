@@ -22,6 +22,7 @@ namespace PayrollManagementSystem
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new AdminUI.Login());
+            //Application.Run(new AdminUI.PaySlip());
             Application.Run(new ClientUI.Login());
         }
     }
