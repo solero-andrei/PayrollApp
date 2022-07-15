@@ -30,8 +30,6 @@ namespace PayrollManagementSystem.AdminUI
             attendanceProcessor = new EmpAttendanceProcessor();
             empProcessor = new EmployeeProcessor();
             payProcessor = new PayrollProcessor();
-
-            lblMonitoringDate.Text = lblMonitoringDate.Text + DateTime.Now.ToLongDateString();
         }
 
         public Dashboard(PayrollUser user) : this()
@@ -40,7 +38,7 @@ namespace PayrollManagementSystem.AdminUI
 
             LoadTimeKeepingDetails("");
             LoadPayrollDetails();
-            //LoadPayrollLogs();
+            LoadPayrollLogs();
         }
 
         public void employeeModifier(Employee emp)
@@ -82,7 +80,7 @@ namespace PayrollManagementSystem.AdminUI
 
         private List<Payroll> PayrollDetails()
         {
-            return payProcessor.GetPayrollStatus("");
+            return payProcessor.GetPayrollList("");
         }
 
         private void LoadPayrollDetails()
@@ -183,8 +181,14 @@ namespace PayrollManagementSystem.AdminUI
         {
             var payroll = new List<Payroll>();
 
-            payroll = payProcessor.GetAllPayrollHistory();
-            
+            try
+            {
+                payroll = payProcessor.GetPayrollStatusLogs($"");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             return payroll;
         }
@@ -192,12 +196,13 @@ namespace PayrollManagementSystem.AdminUI
         private void LoadPayrollLogs()
         {
             listPayrollLogs.Items.Clear();
-            foreach (var employee in GetPayrollLogs())
+            var list = GetPayrollLogs();
+            foreach (var employee in list)
             {
                 ListViewItem lv = new ListViewItem();
-                //lv = listPayrollLogs.Items.Add(employee.PayrollID.ToString());
-                //lv.SubItems.Add(employee.DateProcessed.ToString("MM/dd/yyyy"));
-                //lv.SubItems.Add(employee.EmpInformation.FirstName);
+                lv = listPayrollLogs.Items.Add(employee.PayrollID.ToString());
+                lv.SubItems.Add($"{employee.ProccesedBy.LastName}, {employee.ProccesedBy.FirstName}");
+                lv.SubItems.Add($"{employee.EmpInformation.LastName}, {employee.EmpInformation.FirstName}");
             }
         }
 
@@ -262,12 +267,13 @@ namespace PayrollManagementSystem.AdminUI
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(modifyEmp);
 
-            btnAddEmployee.Enabled = false;
-            btnModifyEmployee.Enabled = true;
+            btnAddEmployee.Enabled = true;
+            btnModifyEmployee.Enabled = false;
         }
 
         private void timeKeepingRefresher_Tick(object sender, EventArgs e)
         {
+            lblMonitoringDate.Text = DateTime.Now.ToLongDateString();
             LoadTimeKeepingDetails("");
             LoadPayrollDetails();
         }
@@ -300,8 +306,6 @@ namespace PayrollManagementSystem.AdminUI
                 decimal overtimeBonus = ComputeOvertime(empInfo.EmpInformation.Job.SalaryPerHour, emplAttendanceInfo.AttendanceInformation.Overtime);
                 txtOvertimePay.Text = HelperClass.CurrencyFormat(overtimeBonus);
 
-                
-
             }
             catch (Exception exe)
             {
@@ -325,8 +329,8 @@ namespace PayrollManagementSystem.AdminUI
             }
             else if(workingHours < 20)
             {
-                MessageBox.Show("Employee unable to be paid. Insufficient Working Hours" +
-                    "\nRequired Working Hours: 20", "Unable to pay", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Employee cannot be paid due to insufficient Working hours rendered." +
+                    "\nRequired Working hours: 20+", "Unable to pay", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -339,6 +343,9 @@ namespace PayrollManagementSystem.AdminUI
         private void btnClear_Click(object sender, EventArgs e)
         {
             panelContainer.Controls.Clear();
+
+            btnAddEmployee.Enabled = true;
+            btnModifyEmployee.Enabled = true;
         }
 
         private void radLate_CheckedChanged(object sender, EventArgs e)
@@ -359,6 +366,27 @@ namespace PayrollManagementSystem.AdminUI
             timeKeepingRefresher.Enabled = true;
             radLate.Checked = false;
             radOntime.Checked = false;
+        }
+
+        private void listPayrollLogs_Click(object sender, EventArgs e)
+        {
+            var payrollInfo = payProcessor.PayrollHistory("where PayrollLogs.PayrollID = " + listPayrollLogs.SelectedItems[0].Text);
+
+            lblPayWorkHours.Text = payrollInfo.EmpInformation.AttendanceInformation.NumberOfWorkHours.ToString() + " Hours";
+            lblPayHistoryLate.Text = payrollInfo.EmpInformation.AttendanceInformation.MinutesLate.ToString() + " Minutes";
+            lblPayOvertime.Text = payrollInfo.EmpInformation.AttendanceInformation.Overtime.ToString() + " Hours";
+            lblPayLateAmountDeduction.Text = HelperClass.CurrencyFormat(payrollInfo.TotalLateAmount);
+            lblPayAmountWorkHours.Text = HelperClass.CurrencyFormat(payrollInfo.TotalWorkHoursAmount);
+            lblPayAmountOvertime.Text = HelperClass.CurrencyFormat(payrollInfo.TotalOvertimeAmount);
+            lblPaySSS.Text = HelperClass.CurrencyFormat(payrollInfo.SSS);
+            lblPayPhilhealth.Text = HelperClass.CurrencyFormat(payrollInfo.PhilHealth);
+            lblPayPagibig.Text = HelperClass.CurrencyFormat(payrollInfo.PagIBIG);
+            lblPayDeductions.Text = HelperClass.CurrencyFormat(payrollInfo.TotalDeductions);
+            lblPayGrosspay.Text = HelperClass.CurrencyFormat(payrollInfo.GrossPay);
+            lblPayNetPay.Text = HelperClass.CurrencyFormat(payrollInfo.NetPay);
+            lblPayDateProcessed.Text = payrollInfo.DateProcessed.ToString("MM/dd/yyyy");
+
+            
         }
     }
 }

@@ -35,6 +35,7 @@ namespace PayrollSystemLibrary.DataAccess
                 command.Parameters.AddWithValue("@dateprocessed", DateTime.Now.ToString("MM/dd/yyy"));
 
                 command.ExecuteNonQuery();
+                ResetPayroll(payroll.EmpInformation.ID);
             }
         }
 
@@ -49,6 +50,12 @@ namespace PayrollSystemLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Used to filter and validate the payroll status of employee
+        /// </summary>
+        /// <param name="empID"></param>
+        /// <param name="anotherCondition"></param>
+        /// <returns></returns>
         public Payroll FilterValidatePayroll(int empID, string anotherCondition)
         {
             Payroll pay = null;
@@ -85,15 +92,14 @@ namespace PayrollSystemLibrary.DataAccess
             return pay;
         }
 
-        public Payroll PayrollHistory(int empID)
+        public Payroll FilterPayrollHistory(string condition)
         {
             Payroll pay = null;
 
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
-            using (SqlCommand command = new SqlCommand($"select distinct Employee.*, PayrollLogs.*, EmployeeJobInfo.*, JobPositions.*, PayrollUser.FirstName as AdminFirstName, PayrollUser.LastName as AdminLastName, PayrollUser.MiddleName as AdminMiddleName from Employee left join PayrollLogs on PayrollLogs.EmployeeID = Employee.EmployeeID inner join EmployeeJobInfo on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID left join PayrollUser on PayrollLogs.AdminID = PayrollUser.AdminID where Employee.EmployeeID = @empID", cn))
+            using (SqlCommand command = new SqlCommand($"select Employee.*, PayrollLogs.*, EmployeeJobInfo.*, JobPositions.*, PayrollUser.FirstName as AdminFirstName, PayrollUser.LastName as AdminLastName, PayrollUser.MiddleName as AdminMiddleName from Employee left join PayrollLogs on PayrollLogs.EmployeeID = Employee.EmployeeID inner join EmployeeJobInfo on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID left join PayrollUser on PayrollLogs.AdminID = PayrollUser.AdminID {condition}", cn))
             {
                 cn.Open();
-                command.Parameters.AddWithValue("@empID", empID);
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read() == true)
@@ -203,40 +209,17 @@ namespace PayrollSystemLibrary.DataAccess
             return pay;
         }
 
-        public Payroll FilterValidatePayrollLogs(int empID, string anotherCondition)
-        {
-            Payroll pay = null;
-
-            using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
-            using (SqlCommand command = new SqlCommand($"select distinct Employee.*, Payroll.*, EmployeeJobInfo.*, JobPositions.*, PayrollUser.FirstName as AdminFirstName, PayrollUser.LastName as AdminLastName, PayrollUser.MiddleName as AdminMiddleName from Employee left join Payroll on Payroll.EmployeeID = Employee.EmployeeID inner join EmployeeJobInfo on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID left join PayrollUser on Payroll.AdminID = PayrollUser.AdminID where Employee.EmployeeID = @empID {anotherCondition}", cn))
-            {
-                cn.Open();
-                command.Parameters.AddWithValue("@empID", empID);
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read() == true)
-                {
-                    try
-                    {
-
-                    }
-                    catch (Exception)
-                    {
-
-                        throw;
-                    }
-                }
-            }
-
-            return pay;
-        }
-
+        /// <summary>
+        /// Used to return all payroll history for a certain employee or all of the employees
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
         public List<Payroll> GetPayrollLogs(string condition)
         {
             List<Payroll> outputs = new List<Payroll>();
 
             using (SqlConnection cn = new SqlConnection(ConnectionString.CnnString))
-            using (SqlCommand command = new SqlCommand($"select distinct Employee.*, Payroll.*, EmployeeJobInfo.*, JobPositions.* from Employee left join Payroll on Payroll.EmployeeID = Employee.EmployeeID inner join EmployeeJobInfo on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID {condition}", cn))
+            using (SqlCommand command = new SqlCommand($"select Employee.*, PayrollUser.FirstName as AdminFirstName, PayrollUser.LastName as AdminLastName, PayrollLogs.*, EmployeeJobInfo.*, JobPositions.* from Employee inner join PayrollLogs on PayrollLogs.EmployeeID = Employee.EmployeeID inner join EmployeeJobInfo on Employee.EmployeeID = EmployeeJobInfo.EmployeeID inner join JobPositions on EmployeeJobInfo.JobID = JobPositions.JobID inner join PayrollUser on PayrollLogs.AdminID = PayrollUser.AdminID {condition}", cn))
             {
                 cn.Open();
                 command.Parameters.AddWithValue("@date", DateTime.Now.ToString("MM/dd/yyyy"));
@@ -247,6 +230,12 @@ namespace PayrollSystemLibrary.DataAccess
                     outputs.Add(new Payroll
                     {
                         PayrollID = int.Parse(reader["PayrollID"].ToString()),
+                        ProccesedBy = new PayrollUser
+                        {
+                            FirstName = reader["AdminFirstName"].ToString(),
+                            LastName = reader["AdminLastName"].ToString()
+                        },
+
                         EmpInformation = new Employee
                         {
                             ID = int.Parse(reader["EmployeeID"].ToString()),
@@ -258,6 +247,7 @@ namespace PayrollSystemLibrary.DataAccess
                                 JobName = reader["JobName"].ToString()
                             }
                         },
+
                         PayrollStatus = reader["PayrollStatus"].ToString(),
                         DateProcessed = DateTime.Parse(reader["DateProcessed"].ToString())
                     });
@@ -267,6 +257,11 @@ namespace PayrollSystemLibrary.DataAccess
             return outputs;
         }
 
+        /// <summary>
+        /// Used to get all employee list for payroll processing
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
         public List<Payroll> GetPayrollStatus(string condition)
         {
             List<Payroll> outputs = new List<Payroll>();

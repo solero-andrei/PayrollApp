@@ -23,24 +23,35 @@ namespace PayrollSystemLibrary.Logic
             attendanceRepo.ResetAttendance(payroll.EmpInformation.ID);
         }
 
+        /// <summary>
+        /// Used to validate the payroll status of the employee
+        /// </summary>
+        /// <param name="empID"></param>
+        /// <param name="condition"></param>
+        /// <returns></returns>
         public Payroll FilterPayroll(int empID, string condition)
         {
             return payrollRepo.FilterValidatePayroll(empID, condition);
         }
 
-        public List<Payroll> GetPayrollStatus(string condition)
+        /// <summary>
+        /// Used to get all employee list for payroll processing
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public List<Payroll> GetPayrollList(string condition)
         {
             return payrollRepo.GetPayrollStatus(condition);
         }
 
-        public Payroll PayrollHistory(int empID)
+        /// <summary>
+        /// Return filtered payroll history
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public Payroll PayrollHistory(string condition)
         {
-            return payrollRepo.PayrollHistory(empID);
-        }
-
-        public Payroll FilterPayrollLogs(int empID, string condition)
-        {
-            return payrollRepo.FilterValidatePayrollLogs(empID, condition);
+            return payrollRepo.FilterPayrollHistory(condition);
         }
 
         public List<Payroll> GetPayrollStatusLogs(string condition)

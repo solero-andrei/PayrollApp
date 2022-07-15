@@ -163,7 +163,7 @@ namespace PayrollManagementSystem.ClientUI
 
         private void listPayrollLogs_Click(object sender, EventArgs e)
         {
-            var payrollInfo = payProcessor.PayrollHistory(employeeDetails.ID);
+            var payrollInfo = payProcessor.PayrollHistory("where Employee.EmployeeID = " + employeeDetails.ID);
 
             lblDateProcessed.Text = "Date Processed: " + payrollInfo.DateProcessed.ToString("MM/dd/yyyy");
             lblProcessedBy.Text = "Processed By: " + payrollInfo.ProccesedBy.LastName + ", " + payrollInfo.ProccesedBy.FirstName;

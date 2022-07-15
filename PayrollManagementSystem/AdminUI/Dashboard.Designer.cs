@@ -74,6 +74,8 @@
             this.lblPayrollJobPosition = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblSelectedEmployee = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.listPayrollEmployee = new MaterialSkin.Controls.MaterialListView();
@@ -85,10 +87,13 @@
             this.btnAddEmployee = new MaterialSkin.Controls.MaterialButton();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnResetAttendance = new MaterialSkin.Controls.MaterialButton();
             this.radOntime = new System.Windows.Forms.RadioButton();
             this.label41 = new System.Windows.Forms.Label();
             this.radLate = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listAttendance = new System.Windows.Forms.ListView();
@@ -100,41 +105,38 @@
             this.tabContainer = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label40 = new System.Windows.Forms.Label();
+            this.lblPayDateProcessed = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
+            this.lblPayNetPay = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
+            this.lblPayGrosspay = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
+            this.lblPayDeductions = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lblPayPagibig = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lblPayPhilhealth = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblPaySSS = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblPayAmountOvertime = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lblPayAmountWorkHours = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblPayLateAmountDeduction = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblPayOvertime = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblPayHistoryLate = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblPayWorkHours = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.listPayrollLogs = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnResetAttendance = new MaterialSkin.Controls.MaterialButton();
-            this.label42 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label43 = new System.Windows.Forms.Label();
-            this.lblSelectedEmployee = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabPage4.SuspendLayout();
             this.payrollPanel.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -241,6 +243,7 @@
             // 
             // payrollPanel
             // 
+            this.payrollPanel.Controls.Add(this.label18);
             this.payrollPanel.Controls.Add(this.groupBox8);
             this.payrollPanel.Controls.Add(this.btnDeductions);
             this.payrollPanel.Controls.Add(this.groupBox6);
@@ -264,7 +267,7 @@
             this.groupBox8.Controls.Add(this.txtOvertimePay);
             this.groupBox8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.groupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.groupBox8.Location = new System.Drawing.Point(872, 367);
+            this.groupBox8.Location = new System.Drawing.Point(872, 353);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(320, 125);
             this.groupBox8.TabIndex = 18;
@@ -330,7 +333,7 @@
             this.btnDeductions.Depth = 0;
             this.btnDeductions.HighEmphasis = true;
             this.btnDeductions.Icon = null;
-            this.btnDeductions.Location = new System.Drawing.Point(909, 507);
+            this.btnDeductions.Location = new System.Drawing.Point(909, 488);
             this.btnDeductions.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDeductions.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDeductions.Name = "btnDeductions";
@@ -351,7 +354,7 @@
             this.groupBox6.Controls.Add(this.lblLateDeduction);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.groupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.groupBox6.Location = new System.Drawing.Point(872, 236);
+            this.groupBox6.Location = new System.Drawing.Point(872, 222);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(320, 125);
             this.groupBox6.TabIndex = 16;
@@ -506,7 +509,7 @@
             this.groupBox5.Controls.Add(this.tableLayoutPanel3);
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.groupBox5.Location = new System.Drawing.Point(451, 363);
+            this.groupBox5.Location = new System.Drawing.Point(451, 387);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(414, 222);
             this.groupBox5.TabIndex = 12;
@@ -618,7 +621,7 @@
             this.groupBox4.Controls.Add(this.tableLayoutPanel2);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.groupBox4.Location = new System.Drawing.Point(451, 218);
+            this.groupBox4.Location = new System.Drawing.Point(451, 234);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(414, 139);
             this.groupBox4.TabIndex = 11;
@@ -702,7 +705,7 @@
             this.groupBox3.Controls.Add(this.tableLayoutPanel1);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.groupBox3.Location = new System.Drawing.Point(448, 133);
+            this.groupBox3.Location = new System.Drawing.Point(448, 141);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(417, 83);
             this.groupBox3.TabIndex = 10;
@@ -761,17 +764,37 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.groupBox2.Location = new System.Drawing.Point(20, 15);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(422, 570);
+            this.groupBox2.Size = new System.Drawing.Size(422, 590);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "List of Employees";
+            // 
+            // lblSelectedEmployee
+            // 
+            this.lblSelectedEmployee.AutoSize = true;
+            this.lblSelectedEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblSelectedEmployee.Location = new System.Drawing.Point(142, 547);
+            this.lblSelectedEmployee.Name = "lblSelectedEmployee";
+            this.lblSelectedEmployee.Size = new System.Drawing.Size(13, 17);
+            this.lblSelectedEmployee.TabIndex = 14;
+            this.lblSelectedEmployee.Text = "-";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label43.Location = new System.Drawing.Point(15, 547);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(121, 17);
+            this.label43.TabIndex = 13;
+            this.label43.Text = "Selected Employee:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(12, 501);
+            this.label4.Location = new System.Drawing.Point(12, 529);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(209, 14);
             this.label4.TabIndex = 12;
@@ -814,7 +837,7 @@
             this.listPayrollEmployee.MouseState = MaterialSkin.MouseState.OUT;
             this.listPayrollEmployee.Name = "listPayrollEmployee";
             this.listPayrollEmployee.OwnerDraw = true;
-            this.listPayrollEmployee.Size = new System.Drawing.Size(395, 404);
+            this.listPayrollEmployee.Size = new System.Drawing.Size(395, 439);
             this.listPayrollEmployee.TabIndex = 0;
             this.listPayrollEmployee.UseCompatibleStateImageBehavior = false;
             this.listPayrollEmployee.View = System.Windows.Forms.View.Details;
@@ -931,6 +954,27 @@
             this.tabPage2.Text = "Time Keeping Monitoring";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnResetAttendance
+            // 
+            this.btnResetAttendance.AutoSize = false;
+            this.btnResetAttendance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnResetAttendance.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnResetAttendance.Depth = 0;
+            this.btnResetAttendance.HighEmphasis = true;
+            this.btnResetAttendance.Icon = null;
+            this.btnResetAttendance.Location = new System.Drawing.Point(841, 156);
+            this.btnResetAttendance.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnResetAttendance.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnResetAttendance.Name = "btnResetAttendance";
+            this.btnResetAttendance.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnResetAttendance.Size = new System.Drawing.Size(191, 42);
+            this.btnResetAttendance.TabIndex = 7;
+            this.btnResetAttendance.Text = "Reset Attenance List";
+            this.btnResetAttendance.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnResetAttendance.UseAccentColor = false;
+            this.btnResetAttendance.UseVisualStyleBackColor = true;
+            this.btnResetAttendance.Click += new System.EventHandler(this.btnResetAttendance_Click);
+            // 
             // radOntime
             // 
             this.radOntime.AutoSize = true;
@@ -972,12 +1016,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblMonitoringDate);
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label42);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.listAttendance);
-            this.groupBox1.Controls.Add(this.lblMonitoringDate);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.groupBox1.Location = new System.Drawing.Point(266, 60);
@@ -986,6 +1031,24 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Today\'s Attendance";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(55, 490);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(273, 16);
+            this.label42.TabIndex = 16;
+            this.label42.Text = "On Time - Time in is below 8:30 required time.";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGreen;
+            this.panel2.Location = new System.Drawing.Point(37, 489);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(15, 15);
+            this.panel2.TabIndex = 15;
             // 
             // label1
             // 
@@ -1051,11 +1114,11 @@
             this.lblMonitoringDate.AutoSize = true;
             this.lblMonitoringDate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonitoringDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.lblMonitoringDate.Location = new System.Drawing.Point(16, 39);
+            this.lblMonitoringDate.Location = new System.Drawing.Point(177, 39);
             this.lblMonitoringDate.Name = "lblMonitoringDate";
-            this.lblMonitoringDate.Size = new System.Drawing.Size(165, 16);
+            this.lblMonitoringDate.Size = new System.Drawing.Size(11, 16);
             this.lblMonitoringDate.TabIndex = 13;
-            this.lblMonitoringDate.Text = "List of attendance for date: ";
+            this.lblMonitoringDate.Text = "-";
             // 
             // tabContainer
             // 
@@ -1091,389 +1154,426 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.label40, 1, 12);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.18367F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.81633F));
+            this.tableLayoutPanel4.Controls.Add(this.lblPayDateProcessed, 1, 12);
             this.tableLayoutPanel4.Controls.Add(this.label39, 0, 12);
-            this.tableLayoutPanel4.Controls.Add(this.label38, 1, 11);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayNetPay, 1, 11);
             this.tableLayoutPanel4.Controls.Add(this.label37, 0, 11);
-            this.tableLayoutPanel4.Controls.Add(this.label36, 1, 10);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayGrosspay, 1, 10);
             this.tableLayoutPanel4.Controls.Add(this.label35, 0, 10);
-            this.tableLayoutPanel4.Controls.Add(this.label34, 1, 9);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayDeductions, 1, 9);
             this.tableLayoutPanel4.Controls.Add(this.label33, 0, 9);
-            this.tableLayoutPanel4.Controls.Add(this.label32, 1, 8);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayPagibig, 1, 8);
             this.tableLayoutPanel4.Controls.Add(this.label31, 0, 8);
-            this.tableLayoutPanel4.Controls.Add(this.label30, 1, 7);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayPhilhealth, 1, 7);
             this.tableLayoutPanel4.Controls.Add(this.label29, 0, 7);
-            this.tableLayoutPanel4.Controls.Add(this.label28, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.lblPaySSS, 1, 6);
             this.tableLayoutPanel4.Controls.Add(this.label27, 0, 6);
-            this.tableLayoutPanel4.Controls.Add(this.label26, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayAmountOvertime, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.label25, 0, 5);
-            this.tableLayoutPanel4.Controls.Add(this.label24, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayAmountWorkHours, 1, 4);
             this.tableLayoutPanel4.Controls.Add(this.label23, 0, 4);
-            this.tableLayoutPanel4.Controls.Add(this.label22, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayLateAmountDeduction, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.label21, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label20, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayOvertime, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.label19, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label18, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayHistoryLate, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label17, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label14, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayWorkHours, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(607, 23);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(640, 22);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 13;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(392, 506);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(440, 551);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // label40
+            // lblPayDateProcessed
             // 
-            this.label40.AutoSize = true;
-            this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label40.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(199, 459);
-            this.label40.Margin = new System.Windows.Forms.Padding(3);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(190, 44);
-            this.label40.TabIndex = 25;
-            this.label40.Text = "label40";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayDateProcessed.AutoSize = true;
+            this.lblPayDateProcessed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayDateProcessed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayDateProcessed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayDateProcessed.Location = new System.Drawing.Point(263, 507);
+            this.lblPayDateProcessed.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayDateProcessed.Name = "lblPayDateProcessed";
+            this.lblPayDateProcessed.Size = new System.Drawing.Size(174, 41);
+            this.lblPayDateProcessed.TabIndex = 25;
+            this.lblPayDateProcessed.Text = "label40";
+            this.lblPayDateProcessed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(3, 456);
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label39.Location = new System.Drawing.Point(5, 509);
+            this.label39.Margin = new System.Windows.Forms.Padding(5);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(190, 50);
+            this.label39.Size = new System.Drawing.Size(250, 37);
             this.label39.TabIndex = 24;
             this.label39.Text = "Date Processed:";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label38
+            // lblPayNetPay
             // 
-            this.label38.AutoSize = true;
-            this.label38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(199, 421);
-            this.label38.Margin = new System.Windows.Forms.Padding(3);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(190, 32);
-            this.label38.TabIndex = 23;
-            this.label38.Text = "label38";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayNetPay.AutoSize = true;
+            this.lblPayNetPay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayNetPay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayNetPay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayNetPay.Location = new System.Drawing.Point(263, 465);
+            this.lblPayNetPay.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayNetPay.Name = "lblPayNetPay";
+            this.lblPayNetPay.Size = new System.Drawing.Size(174, 36);
+            this.lblPayNetPay.TabIndex = 23;
+            this.lblPayNetPay.Text = "label38";
+            this.lblPayNetPay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(3, 418);
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label37.Location = new System.Drawing.Point(5, 467);
+            this.label37.Margin = new System.Windows.Forms.Padding(5);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(190, 38);
+            this.label37.Size = new System.Drawing.Size(250, 32);
             this.label37.TabIndex = 22;
             this.label37.Text = "Net Pay:";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label36
+            // lblPayGrosspay
             // 
-            this.label36.AutoSize = true;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(199, 383);
-            this.label36.Margin = new System.Windows.Forms.Padding(3);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(190, 32);
-            this.label36.TabIndex = 21;
-            this.label36.Text = "label36";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayGrosspay.AutoSize = true;
+            this.lblPayGrosspay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayGrosspay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayGrosspay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayGrosspay.Location = new System.Drawing.Point(263, 423);
+            this.lblPayGrosspay.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayGrosspay.Name = "lblPayGrosspay";
+            this.lblPayGrosspay.Size = new System.Drawing.Size(174, 36);
+            this.lblPayGrosspay.TabIndex = 21;
+            this.lblPayGrosspay.Text = "label36";
+            this.lblPayGrosspay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(3, 380);
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label35.Location = new System.Drawing.Point(5, 425);
+            this.label35.Margin = new System.Windows.Forms.Padding(5);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(190, 38);
+            this.label35.Size = new System.Drawing.Size(250, 32);
             this.label35.TabIndex = 20;
             this.label35.Text = "Gross Pay:";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label34
+            // lblPayDeductions
             // 
-            this.label34.AutoSize = true;
-            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label34.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(199, 345);
-            this.label34.Margin = new System.Windows.Forms.Padding(3);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(190, 32);
-            this.label34.TabIndex = 19;
-            this.label34.Text = "label34";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayDeductions.AutoSize = true;
+            this.lblPayDeductions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayDeductions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayDeductions.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayDeductions.Location = new System.Drawing.Point(263, 381);
+            this.lblPayDeductions.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayDeductions.Name = "lblPayDeductions";
+            this.lblPayDeductions.Size = new System.Drawing.Size(174, 36);
+            this.lblPayDeductions.TabIndex = 19;
+            this.lblPayDeductions.Text = "label34";
+            this.lblPayDeductions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(3, 342);
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label33.Location = new System.Drawing.Point(5, 383);
+            this.label33.Margin = new System.Windows.Forms.Padding(5);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(190, 38);
+            this.label33.Size = new System.Drawing.Size(250, 32);
             this.label33.TabIndex = 18;
             this.label33.Text = "Total Deductions:";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label32
+            // lblPayPagibig
             // 
-            this.label32.AutoSize = true;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(199, 307);
-            this.label32.Margin = new System.Windows.Forms.Padding(3);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(190, 32);
-            this.label32.TabIndex = 17;
-            this.label32.Text = "label32";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayPagibig.AutoSize = true;
+            this.lblPayPagibig.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayPagibig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayPagibig.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayPagibig.Location = new System.Drawing.Point(263, 339);
+            this.lblPayPagibig.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayPagibig.Name = "lblPayPagibig";
+            this.lblPayPagibig.Size = new System.Drawing.Size(174, 36);
+            this.lblPayPagibig.TabIndex = 17;
+            this.lblPayPagibig.Text = "label32";
+            this.lblPayPagibig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(3, 304);
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label31.Location = new System.Drawing.Point(5, 341);
+            this.label31.Margin = new System.Windows.Forms.Padding(5);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(190, 38);
+            this.label31.Size = new System.Drawing.Size(250, 32);
             this.label31.TabIndex = 16;
             this.label31.Text = "Pag IBIG Contribution:";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label30
+            // lblPayPhilhealth
             // 
-            this.label30.AutoSize = true;
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(199, 269);
-            this.label30.Margin = new System.Windows.Forms.Padding(3);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(190, 32);
-            this.label30.TabIndex = 15;
-            this.label30.Text = "label30";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayPhilhealth.AutoSize = true;
+            this.lblPayPhilhealth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayPhilhealth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayPhilhealth.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayPhilhealth.Location = new System.Drawing.Point(263, 297);
+            this.lblPayPhilhealth.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayPhilhealth.Name = "lblPayPhilhealth";
+            this.lblPayPhilhealth.Size = new System.Drawing.Size(174, 36);
+            this.lblPayPhilhealth.TabIndex = 15;
+            this.lblPayPhilhealth.Text = "label30";
+            this.lblPayPhilhealth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(3, 266);
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label29.Location = new System.Drawing.Point(5, 299);
+            this.label29.Margin = new System.Windows.Forms.Padding(5);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(190, 38);
+            this.label29.Size = new System.Drawing.Size(250, 32);
             this.label29.TabIndex = 14;
             this.label29.Text = "Philhealth Contribution:";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label28
+            // lblPaySSS
             // 
-            this.label28.AutoSize = true;
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(199, 231);
-            this.label28.Margin = new System.Windows.Forms.Padding(3);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(190, 32);
-            this.label28.TabIndex = 13;
-            this.label28.Text = "label28";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPaySSS.AutoSize = true;
+            this.lblPaySSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPaySSS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPaySSS.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaySSS.Location = new System.Drawing.Point(263, 255);
+            this.lblPaySSS.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPaySSS.Name = "lblPaySSS";
+            this.lblPaySSS.Size = new System.Drawing.Size(174, 36);
+            this.lblPaySSS.TabIndex = 13;
+            this.lblPaySSS.Text = "label28";
+            this.lblPaySSS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(3, 228);
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label27.Location = new System.Drawing.Point(5, 257);
+            this.label27.Margin = new System.Windows.Forms.Padding(5);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(190, 38);
+            this.label27.Size = new System.Drawing.Size(250, 32);
             this.label27.TabIndex = 12;
             this.label27.Text = "SSS Contribution:";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label26
+            // lblPayAmountOvertime
             // 
-            this.label26.AutoSize = true;
-            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(199, 193);
-            this.label26.Margin = new System.Windows.Forms.Padding(3);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(190, 32);
-            this.label26.TabIndex = 11;
-            this.label26.Text = "label26";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayAmountOvertime.AutoSize = true;
+            this.lblPayAmountOvertime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayAmountOvertime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayAmountOvertime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayAmountOvertime.Location = new System.Drawing.Point(263, 213);
+            this.lblPayAmountOvertime.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayAmountOvertime.Name = "lblPayAmountOvertime";
+            this.lblPayAmountOvertime.Size = new System.Drawing.Size(174, 36);
+            this.lblPayAmountOvertime.TabIndex = 11;
+            this.lblPayAmountOvertime.Text = "label26";
+            this.lblPayAmountOvertime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(3, 190);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label25.Location = new System.Drawing.Point(5, 215);
+            this.label25.Margin = new System.Windows.Forms.Padding(5);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(190, 38);
+            this.label25.Size = new System.Drawing.Size(250, 32);
             this.label25.TabIndex = 10;
             this.label25.Text = "Total Amount Overtime (Hours):";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label24
+            // lblPayAmountWorkHours
             // 
-            this.label24.AutoSize = true;
-            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(199, 155);
-            this.label24.Margin = new System.Windows.Forms.Padding(3);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(190, 32);
-            this.label24.TabIndex = 9;
-            this.label24.Text = "label24";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayAmountWorkHours.AutoSize = true;
+            this.lblPayAmountWorkHours.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayAmountWorkHours.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayAmountWorkHours.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayAmountWorkHours.Location = new System.Drawing.Point(263, 171);
+            this.lblPayAmountWorkHours.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayAmountWorkHours.Name = "lblPayAmountWorkHours";
+            this.lblPayAmountWorkHours.Size = new System.Drawing.Size(174, 36);
+            this.lblPayAmountWorkHours.TabIndex = 9;
+            this.lblPayAmountWorkHours.Text = "label24";
+            this.lblPayAmountWorkHours.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(3, 152);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label23.Location = new System.Drawing.Point(5, 173);
+            this.label23.Margin = new System.Windows.Forms.Padding(5);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(190, 38);
+            this.label23.Size = new System.Drawing.Size(250, 32);
             this.label23.TabIndex = 8;
             this.label23.Text = "Total Amount Working Hours:";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label22
+            // lblPayLateAmountDeduction
             // 
-            this.label22.AutoSize = true;
-            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(199, 117);
-            this.label22.Margin = new System.Windows.Forms.Padding(3);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(190, 32);
-            this.label22.TabIndex = 7;
-            this.label22.Text = "label22";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayLateAmountDeduction.AutoSize = true;
+            this.lblPayLateAmountDeduction.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayLateAmountDeduction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayLateAmountDeduction.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayLateAmountDeduction.Location = new System.Drawing.Point(263, 129);
+            this.lblPayLateAmountDeduction.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayLateAmountDeduction.Name = "lblPayLateAmountDeduction";
+            this.lblPayLateAmountDeduction.Size = new System.Drawing.Size(174, 36);
+            this.lblPayLateAmountDeduction.TabIndex = 7;
+            this.lblPayLateAmountDeduction.Text = "label22";
+            this.lblPayLateAmountDeduction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(3, 114);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label21.Location = new System.Drawing.Point(5, 131);
+            this.label21.Margin = new System.Windows.Forms.Padding(5);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(190, 38);
+            this.label21.Size = new System.Drawing.Size(250, 32);
             this.label21.TabIndex = 6;
             this.label21.Text = "Total Amount of Late(Deduction):";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label20
+            // lblPayOvertime
             // 
-            this.label20.AutoSize = true;
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(199, 79);
-            this.label20.Margin = new System.Windows.Forms.Padding(3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(190, 32);
-            this.label20.TabIndex = 5;
-            this.label20.Text = "label20";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayOvertime.AutoSize = true;
+            this.lblPayOvertime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayOvertime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayOvertime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayOvertime.Location = new System.Drawing.Point(263, 87);
+            this.lblPayOvertime.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayOvertime.Name = "lblPayOvertime";
+            this.lblPayOvertime.Size = new System.Drawing.Size(174, 36);
+            this.lblPayOvertime.TabIndex = 5;
+            this.lblPayOvertime.Text = "label20";
+            this.lblPayOvertime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(3, 76);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label19.Location = new System.Drawing.Point(5, 89);
+            this.label19.Margin = new System.Windows.Forms.Padding(5);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(190, 38);
+            this.label19.Size = new System.Drawing.Size(250, 32);
             this.label19.TabIndex = 4;
             this.label19.Text = "Total Overtime (Hours):";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label18
+            // lblPayHistoryLate
             // 
-            this.label18.AutoSize = true;
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(199, 41);
-            this.label18.Margin = new System.Windows.Forms.Padding(3);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(190, 32);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "label18";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayHistoryLate.AutoSize = true;
+            this.lblPayHistoryLate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayHistoryLate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayHistoryLate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayHistoryLate.Location = new System.Drawing.Point(263, 45);
+            this.lblPayHistoryLate.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayHistoryLate.Name = "lblPayHistoryLate";
+            this.lblPayHistoryLate.Size = new System.Drawing.Size(174, 36);
+            this.lblPayHistoryLate.TabIndex = 3;
+            this.lblPayHistoryLate.Text = "label18";
+            this.lblPayHistoryLate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 38);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label17.Location = new System.Drawing.Point(5, 47);
+            this.label17.Margin = new System.Windows.Forms.Padding(5);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(190, 38);
+            this.label17.Size = new System.Drawing.Size(250, 32);
             this.label17.TabIndex = 2;
             this.label17.Text = "Total Late (Minutes):";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label14
+            // lblPayWorkHours
             // 
-            this.label14.AutoSize = true;
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(199, 3);
-            this.label14.Margin = new System.Windows.Forms.Padding(3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(190, 32);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "label14";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPayWorkHours.AutoSize = true;
+            this.lblPayWorkHours.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPayWorkHours.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPayWorkHours.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayWorkHours.Location = new System.Drawing.Point(263, 3);
+            this.lblPayWorkHours.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPayWorkHours.Name = "lblPayWorkHours";
+            this.lblPayWorkHours.Size = new System.Drawing.Size(174, 36);
+            this.lblPayWorkHours.TabIndex = 1;
+            this.lblPayWorkHours.Text = "label14";
+            this.lblPayWorkHours.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 0);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label12.Location = new System.Drawing.Point(5, 5);
+            this.label12.Margin = new System.Windows.Forms.Padding(5);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(190, 38);
+            this.label12.Size = new System.Drawing.Size(250, 32);
             this.label12.TabIndex = 0;
             this.label12.Text = "Total Working Hours:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1490,7 +1590,7 @@
             this.listPayrollLogs.Depth = 0;
             this.listPayrollLogs.FullRowSelect = true;
             this.listPayrollLogs.HideSelection = false;
-            this.listPayrollLogs.Location = new System.Drawing.Point(86, 23);
+            this.listPayrollLogs.Location = new System.Drawing.Point(119, 67);
             this.listPayrollLogs.MinimumSize = new System.Drawing.Size(200, 100);
             this.listPayrollLogs.MouseLocation = new System.Drawing.Point(-1, -1);
             this.listPayrollLogs.MouseState = MaterialSkin.MouseState.OUT;
@@ -1500,6 +1600,7 @@
             this.listPayrollLogs.TabIndex = 0;
             this.listPayrollLogs.UseCompatibleStateImageBehavior = false;
             this.listPayrollLogs.View = System.Windows.Forms.View.Details;
+            this.listPayrollLogs.Click += new System.EventHandler(this.listPayrollLogs_Click);
             // 
             // columnHeader9
             // 
@@ -1516,64 +1617,27 @@
             this.columnHeader4.Text = "Employee ";
             this.columnHeader4.Width = 200;
             // 
-            // btnResetAttendance
+            // label14
             // 
-            this.btnResetAttendance.AutoSize = false;
-            this.btnResetAttendance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnResetAttendance.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnResetAttendance.Depth = 0;
-            this.btnResetAttendance.HighEmphasis = true;
-            this.btnResetAttendance.Icon = null;
-            this.btnResetAttendance.Location = new System.Drawing.Point(841, 156);
-            this.btnResetAttendance.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnResetAttendance.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnResetAttendance.Name = "btnResetAttendance";
-            this.btnResetAttendance.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnResetAttendance.Size = new System.Drawing.Size(191, 42);
-            this.btnResetAttendance.TabIndex = 7;
-            this.btnResetAttendance.Text = "Reset Attenance List";
-            this.btnResetAttendance.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnResetAttendance.UseAccentColor = false;
-            this.btnResetAttendance.UseVisualStyleBackColor = true;
-            this.btnResetAttendance.Click += new System.EventHandler(this.btnResetAttendance_Click);
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.label14.Location = new System.Drawing.Point(16, 39);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(165, 16);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "List of attendance for date: ";
             // 
-            // label42
+            // label18
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(55, 490);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(273, 16);
-            this.label42.TabIndex = 16;
-            this.label42.Text = "On Time - Time in is below 8:30 required time.";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightGreen;
-            this.panel2.Location = new System.Drawing.Point(37, 489);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(15, 15);
-            this.panel2.TabIndex = 15;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label43.Location = new System.Drawing.Point(15, 519);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(121, 17);
-            this.label43.TabIndex = 13;
-            this.label43.Text = "Selected Employee:";
-            // 
-            // lblSelectedEmployee
-            // 
-            this.lblSelectedEmployee.AutoSize = true;
-            this.lblSelectedEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblSelectedEmployee.Location = new System.Drawing.Point(142, 519);
-            this.lblSelectedEmployee.Name = "lblSelectedEmployee";
-            this.lblSelectedEmployee.Size = new System.Drawing.Size(13, 17);
-            this.lblSelectedEmployee.TabIndex = 14;
-            this.lblSelectedEmployee.Text = "-";
+            this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label18.Location = new System.Drawing.Point(871, 546);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(321, 51);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "Note: When selected employee is paid, their attendance details(Attendance section" +
+    " on the left will be reset to 0.";
             // 
             // Dashboard
             // 
@@ -1701,31 +1765,31 @@
         private MaterialSkin.Controls.MaterialListView listPayrollLogs;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label lblPayDateProcessed;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label lblPayNetPay;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lblPayGrosspay;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblPayDeductions;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblPayPagibig;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblPayPhilhealth;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblPaySSS;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblPayAmountOvertime;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lblPayAmountWorkHours;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblPayLateAmountDeduction;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblPayOvertime;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblPayHistoryLate;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblPayWorkHours;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.RadioButton radOntime;
@@ -1736,5 +1800,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblSelectedEmployee;
         private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label18;
     }
 }
